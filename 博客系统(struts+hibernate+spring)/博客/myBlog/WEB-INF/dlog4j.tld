@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE taglib PUBLIC "-//Sun Microsystems, Inc.//DTD JSP Tag Library 1.1//EN" "http://java.sun.com/j2ee/dtds/web-jsptaglibrary_1_1.dtd">
+<taglib>
+<tlibversion>1.0</tlibversion>
+<jspversion>1.1</jspversion>
+<shortname>dlog</shortname>
+<uri>http://www.dlogcn.com</uri>
+
+<tag><!-- 用于获取当前登录用户的实例 -->
+	<name>layout</name>
+	<tagclass>web.layout.LayoutTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<attribute>
+		<name>id</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>mainPage</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>errorPage</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>baseDir</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+
+<tag><!-- 用于记录外部网站引用本站页面的标签 -->
+	<name>referer</name>
+	<tagclass>dlog4j.tags.SiteRefererTag</tagclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>logAll</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+</tag>
+
+<tag><!-- 罗列出指定目录的所有文件 -->
+	<name>listFiles</name>
+	<tagclass>dlog4j.tags.ListFilesTag</tagclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>id</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>pathId</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>path</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>extend</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>exclude</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+
+<tag><!-- 用于发送密码提示的邮件 -->
+	<name>fetchPwd</name>
+	<tagclass>dlog4j.tags.SendPasswordTag</tagclass>
+	<teiclass>dlog4j.tags.SendPasswordTEI</teiclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>resultId</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>user</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>title</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+</tag>
+
+<tag><!-- 用于获取当前登录用户的实例 -->
+	<name>getLoginUser</name>
+	<tagclass>dlog4j.tags.GetLoginUserTag</tagclass>
+	<teiclass>dlog4j.tags.GetLoginUserTei</teiclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>id</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+</tag>
+
+<tag><!-- 获取发送给当前登录用户的未读信息 -->
+	<name>bookmark</name>
+	<tagclass>dlog4j.tags.BookmarkTag</tagclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>id</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>countId</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>list</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag><!-- 获取发送给当前登录用户的未读信息 -->
+	<name>encode</name>
+	<tagclass>dlog4j.util.tags.URLEncoderTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+</tag>
+<tag><!-- 获取发送给当前登录用户的未读信息 -->
+	<name>messages</name>
+	<tagclass>dlog4j.tags.MessagesTag</tagclass>
+	<teiclass>dlog4j.tags.ListTei</teiclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>id</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>read</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>status</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag><!-- 获取当前正在访问的网站信息 -->
+	<name>getsite</name>
+	<tagclass>dlog4j.tags.GetCurrentSiteTag</tagclass>
+	<teiclass>dlog4j.tags.SiteTei</teiclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>id</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>prefixId</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+</tag>
+<tag><!-- 用于显示评论概略信息 -->
+	<name>replies</name>
+	<tagclass>dlog4j.tags.RepliesTag</tagclass>
+	<teiclass>dlog4j.tags.RepliesTei</teiclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>id</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>sort</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>search</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>catid</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>userid</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>date</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>size</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag><!-- 消息回复,用于sendmsg.jsp -->
+	<name>replymsg</name>
+	<tagclass>dlog4j.tags.ReplyMessageTag</tagclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>id</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>scope</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>msgid</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag><!-- 用户修改,用于user_list.jsp -->
+	<name>edituser</name>
+	<tagclass>dlog4j.tags.GetUserTag</tagclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>id</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>scope</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>userId</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag><!-- 评论编辑,用于showlog.jsp -->
+	<name>getCategory</name>
+	<tagclass>dlog4j.tags.EditCategoryTag</tagclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>id</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>scope</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>catId</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag><!-- 评论编辑,用于showlog.jsp -->
+	<name>reply</name>
+	<tagclass>dlog4j.tags.EditReplyTag</tagclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>id</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>scope</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>replyId</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag><!-- 用于将参数转为特定类型的标签 -->
+	<name>htmlParam</name>
+	<tagclass>dlog4j.util.tags.HttpParamTag</tagclass>
+	<teiclass>dlog4j.util.tags.HttpParamTei</teiclass>
+	<bodycontent>JSP</bodycontent>
+	<attribute>
+		<name>id</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>name</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute><!-- 要转换的类型,如果没有指定则默认为字符串 -->
+		<name>type</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>value</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag><!-- 执行for循环的标签库 -->
+	<name>for</name>
+	<tagclass>dlog4j.util.tags.ForLoopTag</tagclass>
+	<teiclass>dlog4j.util.tags.ForLoopTei</teiclass>
+	<bodycontent>JSP</bodycontent>
+	<attribute>
+		<name>id</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>from</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>to</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>step</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag><!-- 比较大小的标签库 -->
+	<name>compare</name>
+	<tagclass>dlog4j.util.tags.CompareTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<attribute>
+		<name>num1</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>num2</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>method</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+</tag>
+<tag><!-- 用于显示日记概略信息 -->
+	<name>logs</name>
+	<tagclass>dlog4j.tags.LogsTag</tagclass>
+	<teiclass>dlog4j.tags.LogsTei</teiclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>id</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>sort</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>search</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>catid</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>userid</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>date</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>count</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag><!-- 用于查询草稿详细信息 -->
+	<name>draft</name>
+	<tagclass>dlog4j.tags.DraftTag</tagclass>
+	<teiclass>dlog4j.tags.DraftTei</teiclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>id</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>draftId</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>log</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>scope</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+</tag>
+<tag><!-- 用户列出所有的草稿信息 -->
+	<name>drafts</name>
+	<tagclass>dlog4j.tags.DraftsTag</tagclass>
+	<teiclass>dlog4j.tags.ListTei</teiclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>id</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+</tag>
+<tag><!-- HTML格式化文本标签库 -->
+	<name>format</name>
+	<tagclass>dlog4j.util.tags.HtmlFormatTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<attribute>
+		<name>ubb</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>html</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>face</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag><!-- 用于高亮显示搜索关键字 -->
+	<name>highlight</name>
+	<tagclass>dlog4j.util.tags.SearchHighlightTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<attribute>
+		<name>query</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>bold</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>color</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag><!-- 所有系统参数获取 -->
+	<name>params</name>
+	<tagclass>dlog4j.tags.ParamsTag</tagclass>
+	<teiclass>dlog4j.tags.ListTei</teiclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>id</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+</tag>
+<tag><!-- 系统参数获取 -->
+	<name>param</name>
+	<tagclass>dlog4j.tags.ParamTag</tagclass>
+	<teiclass>dlog4j.tags.ParamTei</teiclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>id</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>name</name><!-- 参数名:相对于数据库的p_name -->
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>value</name><!-- 缺省值,如果不存在指定参数则返回缺省值 -->
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag><!-- 查询用户资料,用于viewuser.jsp -->
+	<name>getuser</name>
+	<tagclass>dlog4j.tags.UserTag</tagclass>
+	<teiclass>dlog4j.tags.UserTei</teiclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>id</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>userid</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>loginName</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>detail</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag><!-- 用于editlog.jsp -->
+	<name>getlog</name>
+	<tagclass>dlog4j.tags.LogTag</tagclass>
+	<teiclass>dlog4j.tags.LogTei</teiclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>id</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>nextid</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>previd</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>withReplies</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>logId</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag><!-- 用于log_category.jsp -->
+	<name>category</name>
+	<tagclass>dlog4j.tags.CategoryTag</tagclass>
+	<teiclass>dlog4j.tags.CategoryTei</teiclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>id</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>catid</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>security</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>withLogCount</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>sortByNewest</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>addLog</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+</tag>
+<tag><!-- 用于members.jsp -->
+	<name>member</name>
+	<tagclass>dlog4j.tags.MemberTag</tagclass>
+	<teiclass>dlog4j.tags.MemberTei</teiclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>id</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>count</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>role</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>page</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>userCountId</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>pageCountId</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>usersPageId</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>curPageId</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>query</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+</tag>
+<tag><!-- 用于comment.jsp -->
+	<name>comment</name>
+	<tagclass>dlog4j.tags.TopCommentTag</tagclass>
+	<teiclass>dlog4j.tags.ListTei</teiclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>id</name>
+		<required>true</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>count</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag><!-- 用于calendar.jsp -->
+	<name>calendar_highlight_today</name>
+	<tagclass>dlog4j.tags.CalendarCellColorTag</tagclass>
+	<bodycontent>JSP</bodycontent>
+	<attribute>
+		<name>yearId</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>monthId</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>day</name>
+		<required>true</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>color</name>
+		<required>false</required>
+		<rtexprvalue>true</rtexprvalue>
+	</attribute>
+</tag>
+<tag><!-- 用于calendar.jsp -->
+	<name>calendar</name>
+	<tagclass>dlog4j.tags.CalendarTag</tagclass>
+	<teiclass>dlog4j.tags.CalendarTei</teiclass>
+	<bodycontent>empty</bodycontent>
+	<attribute>
+		<name>logcId</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>yearId</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>monthId</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>datasId</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>titleId</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>paramYear</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+	<attribute>
+		<name>paramMonth</name>
+		<required>false</required>
+		<rtexprvalue>false</rtexprvalue>
+	</attribute>
+</tag>
+</taglib>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="GBK"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="loginForm"   		type="com.xdf.exams.web.form.LoginForm" />
+    <form-bean name="studentForm" 		type="com.xdf.exams.web.form.StudentForm" />
+    <form-bean name="queryStudentForm"  type="com.xdf.exams.web.form.QueryStudentForm" />
+    <form-bean name="subjectForm" 		type="com.xdf.exams.web.form.SubjectForm" />
+    <form-bean name="questionForm" 		type="com.xdf.exams.web.form.QuestionForm" />
+    <form-bean name="queryResultForm"   type="com.xdf.exams.web.form.QueryResultForm" />
+    <form-bean name="queryLogForm" 		type="com.xdf.exams.web.form.QueryLogForm" />
+    <form-bean name="teacherForm" 		type="com.xdf.exams.web.form.TeacherForm" />
+    <form-bean name="examForm" 			type="com.xdf.exams.web.form.ExamForm" />
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards >
+  	<forward name="index" path="/index.jsp"></forward>
+  </global-forwards>
+  <action-mappings >
+  	<action path="/index" forward="/index.jsp" unknown="true" ></action>
+  	
+    <action path="/login" name="loginForm" scope="request" type="com.xdf.exams.web.action.LoginAction" >
+    	<forward name="teacher" path="/teacher/index.jsp" redirect="true"></forward>
+    	<forward name="student" path="/student/index.jsp" redirect="true"></forward>
+    </action>
+    <action path="/regist" type="com.xdf.exams.web.action.RegistAction" >
+    	<forward name="regist" path="/regist.jsp"></forward>
+    </action>  
+    <action path="/registdo" name="studentForm" scope="request" type="com.xdf.exams.web.action.RegistAction" >
+    	<forward name="registmessage" path="/registmessage.jsp"></forward>
+    	<forward name="regist" path="/regist.do"></forward>
+    </action>   
+
+    <action path="/teacher/logout" type="com.xdf.exams.web.action.TeacherLogoutAction" />
+    <action path="/teacher/student/show" name="queryStudentForm" scope="request" type="com.xdf.exams.web.action.StudentAction" >
+    	<forward name="show" path="/teacher/showstudent.jsp"></forward>
+    </action>
+    <action path="/teacher/student/add"  type="com.xdf.exams.web.action.StudentAction" >
+    	<forward name="add" path="/teacher/addstudent.jsp"></forward>
+    </action>    
+     <action path="/teacher/student/adddo" name="studentForm" scope="request"  type="com.xdf.exams.web.action.StudentAction" >
+    	<forward name="add" path="/teacher/student/add.do"></forward>
+    	<forward name="show" path="/teacher/student/show.do"></forward>
+    </action>         	
+    <action path="/teacher/student/delete" name="studentForm" scope="request"  type="com.xdf.exams.web.action.StudentAction" >
+    	<forward name="show" path="/teacher/student/show.do"></forward>
+    </action>     
+    <action path="/teacher/student/update" name="studentForm" scope="request"  type="com.xdf.exams.web.action.StudentAction" >
+    	<forward name="update" path="/teacher/updatestudent.jsp"></forward>
+    </action>  
+    <action path="/teacher/student/updatedo" name="studentForm" scope="request"  type="com.xdf.exams.web.action.StudentAction" >
+    	<forward name="show" path="/teacher/student/show.do"></forward>
+		<forward name="update" path="/teacher/student/update.do"></forward>    	
+    </action>
+    <action path="/teacher/subject/show" type="com.xdf.exams.web.action.SubjectAction" >
+    	<forward name="show" path="/teacher/showsubject.jsp"></forward>
+    </action> 
+    <action path="/teacher/subject/add" name="subjectForm" scope="request"  type="com.xdf.exams.web.action.SubjectAction" >
+    	<forward name="add" path="/teacher/addsubject.jsp"></forward>
+    </action>    
+    <action path="/teacher/subject/adddo" name="subjectForm" scope="request" type="com.xdf.exams.web.action.SubjectAction" >
+    	<forward name="add" path="/teacher/subject/add.do"></forward>
+    	<forward name="show" path="/teacher/subject/show.do"></forward>
+    </action>        
+    <action path="/teacher/subject/delete" name="subjectForm" scope="request" type="com.xdf.exams.web.action.SubjectAction" >
+		<forward name="show" path="/teacher/subject/show.do"></forward>
+    </action>       
+    <action path="/teacher/subject/update" name="subjectForm" scope="request" type="com.xdf.exams.web.action.SubjectAction" >
+		<forward name="update" path="/teacher/updatesubject.jsp"></forward>
+    </action>
+    <action path="/teacher/subject/updatedo" name="subjectForm" scope="request" type="com.xdf.exams.web.action.SubjectAction" >
+		<forward name="show" path="/teacher/subject/show.do"></forward>
+		<forward name="update" path="/teacher/subject/update.do"></forward>		
+    </action>              
+    <action path="/teacher/subject/showquestion" name="questionForm" scope="request" type="com.xdf.exams.web.action.SubjectAction" >
+		<forward name="show" path="/teacher/showquestion.jsp"></forward>
+    </action>
+    <action path="/teacher/subject/addquestion" name="questionForm" scope="request" type="com.xdf.exams.web.action.SubjectAction" >
+		<forward name="add" path="/teacher/addquestion.jsp"></forward>
+    </action>
+    <action path="/teacher/subject/addquestiondo" name="questionForm" scope="request" type="com.xdf.exams.web.action.SubjectAction" >
+		<forward name="show" path="/teacher/subject/showquestion.do"></forward>
+		<forward name="add" path="/teacher/subject/addquestion.do"></forward>		
+    </action>        
+   <action path="/teacher/subject/updatequestion" name="questionForm" scope="request" type="com.xdf.exams.web.action.SubjectAction" >
+		<forward name="update" path="/teacher/updatequestion.jsp"></forward>
+    </action>
+    <action path="/teacher/subject/updatequestiondo" name="questionForm" scope="request" type="com.xdf.exams.web.action.SubjectAction" >
+		<forward name="show" path="/teacher/subject/showquestion.do"></forward>
+		<forward name="update" path="/teacher/subject/updatequestion.do"></forward>		
+    </action>       
+    <action path="/teacher/subject/deletequestion" name="questionForm" scope="request" type="com.xdf.exams.web.action.SubjectAction" >
+		<forward name="show" path="/teacher/subject/showquestion.do"></forward>
+    </action>
+    <action path="/teacher/result/query" name="queryResultForm" scope="request" type="com.xdf.exams.web.action.ResultAction" >
+    	<forward name="query" path="/teacher/queryresult.jsp"></forward>
+    </action>       
+    <action path="/teacher/result/querydo" name="queryResultForm" scope="request" type="com.xdf.exams.web.action.ResultAction" >
+    	<forward name="show" path="/teacher/showqueryresult.jsp"></forward>
+    </action>
+    <action path="/teacher/result/showdetail" type="com.xdf.exams.web.action.ResultAction" >
+    	<forward name="resultdetail" path="/teacher/resultdetail.jsp"></forward>
+    </action>    
+    <action path="/teacher/log/show" name="queryLogForm" scope="request" type="com.xdf.exams.web.action.LogAction" >
+    	<forward name="show" path="/teacher/showlog.jsp"></forward>
+    </action>
+    <action path="/teacher/admin/show" type="com.xdf.exams.web.action.TeacherAction" >
+    	<forward name="show" path="/teacher/showteacher.jsp"></forward>
+    </action>       
+    <action path="/teacher/admin/add" name="teacherForm" scope="request" type="com.xdf.exams.web.action.TeacherAction" >
+    	<forward name="add" path="/teacher/addteacher.jsp"></forward>
+    </action>       
+    <action path="/teacher/admin/adddo" name="teacherForm" scope="request" type="com.xdf.exams.web.action.TeacherAction" >
+    	<forward name="add" path="/teacher/admin/add.do"></forward>
+    	<forward name="show" path="/teacher/admin/show.do"></forward>    	
+    </action>       
+    <action path="/teacher/admin/update" name="teacherForm" scope="request" type="com.xdf.exams.web.action.TeacherAction" >
+    	<forward name="update" path="/teacher/updateteacher.jsp"></forward>    	
+    </action>       
+    <action path="/teacher/admin/updatedo" name="teacherForm" scope="request" type="com.xdf.exams.web.action.TeacherAction" >
+    	<forward name="show" path="/teacher/admin/show.do"></forward>
+    	<forward name="update" path="/teacher/admin/update.do"></forward>    	    	
+    </action>       
+    <action path="/teacher/admin/delete" name="teacherForm" scope="request" type="com.xdf.exams.web.action.TeacherAction" >
+    	<forward name="show" path="/teacher/admin/show.do"></forward>
+    </action>
+
+    <action path="/student/info/update" name="studentForm" scope="request" type="com.xdf.exams.web.action.StudentInfoAction" >
+    	<forward name="update" path="/student/updatestudent.jsp" ></forward>
+    </action>
+    <action path="/student/info/updatedo" name="studentForm" scope="request" type="com.xdf.exams.web.action.StudentInfoAction" >
+    	<forward name="update" path="/student/info/update.do" ></forward>
+    </action>
+    <action path="/student/logout" type="com.xdf.exams.web.action.StudentLogoutAction" />
+    <action path="/student/exam/list" type="com.xdf.exams.web.action.ExamAction" >
+    	<forward name="examlist" path="/student/examlist.jsp"></forward>
+    </action>
+    <action path="/student/exam/exampre" type="com.xdf.exams.web.action.ExamAction" >
+    	<forward name="exampre" path="/student/exampre.jsp"></forward>
+    	<forward name="examlist" path="/student/exam/list.do"></forward>    	
+    </action>    
+    <action path="/student/exam/start" name="subjectForm" scope="request" type="com.xdf.exams.web.action.ExamAction" >
+    	<forward name="go" path="/student/exam/go.do" redirect="true"></forward>  	
+    </action>        
+    <action path="/student/exam/go" name="examForm" scope="request" type="com.xdf.exams.web.action.ExamAction" >
+    	<forward name="exam" path="/student/exam.jsp"></forward>  	
+    	<forward name="examlist" path="/student/exam/list.do"></forward>    
+    </action>   
+    <action path="/student/exam/end" name="examForm" scope="request" type="com.xdf.exams.web.action.ExamAction" >
+    	<forward name="examlist" path="/student/exam/list.do"></forward>    
+    </action>
+    <action path="/student/result/list" type="com.xdf.exams.web.action.ResultListAction" >
+    	<forward name="result" path="/student/result.jsp"></forward>    
+    </action>     
+    <action path="/student/result/detail" type="com.xdf.exams.web.action.ResultListAction" >
+    	<forward name="resultdetail" path="/student/resultdetail.jsp"></forward>    
+    </action>             
+  </action-mappings>
+
+  <message-resources parameter="ApplicationResources" />
+</struts-config>
+

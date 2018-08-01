@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='gb2312'?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD//EN"
+                                         "http://hibernate.sourceforge.net/hibernate-configuration-2.0.dtd">
+
+<hibernate-configuration>
+
+    <session-factory>        
+    	<property name="dialect">net.sf.hibernate.dialect.GenericDialect</property>
+        <property name="show_sql">false</property>
+        <property name="use_outer_join">false</property>
+		<!--
+        <property name="use_reflection_optimizer">false</property>
+    	-->
+        <!-- Mapping files -->
+        <mapping resource="dlog4j/formbean/AttachmentForm.hbm.xml"/><!-- 日志附件 -->
+        <mapping resource="dlog4j/formbean/CategoryForm.hbm.xml"/><!-- 日志分类 -->
+        <mapping resource="dlog4j/formbean/ReplyForm.hbm.xml"/><!-- 评论信息 -->
+        <mapping resource="dlog4j/formbean/ParamForm.hbm.xml"/><!-- 系统参数 -->
+        <mapping resource="dlog4j/formbean/UserForm.hbm.xml"/><!-- 系统用户 -->
+        <mapping resource="dlog4j/formbean/SiteForm.hbm.xml"/><!-- 子网站 -->        
+        <mapping resource="dlog4j/formbean/LogForm.hbm.xml"/><!-- 日志信息 -->
+        <mapping resource="dlog4j/formbean/DraftForm.hbm.xml"/><!-- 日志草稿 -->
+        <mapping resource="dlog4j/formbean/BookMarkBean.hbm.xml"/><!-- 日记书签 -->
+        <mapping resource="dlog4j/formbean/TrackBackForm.hbm.xml"/><!-- 日志引用 -->
+        <mapping resource="dlog4j/formbean/MessageForm.hbm.xml"/><!-- 点对点消息引用 -->
+        <mapping resource="dlog4j/formbean/LoginTrackBean.hbm.xml"/><!-- 访问IP地址跟踪 -->
+        <mapping resource="dlog4j/formbean/FavoriteForm.hbm.xml"/><!-- 网站链接引用 -->
+        <mapping resource="dlog4j/beans/RefererBean.hbm.xml"/><!-- 外部网站引用 -->
+    </session-factory>
+
+</hibernate-configuration>

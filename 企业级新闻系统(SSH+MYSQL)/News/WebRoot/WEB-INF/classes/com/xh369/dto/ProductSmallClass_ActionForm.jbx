@@ -1,0 +1,9 @@
+[PropertyInfo]
+id,Integer,false,false, , ,false,<default>
+productSmallClass,com.xh369.dto.ProductSmallClass,false,false, , ,false,<default>
+smallclassname,String,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

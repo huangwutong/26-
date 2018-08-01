@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="carmackTruckInfoForm" type="com.struts.form.CarmackTruckInfoForm" />
+    <form-bean name="carmackTruckModelForm" type="com.struts.form.CarmackTruckModelForm" />
+    <form-bean name="carmackDriverInfoForm" type="com.struts.form.CarmackDriverInfoForm" />
+    <form-bean name="carmackTruckLogForm" type="com.struts.form.CarmackTruckLogForm" />
+    <form-bean name="carmackCargoInfoForm" type="com.struts.form.CarmackCargoInfoForm" />
+    <form-bean name="carmackBranchInfoForm" type="com.struts.form.CarmackBranchInfoForm" />
+    <form-bean name="carmackUserInfoForm" type="com.struts.form.CarmackUserInfoForm" />
+    
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+    
+
+    <action
+      path="/CarmacktruckInfoAdd"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false">
+      <forward
+        name="tisave"
+        path="/Carmack/JsonFactory/TruckInfoSave.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/CarmacktruckInfoUpdateOk"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >     
+    </action>
+    <action
+      path="/CarmacktruckInfoUpdate"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false">
+      <forward
+        name="TruckInfoUpdate"
+        path="/Carmack/JsonFactory/TruckInfoUpdate.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/carmacktruckInfoDelete"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false">
+      <forward
+        name="tidel"
+        path="/Carmack/TruckInfo.html"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/carmackUserInfoAdd"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="uiSave"
+        path="/Carmack/JsonFactory/UserInfoSave.jsp"
+        contextRelative="true" />
+      
+    </action>
+    <action
+      path="/carmackUserInfoList"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy" 
+      validate="false" >
+      <forward
+        name="uilist"
+        path="/Carmack/JsonFactory/UserInfoByBranchID.jsp"
+        contextRelative="true" />
+    </action>
+
+    <action
+      path="/carmackUserInfoUpdateOk"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      
+    </action>
+    <action
+      path="/carmackUserInfoUpdate"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false">
+      <forward
+        name="UserInfoUpdate"
+        path="/Carmack/JsonFactory/UserInfoUpdate.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/carmackUserInfoDelete"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="uidel"
+        path="/Carmack/UserInfo.html"
+        contextRelative="true" />
+      
+    </action>
+    <action
+      path="/carmackDriverInfoAdd"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false">
+      <forward
+        name="diaddOK"
+        path="/Carmack/JsonFactory/DriverInfoAdd.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/carmackDriverInfoUpdateOk"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      
+    </action>
+    <action
+      path="/carmackDriverInfoUpdate"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false">
+      <forward
+        name="diUpdateOK"
+        path="/Carmack/JsonFactory/DriverInfoUpdate.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/carmackDriverInfoList"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false">
+      <forward
+        name="dilist"
+        path="/Carmack/JsonFactory/DriverInfoByBranchID.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/carmackDriverInfoDelete"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false">
+      <forward
+        name="didelOK"
+        path="/Carmack/JsonFactory/DriverInfoDel.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/carmackBranchInfoAdd"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="bisave"
+        path="/Carmack/JsonFactory/BranchInfoSave.jsp"
+        contextRelative="true" />
+      
+    </action>
+    <action
+      path="/carmackBranchInfoList"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false">
+      <forward
+        name="bilist"
+        path="/Carmack/JsonFactory/BranchInfoMsg.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/carmackBranchInfoUpdateOk"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      
+    </action>
+    <action
+      path="/carmackBranchInfoUpdate"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false">
+      <forward
+        name="BranchInfoUpdate"
+        path="/Carmack/JsonFactory/BranchInfoUpdate.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/carmackBranchInfoDelete"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false">
+      <forward
+        name="bidel"
+        path="/Carmack/BranchInfo.html"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/carmackTruckModelAdd"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="TruckModelSorUOK"
+        path="/Carmack/TruckModel.html"
+        contextRelative="true" />
+      
+    </action>
+    <action
+      path="/carmackTruckModelUpdateOk"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      
+    </action>
+    <action
+      path="/carmackTruckModelList"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="TruckModelList"
+        path="/Carmack/JsonFactory/TruckModeList.jsp"
+        contextRelative="true" />
+      
+    </action>
+    <action
+      path="/carmackTruckModelUpdate"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      
+    </action>
+    <action
+      path="/carmackTruckModelDelete"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="TruckModelDel"
+        path="/Carmack/TruckModel.html"
+        contextRelative="true" />
+      
+    </action>
+    <action
+      path="/CarmacktruckInfoList"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false">
+      <forward
+        name="tilist"
+        path="/Carmack/JsonFactory/TruckInfoMsg.jsp"
+        contextRelative="true" />
+    </action>
+    <action path="/systemLogList" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward
+        name="SystemLogList"
+        path="/Carmack/JsonFactory/SystemLog.jsp"
+        contextRelative="true" />
+    </action>
+
+  </action-mappings>
+
+  <message-resources parameter="com.struts.ApplicationResources" />
+  <plug-in className="com.plugin.Carmark_PlugIn" />
+</struts-config>
+

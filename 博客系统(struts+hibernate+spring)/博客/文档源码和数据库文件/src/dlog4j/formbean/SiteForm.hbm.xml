@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping package="dlog4j.formbean">
+	
+    <class name="SiteForm" table="dlog_site" dynamic-update="false">
+    	<id name="id" column="siteid" type="int">
+			<generator class="increment"/>
+		</id>		
+		<property name="name" type="java.lang.String" column="sitename"/>
+		<property name="displayName" type="java.lang.String" column="displayName"/>
+		<property name="detail" type="java.lang.String" column="siteDetail"/>
+		<property name="icon" type="java.lang.String" column="siteicon"/>
+		<property name="logo" type="java.lang.String" column="sitelogo"/>
+		<property name="css" type="java.lang.String" column="cssfile"/>
+		<property name="createTime" type="java.util.Date" column="createTime"/>
+		<property name="lastTime" type="java.util.Date" column="lastTime"/>
+		<property name="url" type="java.lang.String" column="siteurl"/>		
+		<property name="status" type="int" column="status"/>
+		<bag name="categories" table="dlog_category" lazy="true" inverse="true" cascade="none" order-by="order">
+			<key column="siteid"/>
+			<one-to-many class="CategoryForm"/>
+		</bag>
+		<bag name="users" table="dlog_user" lazy="true" inverse="true" cascade="none" order-by="regTime DESC">
+			<key column="siteid"/>
+			<one-to-many class="UserForm"/>
+		</bag>
+		<bag name="params" table="dlog_param" lazy="false" inverse="true" cascade="none">
+			<key column="siteid"/>
+			<one-to-many class="ParamForm"/>
+		</bag>
+    </class>
+
+</hibernate-mapping>

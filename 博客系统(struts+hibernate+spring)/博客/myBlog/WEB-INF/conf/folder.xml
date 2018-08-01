@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Download4J/Folder sample - JavaZOOM -->
+<!DOCTYPE DOWNLOAD SYSTEM "download.dtd">
+<DOWNLOAD LOGFOLDER="C:\\TEMP" LOGLEVEL="2">
+    <FOLDER ID="uniqueid" DESC="My Folder" PATH="">
+        <PROPERTIES CONTENT-TYPE-FILE="conf/mimes-type.xml"/>
+    </FOLDER>
+</DOWNLOAD>

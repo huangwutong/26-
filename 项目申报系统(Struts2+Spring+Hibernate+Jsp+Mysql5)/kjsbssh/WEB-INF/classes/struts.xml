@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" "struts-2.0.dtd" >
+<struts>
+   <package name="UserAction" extends="struts-default" namespace="/admin">
+      <!-- user login configuration -->
+      <action name="UserLoginAction" class="UserManager" method="loginCheck">
+         <result name="admin_login">/admin/admin_index.jsp</result>
+         <result name="expert_login">/expert/expert_index.jsp</result>
+         <result name="unit_login">/unit/unit_index.jsp</result>
+         <result name="error">/error.jsp</result>
+      </action>
+      
+      <!-- config find all users -->
+      <action name="FindAllUser" class="UserManager" method="findUserByPage">
+          <result name="success">/admin/showusers.jsp</result>
+      </action>
+      
+      <!-- config add a user -->
+      <action name="AddUser" class="UserManager" method="addUser">
+        <result name="success" type="redirect">/admin/FindAllUser.action</result>
+        <result name="error">/error.jsp</result>
+      </action>
+      
+      <!-- config delete user -->
+      <action name="DeleteUserAction" class="UserManager" method="deleteUser">
+          <result name="success" type="redirect">/admin/FindAllUser.action</result>
+      </action>
+      
+      <!-- config display update user -->
+      <action name="DisplayUpdateUser" class="UserManager" method="displayUpdateUser">
+         <result name="success">/admin/updateuser.jsp</result>
+         <result name="error">/error.jsp</result>
+      </action>
+      
+      <!-- config update user -->
+      <action name="UpdateUser" class="UserManager" method="updateUser">
+          <result name="success">/admin/FindAllUser.action</result>
+      </action>
+      
+      <!-- config show all experts -->
+      <action name="ShowAllExperts" class="UserManager" method="showAllExpert"> 
+          <result name="success">/admin/showexperts.jsp</result>
+      </action>
+      
+      <!-- config show all units -->
+      <action name="ShowAllUnits" class="UserManager" method="showAllUnit">
+         <result name="success">/admin/showunits.jsp</result>
+      </action>
+   </package>
+   
+   <!-- expert configuration message -->
+   <package name="ExpertAction" extends="struts-default" namespace="/expert">
+   
+      <action name="DisplayUpdateExpert" class="ExpertManager" method="displayUpdateExpert">
+         <result name="success">/admin/adminviewexpertinfo.jsp</result>
+      </action>
+      
+      <action name="UpdateExpert" class="ExpertManager" method="updateExpert">
+         <result name="success" type="redirect">/admin/ShowAllExperts.action</result>
+      </action>
+      
+      <action name="DeleteExpert" class="ExpertManager" method="deleteExpert">
+         
+      </action>
+      
+      <action name="DisplayExpertInfo" class="ExpertManager" method="displayExpertInfo">
+         <result name="success">/expert/viewexpertinfo.jsp</result>
+      </action>
+      
+      <action name="UpdateExpertInfo" class="ExpertManager" method="updateExpertInfo">
+         <result name="success">/expert/expert_success.jsp</result>
+      </action>
+      
+      <action name="UpdatePassword" class="ExpertManager" method="updatePassword">
+         <result name="success">/expert/expert_success.jsp</result>
+      </action>
+      
+      <action name="ShowProjectCategorys" class="ExpertManager" method="showProjectCategorys">
+         <result name="success">/expert/showprojectCategorys.jsp</result>
+      </action>
+      
+      <action name="FindProjectInfo" class="ExpertManager" method="findProjectInfo">
+         <result name="success">/expet/showprojects.jsp</result>
+      </action>
+  
+  
+  
+   </package>
+   
+   <!-- config unit message -->
+   <package name="UnitAction" extends="struts-default" namespace="/unit">
+      <action name="DisplayUpdateUnit" class="UnitManager" method="displayUpdateUnit">
+         <result name="success">/admin/adminviewunitinfo.jsp</result>
+      </action>
+      
+      <action name="UpdateUnit" class="UnitManager" method="updateUint">
+          <result name="success" type="redirect">/admin/ShowAllUnits.action</result>
+      </action>
+      
+      <action name="DeleteUnit" class="UnitManager" method="deleteUnit">
+         <result name="success" type="redirect">/admin/ShowAllUnits.action</result>
+      </action>
+      
+      <action name="informationAction" class="UnitManager" method="unitInformation">
+         <result name="success">/unit/viewunitinfo.jsp</result>
+      </action>
+      
+      <action name="UpdateUnitInfo" class="UnitManager" method="updateUnitInfo">
+         <result name="success">/unit/informationAction.action</result>
+      </action>
+      
+      <action name="UpdatePassword" class="UnitManager" method="updatePassword">
+          <result name="success">/unit/updateusersuccess.jsp</result>
+          <result name="error">/error.jsp</result>
+      </action>
+      
+      <action name="FindAllProjectCategory" class="UnitManager" method="findAllProjectCategory">
+         <result name="success">/unit/showprojectCategorys.jsp</result>
+      </action>
+      
+      <action name="DisplayProjectCategory" class="UnitManager" method="displayProjectCategory">
+         <result name="success">/unit/applyproject.jsp</result>
+      </action>
+      
+      
+      
+      
+      <action name="AddProject" class="UnitManager" method="addApplyProject">
+         <result name="success">/index.jsp</result>
+      </action>
+      
+      
+   </package>
+   
+   <package name="ProjectAction" extends="struts-default" namespace="/category">
+   
+      <action name="ShowAllProjectCategorys" class="ProjectCategoryManager" method="findAllProjectCategorys">
+         <result name="success">/admin/showprojectCategorys.jsp</result>
+      </action>
+      
+      <action name="DisplayUpdateCategory" class="ProjectCategoryManager" method="displayUpdateCategory">
+         <result name="success">/admin/adminupdateshowprojects.jsp</result>
+      </action>
+      
+      <action name="UpdateCategory" class="ProjectCategoryManager" method="updateCategory">
+         <result name="success" type="redirect">/category/ShowAllProjectCategorys.action</result>
+      </action>
+      
+      <action name="AddCategory" class="ProjectCategoryManager" method="addCategory">
+         <result name="success" type="redirect">/index.jsp</result>
+         <result name="error">/error.jsp</result>
+      </action>
+      
+      <action name="DeleteCategory" class="ProjectCategoryManager" method="deleteCategory">
+         <result name="success" type="redirect">/category/ShowAllProjectCategorys.action</result>
+      </action>
+      
+   </package>
+</struts>

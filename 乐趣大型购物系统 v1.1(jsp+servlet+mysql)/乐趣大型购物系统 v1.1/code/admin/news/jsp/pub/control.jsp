@@ -1,0 +1,6 @@
+<%
+  if(session.getAttribute("aid") == null || session.getAttribute("name") == "")
+  {
+     throw new Exception("Äã»¹Î´µÇÂ¼»òµÇÂ¼ÒÑ¹ýÆÚ£¬ÇëµÇÂ¼£¡");
+  }
+%>

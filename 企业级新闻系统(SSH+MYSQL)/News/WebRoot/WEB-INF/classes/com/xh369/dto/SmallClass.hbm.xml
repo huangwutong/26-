@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.xh369.dto.SmallClass" table="smallclasses" dynamic-update="true" dynamic-insert="true">
+    <id name="id" column="id" type="int">
+      <generator class="native"/>
+    </id>
+    <property name="smallclassname" type="string">
+      <column name="smallclassname"/>
+    </property>
+    <many-to-one
+      class="com.xh369.dto.BigClass"
+      name="bigclass"
+      column="bigclass_id"
+      not-null="false"
+    />
+    <set name="article" cascade="delete" inverse="true">
+      <key column="smallclassid"/>
+      <one-to-many class="com.xh369.dto.Article"/>
+    </set>
+  </class>
+</hibernate-mapping>

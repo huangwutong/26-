@@ -1,0 +1,12 @@
+[PropertyInfo]
+bigclassid,Integer,false,false, , ,true,<default>
+content,String,false,false, , ,true,<default>
+deploytime,java.sql.Timestamp,false,false, , ,true,<default>
+picpath,String,false,false, , ,false,<default>
+smallclassid,int,false,false, , ,true,<default>
+title,String,false,false, , ,true,<default>
+[IconNames]
+
+
+
+

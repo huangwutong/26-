@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- 引入Spring.xml文件  -->
+	<import resource="Spring.xml" />
+
+	<!-- 注入Opt用业务类 -->
+	<bean id="BranchBusiness" class="com.bu.opt.BranchBusiness">
+		<property name="daos">
+			<ref bean="DAOService" />
+		</property>
+	</bean>
+
+	<bean id="DepBusiness" class="com.bu.opt.DepBussiness">
+		<property name="daos">
+			<ref bean="DAOService" />
+		</property>
+	</bean>
+
+	<bean id="UserBusiness" class="com.bu.opt.UserBusiness">
+		<property name="daos">
+			<ref bean="DAOService" />
+		</property>
+	</bean>
+
+	<bean id="OperationBusiness" class="com.bu.opt.OperationBusiness">
+		<property name="daos">
+			<ref bean="DAOService" />
+		</property>
+	</bean>
+
+	<bean id="RoleBusiness" class="com.bu.opt.RoleBusiness">
+		<property name="daos">
+			<ref bean="DAOService" />
+		</property>
+	</bean>
+
+	<bean id="BillInfoBusiness" class="com.bu.opt.BillInfoBusiness">
+		<property name="daos">
+			<ref bean="DAOService" />
+		</property>
+	</bean>
+	
+	<bean id="CargoInfoBusiness" class="com.bu.opt.CargoInfoBusiness">
+		<property name="daos">
+			<ref bean="DAOService" />
+		</property>	
+	</bean>
+	
+	<bean id="DriverInfoBusiness" class="com.bu.opt.DriverInfoBusiness">
+		<property name="daos">
+			<ref bean="DAOService" />
+		</property>	
+	</bean>
+	
+	<bean id="TruckInfoBusiness" class="com.bu.opt.TruckInfoBusiness">
+		<property name="daos">
+			<ref bean="DAOService" />
+		</property>	
+	</bean>
+	
+	<bean id="TruckLogBusiness" class="com.bu.opt.TruckLogBusiness">
+		<property name="daos">
+			<ref bean="DAOService" />
+		</property>	
+	</bean>
+	
+	<bean id="TrafficLogBusiness" class="com.bu.opt.TrafficLogBusiness">
+		<property name="daos">
+			<ref bean="DAOService" />
+		</property>	
+	</bean>
+
+	<!-- 注入Opt用业务服务类 -->
+	<bean id="OptBuService" class="com.service.OptBuService">
+		<property name="rolebuss">
+			<ref bean="RoleBusiness" />
+		</property>
+		<property name="depbuss">
+			<ref bean="DepBusiness" />
+		</property>
+		<property name="operabuss">
+			<ref bean="OperationBusiness" />
+		</property>
+		<property name="userbuss">
+			<ref bean="UserBusiness" />
+		</property>
+		<property name="branchbuss">
+			<ref bean="BranchBusiness" />
+		</property>
+		<property name="billbuss">
+			<ref bean="BillInfoBusiness" />
+		</property>
+		<property name="cargobuss">
+			<ref bean="CargoInfoBusiness"/>
+		</property>
+		<property name="driverbuss">
+			<ref bean="DriverInfoBusiness"/>
+		</property>
+		<property name="truckbuss">
+			<ref bean="TruckInfoBusiness"/>
+		</property>
+		<property name="trucklogbuss">
+			<ref bean="TruckLogBusiness"/>
+		</property>
+		<property name="trafficbuss">
+			<ref bean="TrafficLogBusiness"/>
+		</property>
+	</bean>
+
+	<!-- 注入Opt用Action类 -->
+
+	<bean name="/optUserLogin"
+		class="com.struts.action.OptUserLoginAction" abstract="false">
+		<property name="bus">
+			<ref bean="OptBuService" />
+		</property>
+	</bean>
+	<bean name="/optOperationTree"
+		class="com.struts.action.OptOperationTreeAction" abstract="false">
+		<property name="bus">
+			<ref bean="OptBuService" />
+		</property>
+	</bean>
+	<bean name="/optBillInfoList"
+		class="com.struts.action.OptBillInfoListAction" abstract="false">
+		<property name="bus">
+			<ref bean="OptBuService" />
+		</property>
+	</bean>
+	<bean name="/optBillInfoFindByID"
+		class="com.struts.action.OptBillInfoFindByIDAction" abstract="false">
+		<property name="bus">
+			<ref bean="OptBuService" />
+		</property>
+	</bean>
+	<bean name="/optCargoFindByID"
+		class="com.struts.action.OptCargoFindByIDAction" abstract="false">
+		<property name="bus">
+			<ref bean="OptBuService" />
+		</property>
+	</bean>
+	<bean name="/optBillInfoUpdate"
+		class="com.struts.action.OptBillInfoUpdateAction" abstract="false">
+		<property name="bus">
+			<ref bean="OptBuService" />
+		</property>
+	</bean>
+	<bean name="/optTruckLogAdd"
+		class="com.struts.action.OptTruckLogAddAction" abstract="false">
+		<property name="bus">
+			<ref bean="OptBuService" />
+		</property>
+	</bean>
+</beans>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping package="dlog4j.beans">
+	
+    <class name="RefererBean" table="dlog_visit" dynamic-update="false">
+    	<id name="id" column="visitID" type="int">
+			<generator class="increment"/>
+		</id>		
+		<property name="remoteAddr" type="java.lang.String" length="15" column="remoteAddr"/>
+		
+		<property name="refererURL" type="java.lang.String" length="200" column="refererURL"/>
+		<property name="requestURL" type="java.lang.String" length="100" column="requestURL"/>	
+		<property name="userAgent" type="java.lang.String" length="100" column="userAgent"/>	
+		
+		<property name="visitDate" type="java.lang.String" length="8" column="visitDate"/>
+		<property name="visitTime" type="java.lang.String" length="6" column="visitTime"/>	
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping package="dlog4j.formbean">
+	
+    <class name="AttachmentForm" table="dlog_attachment" dynamic-update="false">
+    	<id name="id" column="att_id" type="int">
+			<generator class="increment"/>
+		</id>
+		<many-to-one name="log" column="logid" not-null="true" outer-join="false"/>
+		<property name="url" type="java.lang.String" length="20" column="att_url"/>
+		<property name="type" type="int" column="att_type"/>
+		<property name="urlType" type="int" column="att_urlType"/>
+    </class>
+
+</hibernate-mapping>

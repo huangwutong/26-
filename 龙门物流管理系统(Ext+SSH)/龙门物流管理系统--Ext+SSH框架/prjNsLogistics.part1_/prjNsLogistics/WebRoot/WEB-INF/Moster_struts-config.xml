@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="mosterCargoInfoForm" type="com.struts.form.MosterCargoInfoForm" />
+    <form-bean name="mosterBillInfoForm" type="com.struts.form.MosterBillInfoForm" />
+    <form-bean name="mosterBillStateForm" type="com.struts.form.MosterBillStateForm" />
+    <form-bean name="mosterCargoVectorForm" type="com.struts.form.MosterCargoVectorForm" />
+    <form-bean name="mosterTrafficLogForm" type="com.struts.form.MosterTrafficLogForm" />
+
+	<form-bean name="mosterTruckLogForm" type="com.struts.form.MosterTruckLogForm" />
+    <form-bean name="mosterBranchInfoForm" type="com.struts.form.MosterBranchInfoForm" />
+    <form-bean name="mosterUserInfoFormForm" type="com.struts.form.MosterUserInfoFormForm" />
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+    <action
+      path="/MocargoInfoAdd"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false">
+      <forward
+        name="mocargoadd"
+        path="/Moster/JsonFactory/MoCargoInfoAdd.jsp"
+        contextRelative="true" />
+    </action>
+
+    <action path="/MocargoList" type="org.springframework.web.struts.DelegatingActionProxy" >
+      <forward
+        name="mocargolist"
+        path="/Moster/JsonFactory/MoCargoInfoList.jsp"
+        contextRelative="true" />
+      
+      
+    </action>
+    <action
+      path="/MocargoVCAdd"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="mocargoID"
+        path="/Moster/JsonFactory/MoCargoVCAdd.jsp"
+        contextRelative="true" />
+    </action>
+
+
+    <action
+      path="/MocargoVCList"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="mocargovclist"
+        path="/Moster/JsonFactory/MoCargoVCList.jsp"
+        contextRelative="true" />
+      
+    </action>
+
+    <action
+      path="/MobillUpdate"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false">
+      <forward
+        name="cargoByID"
+        path="/Moster/JsonFactory/CargoByID.jsp"
+        contextRelative="true" />
+      
+    </action>
+    <action
+      path="/MobillUpdateOk"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false">
+      <forward
+        name="mobillUpdateOK"
+        path="/Moster/JsonFactory/BillInfoUpdate.jsp"
+        contextRelative="true" />
+    </action>
+
+    <action
+      path="/MobillList"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="mobilllist"
+        path="/Moster/JsonFactory/MoBillList.jsp"
+        contextRelative="true" />
+      
+      
+    </action>
+    <action
+      path="/MocargoBillInfo"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="mocargobill"
+        path="/Moster/JsonFactory/MoCVBillID.jsp"
+        contextRelative="true" />
+    </action>
+
+    <action path="/MotrafficList" type="org.springframework.web.struts.DelegatingActionProxy" >
+      <forward
+      name="motralist"
+      path="/Moster/JsonFactory/MoTraBillList.jsp"
+      contextRelative="true" />
+      
+      
+      
+    </action>
+    <action path="/MotraBillUpdate" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward
+        name="motracargoByID"
+        path="/Moster/JsonFactory/MoTraCargoByID.jsp"
+        contextRelative="true" />
+      
+    </action>
+
+    <action
+      attribute="mosterBillInfoForm"
+      name="mosterBillInfoForm"
+      path="/MotraBillUpdateOk"
+      scope="request"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="motrabillupdate"
+        path="/Moster/JsonFactory/MoTraBillInfoUpdate.jsp"
+        contextRelative="true" />
+    </action>
+
+    <action
+      path="/MosortingBillList"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="mosortingbillinfo"
+        path="/Moster/JsonFactory/MoSortingBillList.jsp"
+        contextRelative="true" />
+    </action>
+
+    <action
+      path="/MosortingBillUpdate"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="mosortingcargobyid"
+        path="/Moster/JsonFactory/MosortingCargoByID.jsp"
+        contextRelative="true" />
+      
+    </action>
+
+    <action
+      path="/MosortingBillUpdateOk"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="mosorbillupdateok"
+        path="/Moster/JsonFactory/MosortingBillInfoUpdate.jsp"
+        contextRelative="true" />
+    </action>
+
+    <action
+      path="/MoBillInfoFindByID"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false">
+      <forward
+        name="billInfoFindByID"
+        path="/Moster/JsonFactory/BillInfoByID.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/moTraBillFindByID"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="motrabillfindbyid"
+        path="/Moster/JsonFactory/MoTraBillInfoByID.jsp"
+        contextRelative="true" />
+      
+    </action>
+    <action
+      path="/moCargoInfoUpdate"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="mocargoupdate"
+        path="/Moster/JsonFactory/MoCargoInfoUpdate.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/MoCargoID"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="mocargoID"
+        path="/Moster/JsonFactory/MoCVCargoID.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/MoCargoVCUpdate"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="moCVUpdateOK"
+        path="/Moster/JsonFactory/MoCargoVCUpdate.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/MoBillCheckList"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+      name="mobillchecklist"
+      path="/Moster/JsonFactory/MoBillCheckList.jsp"
+      contextRelative="true" />
+    </action>
+
+    <action
+      path="/MoBillCheckUpdate"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="mobillcheckcargo"
+        path="/Moster/JsonFactory/MoBillCheckCargoByID.jsp"
+        contextRelative="true" />
+    </action>
+
+    <action
+      path="/MoBillCheckUpdateOk"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="mobillcheckupdateok"
+        path="/Moster/JsonFactory/MoBillCheckUpdate.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/MoCargoSelectList"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="mocargoselectlist"
+        path="/Moster/JsonFactory/MoCargoSelectList.jsp"
+        contextRelative="true" />
+    </action>
+
+    <action
+      path="/MoCargoSelectUpdate"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="mocargoselectupdate"
+        path="/Moster/JsonFactory/MoCargoSelectUpdate.jsp"
+        contextRelative="true" />
+    </action>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </action-mappings>
+
+  <plug-in className="com.plugin.MosterPlugin" />
+
+  
+</struts-config>
+

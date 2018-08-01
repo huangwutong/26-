@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="optUserInfoForm" type="com.struts.form.OptUserInfoForm" />
+    <form-bean name="optBranchInfoForm" type="com.struts.form.OptBranchInfoForm" />
+    <form-bean name="optDepartmentInfoForm" type="com.struts.form.OptDepartmentInfoForm" />
+    <form-bean name="optOperationForm" type="com.struts.form.OptOperationForm" />
+    <form-bean name="optRoleInfoForm" type="com.struts.form.OptRoleInfoForm" />
+    <form-bean name="optTruckModelForm" type="com.struts.form.OptTruckModelForm" />
+    <form-bean name="optTruckInfoForm" type="com.struts.form.OptTruckInfoForm" />
+    <form-bean name="optDriverInfoForm" type="com.struts.form.OptDriverInfoForm" />
+    <form-bean name="optTruckLogForm" type="com.struts.form.OptTruckLogForm" />
+    <form-bean name="optCargoInfoForm" type="com.struts.form.OptCargoInfoForm" />
+    <form-bean name="optCargoVectorForm" type="com.struts.form.OptCargoVectorForm" />
+    <form-bean name="optBillStateForm" type="com.struts.form.OptBillStateForm" />
+    <form-bean name="optBillInfoForm" type="com.struts.form.OptBillInfoForm" />
+    <form-bean name="optTrafficLogForm" type="com.struts.form.OptTrafficLogForm" />
+    <form-bean name="optSystemLogForm" type="com.struts.form.OptSystemLogForm" />
+    <form-bean name="optCustomerInfoForm" type="com.struts.form.OptCustomerInfoForm" />
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+    <action
+      path="/optUserLogin"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="msg"
+        path="/Opt/JsonFactory/LoginMsg.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/optOperationTree"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="TreeJson"
+        path="/Opt/JsonFactory/Tree.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/optBillInfoList"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="billinfo"
+        path="/Opt/JsonFactory/BillInfo.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/optBillInfoFindByID"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="billinfoByID"
+        path="/Opt/JsonFactory/BillInfoByID.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/optCargoFindByID"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="cargoByID"
+        path="/Opt/JsonFactory/CargoByID.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/optBillInfoUpdate"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="billUpdateOK"
+        path="/Opt/JsonFactory/BillInfoUpdate.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/optTruckLogAdd"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="truckAddOK"
+        path="/Opt/JsonFactory/TruckAddMsg.jsp"
+        contextRelative="true" />
+    </action>
+
+
+
+
+
+
+  </action-mappings>
+  <plug-in className="com.plugin.Opt_PlugIn" />
+
+</struts-config>
+

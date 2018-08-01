@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	
+	<!-- 配置事务的管理器 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+	   <property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<!-- 配置手动代理 -->
+	<bean id="serviceProxy" abstract="true" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+	    <property name="transactionManager" ref="transactionManager"></property>
+	    
+	    <!-- 配置事务的传播特性 -->
+	    <property name="transactionAttributes">
+	       <props>
+	          <prop key="add*">PROPAGATION_REQUIRED,-Exception</prop>
+	          <prop key="del*">PROPAGATION_REQUIRED,-Exception</prop>
+	          <prop key="upd*">PROPAGATION_REQUIRED,-Exception</prop>
+	          <prop key="fin*">PROPAGATION_REQUIRED,-Exception</prop>
+	          <prop key="dis*">PROPAGATION_REQUIRED,-Exception</prop>
+	       </props>
+	    </property>
+	</bean>
+	
+	
+	
+	<bean id="UserDao" class="com.ascent.daoImpl.UserDaoImpl">
+	   <property name="sessionFactory">
+	     <ref bean="sessionFactory"/>
+	   </property>
+	</bean>
+	
+	<bean id="ExpertDao" class="com.ascent.daoImpl.ExpertDaoImpl">
+	   <property name="sessionFactory">
+	      <ref bean="sessionFactory"/>
+	   </property>
+	</bean>
+	
+	<bean id="UnitDao" class="com.ascent.daoImpl.UnitDaoImpl">
+	  <property name="sessionFactory">
+	     <ref bean="sessionFactory"/>
+	  </property>
+	</bean>
+	
+	<bean id="ProjectDao" class="com.ascent.daoImpl.ProjectDaoImpl">
+	   <property name="sessionFactory">
+	      <ref bean="sessionFactory"/>
+	   </property>
+	</bean>
+	
+	<bean id="ProjectCategoryDao" class="com.ascent.daoImpl.ProjectCategoryImpl">
+	   <property name="sessionFactory">
+	      <ref bean="sessionFactory"/>
+	   </property>
+	</bean>
+	
+	
+	<bean id="UserService" class="com.ascent.serviceImpl.UserServiceImpl">
+	   <property name="userdao" ref="UserDao"></property>
+	</bean>
+	
+	<bean id="ExpertService" class="com.ascent.serviceImpl.ExpertServiceImpl">
+	   <property name="expertdao">
+	      <ref bean="ExpertDao"/>
+	   </property>
+	</bean>
+	
+	<bean id="UnitService" class="com.ascent.serviceImpl.UnitServiceImpl">
+	   <property name="unitdao">
+	      <ref bean="UnitDao"/>
+	   </property>
+	</bean>
+	
+	<bean id="ProjectService" class="com.ascent.serviceImpl.ProjectServiceImpl">
+	   <property name="projectdao">
+	      <ref bean="ProjectDao"/>
+	   </property>
+	</bean>
+	
+	<bean id="ProjectCategoryService" class="com.ascent.serviceImpl.ProjectCategoryServiceImpl">
+	    <property name="projectCategoryDao">
+	       <ref bean="ProjectCategoryDao"/>
+	    </property>
+	</bean>
+	
+	<bean id="UserServiceProxy" parent="serviceProxy">
+	    <property name="proxyInterfaces">
+	       <value>com.ascent.service.UserService</value>
+	    </property>
+	    <property name="target">
+	       <ref bean="UserService"/>
+	    </property>
+	</bean>
+	
+	<bean id="ExpertServiceProxy" parent="serviceProxy">
+	   <property name="proxyInterfaces">
+	      <value>com.ascent.service.ExpertService</value>
+	   </property>
+	   
+	   <property name="target">
+	      <ref bean="ExpertService"/>
+	   </property>
+	</bean>
+	
+	<bean id="UnitServiceProxy" parent="serviceProxy">
+	   <property name="proxyInterfaces">
+	      <value>com.ascent.service.UnitService</value>
+	   </property>
+	   
+	   <property name="target">
+	      <ref bean="UnitService"/>
+	   </property>
+	</bean>
+	
+	<bean id="ProjectServiceProxy" parent="serviceProxy">
+	   <property name="proxyInterfaces">
+	      <value>com.ascent.service.ProjectService</value>
+	   </property>
+	   
+	   <property name="target">
+	     <ref bean="ProjectService"/>
+	   </property>
+	</bean>
+	
+	<bean id="ProjectCategoryServiceProxy" parent="serviceProxy">
+	   <property name="proxyInterfaces">
+	      <value>com.ascent.service.ProjectCategoryService</value>
+	   </property>
+	   
+	   <property name="target">
+	      <ref bean="ProjectCategoryService"/>
+	   </property>
+	</bean>
+	
+</beans>

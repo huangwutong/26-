@@ -1,0 +1,9 @@
+<%
+  if(session.getAttribute("id") == null || session.getAttribute("id") == "")
+  {
+     throw new Exception("Äã»¹Î´µÇÂ¼»òµÇÂ¼ÒÑ¹ýÆÚ£¬ÇëµÇÂ¼£¡");
+  }  
+  String inc = session.getAttribute("inc").toString();
+  String id = session.getAttribute("id").toString();
+  String nickname = session.getAttribute("nickname").toString();  
+%>

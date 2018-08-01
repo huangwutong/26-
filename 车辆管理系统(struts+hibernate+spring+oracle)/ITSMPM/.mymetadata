@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-module
+  type="WEB"
+  name="ITSMPM"
+  id="myeclipse.1275269947671"
+  context-root="/ITSMPM"
+  j2ee-spec="5.0"
+  archive="ITSMPM.war">
+  <attributes>
+    <attribute name="webrootdir" value="WebRoot" />
+  </attributes>
+</project-module>
+

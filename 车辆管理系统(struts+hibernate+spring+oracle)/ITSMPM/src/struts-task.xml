@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+ <package name="task" extends="struts-default">
+ <!-- 用车申请 -->
+ <!--客户用车请求  -->
+  <action name="usecarsq" class="usecarsqAction">
+    <result name="success">/jsp/task/usecarsqshow.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+  </action>
+  <action name="saveUsecarsq" class="saveUsecarsqAction">
+    <result name="success">/jsp/task/usecarsqsuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+  </action>
+  
+  <action name="usecarsqdele" class="usecarsqdeleAction">
+    <result name="success">/jsp/task/usecarsqsuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+  </action>
+  
+<!-- 用车审批 -->
+  <action name="carsp" class="carspAction">
+    <result name="success">/jsp/task/carspshow.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+  </action>
+  <!--审批的用户信息  -->
+  <action name="carspsele" class="carspseleAction">
+    <result name="success">/jsp/task/carspadd.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+  </action>
+  
+  <action name="saveCarsp" class="saveCarspAction">
+    <result name="success">/jsp/task/carspaddsuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+  </action>
+  <action name="carspAll" class="usecarsqAction">
+    <result name="success">/jsp/task/carspAllshow.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+  </action>
+  
+  
+  <!-- 出车管理 -->
+  <action name="outcar" class="taskoutcarAction">
+    <result name="success">/jsp/task/outcarshow.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+  </action>
+  <!--派车信息  -->
+  <action name="takecar" class="takecarAction">
+    <result name="success">/jsp/task/takecar.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+  </action>
+  
+  <action name="saveTakecar" class="saveTakecarAction">
+    <result name="success">/jsp/task/saveTakecarsuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+  </action>
+  <!-- 查看出车单 -->
+  <action name="seleoutcar" class="seleoutcarAction">
+    <result name="success">/jsp/task/seleoutcarshow.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+  </action>
+  <!--删除出车单  -->
+  <action name="outcmdele" class="outcmdeleAction">
+    <result name="success">/jsp/task/outcmdelesuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+  </action>
+  
+  
+  
+<!-- 收车管理 -->
+  <action name="incar" class="incarAction">
+    <result name="success">/jsp/task/incarshow.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+  </action>
+  <!--收车  -->
+  <action name="taskincar" class="taskincarAction">
+    <result name="success">/jsp/task/taskincarshow.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+  </action>
+  <action name="saveIncar" class="saveIncarAction">
+    <result name="success">/jsp/task/incarsuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+  </action>
+  <!--查看收车信息  -->
+  <action name="seleincar" class="seleoutcarAction">
+    <result name="success">/jsp/task/seleincarshow.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+  </action>
+  <!--删除收车信息  -->
+  <action name="incmdele" class="outcmdeleAction">
+    <result name="success">/jsp/task/incmdelesuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+  </action>
+  
+ </package>
+ 
+</struts>

@@ -1,0 +1,221 @@
+﻿body,table,td,select,textarea,input {font-size: 12px; font-family: "Verdana", "宋体"}	/*总体控制文字*/
+body { 
+	background-color: #333333;	/*网页整体背景色*/
+	background-image: url(images/c.gif)}		/* 网页背景图片 */
+	color: #333333;				/*文字整体颜色*/
+	}
+
+/* 默认链接样式 */
+a {  text-decoration: none; color: #545454}
+a:link {  text-decoration: none; color: #545454}
+a:visited {  text-decoration: none; color: #545454}
+a:hover {  text-decoration: none; color: #FF0000}
+
+.smalltext { font-size: 9px;}		/* 小字体 */
+.mediumtext { font-size: 11px;}		/* 中字体 */
+.button { border-width: 1px; height:20px;}	 /* 按钮 */
+
+.tableBorder {
+	BORDER-RIGHT: #FFFFFF 1px solid; BORDER-TOP: #FFFFFF 1px solid; BORDER-LEFT: #FFFFFF 1px solid; BORDER-BOTTOM: #FFFFFF 1px solid; BACKGROUND-COLOR: #FFFFFF
+}
+
+.tableBorderHead {
+	color: #666666;
+	background-color: ;
+	font-size: 14px;
+	font-family: Verdana;
+	text-align: left;
+	font-weight: bold;
+}
+	
+.contentTableBorder {
+	BORDER-RIGHT: #CCCCCC 1px solid; BORDER-LEFT: #CCCCCC 1px solid; BACKGROUND-COLOR: #FFFFFF
+}
+
+.bottomTableBorder {
+	BORDER-RIGHT: #CCCCCC 1px solid; BORDER-LEFT: #CCCCCC 1px solid; BORDER-BOTTOM: #CCCCCC 1px solid; BACKGROUND-COLOR: #FFFFFF
+}
+
+.OuterTable {
+	border: 1px solid #333333;
+}
+
+.OuterHead {
+	background-color: #f6f6f6;
+	color: #000000;
+}
+.InnerTable {
+	background-color: #333333;
+}
+.InnerHead {
+	background-color: #f6f6f6;
+	border-top-width: 1px;
+	border-right-width: 0px;
+	border-bottom-width: 0px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #FFFFFF;
+	border-right-color: #FFFFFF;
+	border-bottom-color: #FFFFFF;
+	border-left-color: #FFFFFF;
+	text-align: center;
+	padding: 3px;
+
+
+
+}
+
+.InnerMain {
+	background-color: #FFFFFF;
+	padding: 1px;
+}
+
+.InnerTitleFont {
+	font-size: 9pt;
+	font-weight: bold;
+}
+
+.NoBorderTextArea {
+	border: none;
+}
+
+.innerFoot {
+	background-color: #f6f6f6;
+	border-top-width: 0px;
+	border-right-width: 1px;
+	border-bottom-width: 1px;
+	border-left-width: 1px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #CCCCCC;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #CCCCCC;
+	border-left-color: #CCCCCC;
+	padding: 3px;
+}
+
+
+/* 菜单区 start */
+.navbg { background-color: #FFFFFF}		/* 菜单区背景色 */
+.navbgimg { background-image: url(../images/no.gif)}		/* 菜单区背景图片 */
+.navline { background-image: url(../images/LINE1.gif)}		/* 菜单区分隔线图片 */
+.selected_category { color: #FF0000 }		/* 被选中菜单项的字体色 */
+/* 菜单区 end */
+
+
+/* 日历区 start */
+.calendar_border { background-color: }		/* 日历边框色 */
+.calendar_title { 
+	color: #666666;						/* 日历标题字体色 */
+	font-size: 14px;						/* 日历标题字体大小 */
+	font-family: sans-serif;				/* 日历标题字体 */
+	background-color: ;		/* 日历标题背景色 */
+	}
+.week { 
+	color: #999999;						/* 星期文字色 */
+	background-color: ;	/* 星期背景色 */
+	font-size: 9px;						/* 星期文字大小 */
+	font-family: Verdana;				/* 星期字体 */
+	text-align: center;					/* 星期对齐属性: left | right | center | justify */
+	font-weight: bold;					/* 星期文字粗细: normal | bold | bolder | lighter | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 */
+	}
+.date {
+	color: #CCCCCC;					/* 日期文字色 */
+	background-color: ;					/* 日期背景色 */
+	font-size: 9px;						/* 日期文字大小 */
+	font-family: Verdana;				/* 日期字体 */
+	text-align: center;					/* 日期对齐属性: left | right | center | justify */
+	font-weight: normal;				/* 日期文字粗细: normal | bold | bolder | lighter | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 */
+	}
+.arrow { font-family: webdings}		/* 箭头字体 */
+.turn { color: #999999; font-weight: bold}		/* 月及年的跳转文字 */
+.datejump {
+	color: #CCCCCC;					/* 跳转文字色 */
+	background-color: ;	/* 跳转背景色 */
+	font-size: 10px;						/* 跳转文字大小 */
+	font-family: Verdana;				/* 跳转字体 */
+	text-align: center;					/* 跳转对齐属性: left | right | center | justify */
+	font-weight: normal;				/* 跳转文字粗细: normal | bold | bolder | lighter | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 */
+	}
+/* 日历区 end */
+
+
+.bottom_line { 
+	background-color: #0080C0;	/* 底部分隔条颜色 */
+	height: 2px;							/* 底部分高度 */
+}
+
+.log_title {
+	color: #006699;						/* 日志主题文字色 */
+	background-color: ;	/* 日志主题背景色 */
+	font-size: 14px;						/* 日志主题文字大小 */
+	font-family: Verdana;				/* 日志主题字体 */
+	text-align: left;						/* 日志主题对齐属性: left | right | center | justify */
+	font-weight: bold;				/* 日志主题文字粗细: normal | bold | bolder | lighter | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 */
+	}
+	
+.log_content {
+	color: #000000;						/* 日志内容文字色 */
+	background-color: ;	/* 日志内容背景色 */
+	font-size: 12px;						/* 日志内容文字大小 */
+	font-family: Verdana;				/* 日志内容字体 */
+	text-align: left;						/* 日志内容对齐属性: left | right | center | justify */
+	font-weight: normal;
+	word-break: break-all; table-layout: fixed;
+	}
+	
+/* 主显示区 end */
+
+/* addlog页 start */
+
+.addinfo {			/* 添加与修改日志内容 */
+	color: #000000;
+	background-color: #EFEFEF;
+	font-size: 12px;
+	font-family: Verdana;
+	text-align: left;
+	font-weight: normal;
+	}
+
+/* addlog页 end */
+
+/* comment_list页 start */
+
+.clist{		/* 评论列表内容 */
+	color: #333333;
+	background-color: #FFFFFF;
+	font-size: 12px;
+	font-family: Verdana;
+	text-align: left;
+	font-weight: normal;
+	}
+
+/* comment_list页 end */
+
+
+/* user_list页 start */
+
+.clist_title{		/* 用户列表标题 */
+	color: #333333;
+	background-color: #e2e2e2;
+	font-size: 12px;
+	font-family: Verdana;
+	text-align: left;
+	font-weight: normal;
+	}
+
+.clist{		/* 用户列表内容 */
+	color: #333333;
+	background-color: #FFFFFF;
+	font-size: 12px;
+	font-family: Verdana;
+	text-align: left;
+	font-weight: normal;
+	}
+
+/* user_list页 end */

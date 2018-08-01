@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping package="dlog4j.formbean">
+	
+    <class name="BookMarkBean" table="dlog_bookmark" dynamic-update="false">
+    	<id name="id" column="markid" type="int">
+			<generator class="increment"/>
+		</id>
+		<property name="type" type="int" column="marktype"/>
+		<property name="order" type="int" column="markorder"/>
+		<property name="createTime" type="java.util.Date" column="createTime"/>
+		<many-to-one name="user" column="userid" cascade="none"/>
+		<many-to-one name="log" column="logid" cascade="none"/>
+		<many-to-one name="site" column="siteid" cascade="none"/>
+    </class>
+
+</hibernate-mapping>

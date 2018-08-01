@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table name="kaoshijieguo" catalog="Default Catalog">
+		<column name="fenshu" type="int" />
+	</table>
+	<table name="timu" catalog="Default Catalog">
+		<column name="fenshu" type="int" />
+	</table>
+	<table name="denglurizhi" catalog="Default Catalog">
+		<column name="chenggong" type="int" />
+		<column name="laoshi" type="int" />
+	</table>
+	<table name="kemu" catalog="Default Catalog">
+		<column name="zhuangtai" type="int" />
+		<column name="shijian" type="int" />
+	</table>
+	<table name="DENGLURIZHI" schema="EXAMS">
+		<column name="CHENGGONG" type="int" />
+		<column name="LAOSHI" type="int" />
+	</table>
+	<table name="KAOSHIJIEGUO" schema="EXAMS">
+		<column name="FENSHU" type="int" />
+	</table>
+	<table name="KEMU" schema="EXAMS">
+		<column name="SHIJIAN" type="int" />
+		<column name="ZHUANGTAI" type="int" />
+	</table>
+	<table name="TIMU" schema="EXAMS">
+		<column name="FENSHU" type="int" />
+	</table>
+	<table name="LOGINLOG" schema="EXAMS">
+		<column name="SUCCESS" type="int" />
+		<column name="ISTEACHER" type="int" />
+	</table>
+	<table name="QUESTION" schema="EXAMS">
+		<column name="SCORE" type="int" />
+	</table>
+	<table name="RESULT" schema="EXAMS">
+		<column name="SCORE" type="int" />
+	</table>
+	<table name="SUBJECT" schema="EXAMS">
+		<column name="STATE" type="int" />
+	</table>
+	<table name="TEACHER" schema="EXAMS">
+		<column name="PASSWORD" />
+	</table>
+</hibernate-reverse-engineering>

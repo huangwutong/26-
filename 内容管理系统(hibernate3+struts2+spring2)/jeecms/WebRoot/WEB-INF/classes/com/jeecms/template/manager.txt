@@ -1,0 +1,8 @@
+package #{manager_p};
+
+import #{manager_parent_p}.#{manager_parent_name};
+import #{entity_p}.#{Entity};
+
+public interface #{Entity}Mng extends #{manager_parent_name}<#{Entity}> {
+
+}

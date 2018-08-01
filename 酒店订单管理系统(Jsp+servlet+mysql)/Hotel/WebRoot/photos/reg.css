@@ -1,0 +1,69 @@
+BODY {
+	COLOR: #888
+}
+#regleft {
+	MARGIN-TOP: 10px; FLOAT: left; WIDTH: 200px
+}
+#regright {
+	MARGIN-TOP: 10px; FLOAT: left; WIDTH: 770px
+}
+#topinfo {
+	COLOR: #fff
+}
+#topinfo A {
+	COLOR: #fff
+}
+.regt {
+	DISPLAY: block; FONT-WEIGHT: bold; BACKGROUND: url(images/reg_18.gif) no-repeat left top; WIDTH: 500px; COLOR: #fff; TEXT-INDENT: 15px; LINE-HEIGHT: 25px; HEIGHT: 22px
+}
+#regbox {
+	CLEAR: both; POSITION: relative; HEIGHT: 400px
+}
+.okstate {
+	PADDING-LEFT: 20px; LINE-HEIGHT: 16px; HEIGHT: 16px
+}
+.newstate {
+	PADDING-LEFT: 20px; LINE-HEIGHT: 16px; HEIGHT: 16px
+}
+.newstate {
+	BACKGROUND: url(/member/images/c_error.gif) no-repeat; COLOR: #f20
+}
+.okstate {
+	BACKGROUND: url(/member/images/c_right.gif) no-repeat
+}
+#Err_Content {
+	BORDER-RIGHT: #fea64e 1px solid; PADDING-RIGHT: 10px; BORDER-TOP: #fea64e 1px solid; DISPLAY: none; PADDING-LEFT: 10px; PADDING-BOTTOM: 10px; BORDER-LEFT: #fea64e 1px solid; WIDTH: 200px; PADDING-TOP: 10px; BORDER-BOTTOM: #fea64e 1px solid
+}
+.tstitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px; MARGIN-BOTTOM: 5px; COLOR: #ff0000; LINE-HEIGHT: 24px
+}
+#reg_memu_top {
+	BORDER-TOP: #fed082 1px solid; BACKGROUND: #fff6c7; MARGIN: 5px 0px 0px; WIDTH: 100%; HEIGHT: 10px
+}
+#loginleftbox {
+	MARGIN-TOP: 20px; BACKGROUND: url(/member/images/logbg1.gif) no-repeat; FLOAT: left; WIDTH: 420px; HEIGHT: 246px
+}
+#loginrightbox {
+	BACKGROUND: url(/member/imgs/logbg2.gif) no-repeat; FLOAT: left; MARGIN: 20px 0px 10px 15px; WIDTH: 535px; HEIGHT: 246px; TEXT-ALIGN: center
+}
+#loginleftbox TABLE {
+	COLOR: #000
+}
+#regbut6 {
+	MARGIN-TOP: 185px; DISPLAY: block; FONT-SIZE: 14px; BACKGROUND: url(../member/images/regbutbg.gif) no-repeat; WIDTH: 150px; COLOR: #fff; LINE-HEIGHT: 38px; HEIGHT: 38px; TEXT-ALIGN: center
+}
+A#regbut6:hover {
+	COLOR: #ffff33
+}
+.red {
+	COLOR: #f60
+}
+#repassmain {
+	BORDER-RIGHT: #fed082 1px solid; PADDING-RIGHT: 39px; BORDER-TOP: #fed082 1px solid; PADDING-LEFT: 39px; PADDING-BOTTOM: 27px; MARGIN: 10px auto; BORDER-LEFT: #fed082 1px solid; WIDTH: 980px; COLOR: #000; PADDING-TOP: 27px; BORDER-BOTTOM: #fed082 1px solid; HEIGHT: 235px
+}
+#repass {
+	BORDER-RIGHT: #ddd 1px solid; PADDING-LEFT: 35px; BACKGROUND: url(/member/imgs/repassbg.gif) no-repeat; FLOAT: left; WIDTH: 440px; PADDING-TOP: 45px; HEIGHT: 210px
+}
+#repass2 {
+	FLOAT: right; WIDTH: 400px; LINE-HEIGHT: 1.5em; PADDING-TOP: 50px
+}

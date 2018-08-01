@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="loginForm" type="struts.form.LoginForm" />
+    <form-bean name="addOperatorForm" type="struts.form.AddOperatorForm" />
+    <form-bean name="resourceForm" type="struts.form.ResourceForm" />
+    <form-bean name="editChargeForm" type="struts.form.EditChargeForm" />
+    <form-bean name="editChargeRuleForm" type="struts.form.EditChargeRuleForm" />
+    <form-bean name="addCustomerForm" type="struts.form.AddCustomerForm" />
+    <form-bean name="addUserForm" type="struts.form.AddUserForm" />
+  </form-beans>
+  <global-exceptions />
+  <global-forwards />
+  
+  <action-mappings >
+    <action
+      attribute="loginForm"
+      input="/index.html"
+      name="loginForm"
+      path="/login"
+      scope="request"
+      type="struts.action.LoginAction">
+      <forward
+        name="success"
+        path="/web/main.jsp"
+        redirect="true" />
+    </action>
+    
+    
+    <action
+      attribute="addOperatorForm"
+      input="/web/newOperator.jsp"
+      name="addOperatorForm"
+      path="/addOperator"
+      scope="request"
+      type="struts.action.AddOperatorAction">
+      <forward
+        name="success"
+        path="/saveInfo.jsp"
+        />
+    </action>
+    <action
+      attribute="resourceForm"
+      input="/web/Resource.jsp"
+      name="resourceForm"
+      path="/resource"
+      scope="request"
+      type="struts.action.ResourceAction">
+      <forward
+        name="success"
+        path="/saveInfo.jsp"
+       />
+    </action>
+    <action
+      attribute="editChargeForm"
+      input="/web/Charge.jsp"
+      name="editChargeForm"
+      path="/editCharge"
+      scope="request"
+      type="struts.action.EditChargeAction">
+      <forward
+        name="success"
+        path="/saveInfo.jsp"
+       />
+    </action>
+    <action
+      attribute="editChargeRuleForm"
+      input="/web/Charge.jsp"
+      name="editChargeRuleForm"
+      path="/editChargeRule"
+      scope="request"
+      type="struts.action.EditChargeRuleAction">
+      <forward
+        name="success"
+        path="/saveInfo.jsp"
+        />
+    </action>
+    <action
+      attribute="addCustomerForm"
+      input="/web/newCustomer1.jsp"
+      name="addCustomerForm"
+      path="/addCustomer"
+      scope="request"
+      type="struts.action.AddCustomerAction">
+      <forward
+        name="success"
+        path="/web/newUser.jsp"
+        redirect="true" />
+      <forward name="false" path="/saveInfo.jsp" />
+    </action>
+    <action
+      attribute="addUserForm"
+      input="/web/newUser.jsp"
+      name="addUserForm"
+      path="/addUser"
+      scope="request"
+      type="struts.action.AddUserAction">
+      <forward
+        name="success"
+        path="/saveInfo.jsp"
+        />
+    </action>
+
+  </action-mappings>
+
+  <message-resources parameter="struts.ApplicationResources" />
+</struts-config>
+

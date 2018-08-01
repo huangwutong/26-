@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+    "http://struts.apache.org/dtds/struts-2.1.dtd">
+
+	<struts>
+	<package name="Vip" namespace="/backstage/Vip"
+		extends="struts-default">
+		<action name="Vip-*" class="vipAction" method="{1}">
+			<result name="success">/backstage/Vip/Vip-list.jsp</result>
+			<result name="true">
+				/backstage/Vip/ Vip-operatorSuccess.jsp
+			</result>
+			<result name="updateInput">
+				/backstage/Vip/Vip-updateInput.jsp
+			</result>
+		</action>
+	</package>
+
+	</struts>

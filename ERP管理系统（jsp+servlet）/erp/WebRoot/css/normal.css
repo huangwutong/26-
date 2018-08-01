@@ -1,0 +1,9 @@
+@charset "utf-8";
+body {font-size: 12px;margin:0;padding:0;}
+.clearfloat {clear:both;height:0;font-size: 1px;line-height: 0px;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+/* Hides from IE-mac \*/
+* html .clearfix{height:1%;}
+
+/*link*/
+a.grayLink {color:#717171;text-decoration: none;}

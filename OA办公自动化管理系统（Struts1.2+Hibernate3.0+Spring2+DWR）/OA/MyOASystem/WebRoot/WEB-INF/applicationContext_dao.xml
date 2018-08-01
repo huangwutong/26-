@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	<bean id="baseDao" abstract="true">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="carDao" class="com.accp.myoa.dao.hibimpl.CarDaoImpl" parent="baseDao"/>
+	<bean id="boardRoomDao" class="com.accp.myoa.dao.hibimpl.BoardRoomDaoImpl" parent="baseDao"/>
+	<bean id="bulletinDao" class="com.accp.myoa.dao.hibimpl.BulletinDaoImpl" parent="baseDao"/>
+	<bean id="bulletinExamineDao" class="com.accp.myoa.dao.hibimpl.BulletinExamineDaoImpl" parent="baseDao"/>
+	<bean id="bulletinReadDao" class="com.accp.myoa.dao.hibimpl.BulletinReadDaoImpl" parent="baseDao"/>
+	<bean id="carApplyDao" class="com.accp.myoa.dao.hibimpl.CarApplyDaoImpl" parent="baseDao"/>
+	<bean id="clientCompanyDao" class="com.accp.myoa.dao.hibimpl.ClientCompanyDaoImpl" parent="baseDao"/>
+	<bean id="clientDao" class="com.accp.myoa.dao.hibimpl.ClientDaoImpl" parent="baseDao"/>
+	<bean id="comleteDegressDao" class="com.accp.myoa.dao.hibimpl.ComleteDegressDaoImpl" parent="baseDao"/>
+	<bean id="deptDao" class="com.accp.myoa.dao.hibimpl.DeptDaoImpl" parent="baseDao"/>
+	<bean id="deptPositionDao" class="com.accp.myoa.dao.hibimpl.DeptPositionDaoImpl" parent="baseDao"/>
+	<bean id="diaryDao" class="com.accp.myoa.dao.hibimpl.DiaryDaoImpl" parent="baseDao"/>
+	<bean id="documentDao" class="com.accp.myoa.dao.hibimpl.DocumentDaoImpl" parent="baseDao"/>
+	<bean id="documentExamineDao" class="com.accp.myoa.dao.hibimpl.DocumentExamineDaoImpl" parent="baseDao"/>
+	<bean id="documentReadDao" class="com.accp.myoa.dao.hibimpl.DocumentReadDaoImpl" parent="baseDao"/>
+	<bean id="egressDao" class="com.accp.myoa.dao.hibimpl.EgressDaoImpl" parent="baseDao"/>
+	<bean id="egressExamineDao" class="com.accp.myoa.dao.hibimpl.EgressExamineDaoImpl" parent="baseDao"/>
+	<bean id="emailDao" class="com.accp.myoa.dao.hibimpl.EmailDaoImpl" parent="baseDao"/>
+	<bean id="emailReceivceDao" class="com.accp.myoa.dao.hibimpl.EmailReceivceDaoImpl" parent="baseDao"/>
+	<bean id="emailTypeDao" class="com.accp.myoa.dao.hibimpl.EmailTypeDaoImpl" parent="baseDao"/>
+	<bean id="examineStateDao" class="com.accp.myoa.dao.hibimpl.ExamineStateDaoImpl" parent="baseDao"/>
+	<bean id="fileDao" class="com.accp.myoa.dao.hibimpl.FileDaoImpl" parent="baseDao"/>
+	<bean id="leaveWordDao" class="com.accp.myoa.dao.hibimpl.LeaveWordDaoImpl" parent="baseDao"/>
+	<bean id="levelDao" class="com.accp.myoa.dao.hibimpl.LevelDaoImpl" parent="baseDao"/>
+	<bean id="meetingDao" class="com.accp.myoa.dao.hibimpl.MeetingDaoImpl" parent="baseDao"/>
+	<bean id="meetingReadDao" class="com.accp.myoa.dao.hibimpl.MeetingReadDaoImpl" parent="baseDao"/>
+	<bean id="meetingstateDao" class="com.accp.myoa.dao.hibimpl.MeetingstateDaoImpl" parent="baseDao"/>
+	<bean id="meetingSummaryDao" class="com.accp.myoa.dao.hibimpl.MeetingSummaryDaoImpl" parent="baseDao"/>
+	<bean id="meetingSummaryScanDao" class="com.accp.myoa.dao.hibimpl.MeetingSummaryScanDaoImpl" parent="baseDao"/>
+	<bean id="menuDao" class="com.accp.myoa.dao.hibimpl.MenuDaoImpl" parent="baseDao"/>
+	<bean id="messageDao" class="com.accp.myoa.dao.hibimpl.MessageDaoImpl" parent="baseDao"/>
+	<bean id="messageReceiveDao" class="com.accp.myoa.dao.hibimpl.MessageReceiveDaoImpl" parent="baseDao"/>
+	<bean id="messageTypeDao" class="com.accp.myoa.dao.hibimpl.MessageTypeDaoImpl" parent="baseDao"/>
+	<bean id="positionDao" class="com.accp.myoa.dao.hibimpl.PositionDaoImpl" parent="baseDao"/>
+	<bean id="positionPopedomDao" class="com.accp.myoa.dao.hibimpl.PositionPopedomDaoImpl" parent="baseDao"/>
+	<bean id="readStateDao" class="com.accp.myoa.dao.hibimpl.ReadStateDaoImpl" parent="baseDao"/>
+	<bean id="scratchpadDao" class="com.accp.myoa.dao.hibimpl.ScratchpadDaoImpl" parent="baseDao"/>
+	<bean id="turnOutForWorkDao" class="com.accp.myoa.dao.hibimpl.TurnOutForWorkDaoImpl" parent="baseDao"/>
+	<bean id="unitDao" class="com.accp.myoa.dao.hibimpl.UnitDaoImpl" parent="baseDao"/>
+	<bean id="userDao" class="com.accp.myoa.dao.hibimpl.UserDaoImpl" parent="baseDao"/>
+	<bean id="userStateDao" class="com.accp.myoa.dao.hibimpl.UserStateDaoImpl" parent="baseDao"/>
+	<bean id="weekDiaryDao" class="com.accp.myoa.dao.hibimpl.WeekDiaryDaoImpl" parent="baseDao"/>
+</beans>

@@ -1,0 +1,8 @@
+[PropertyInfo]
+adminDAO,com.xh369.dao.AdminDAO,false,false, , ,false,<default>
+adminListDAO,com.xh369.dao.AdminListDAO,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

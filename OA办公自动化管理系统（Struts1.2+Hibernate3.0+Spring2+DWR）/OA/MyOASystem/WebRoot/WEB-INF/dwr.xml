@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dwr PUBLIC
+    "-//GetAhead Limited//DTD Direct Web Remoting 2.0//EN"
+    "http://getahead.org/dwr/dwr20.dtd">
+    <dwr>
+    	<allow>
+    		<create creator="spring" javascript="menuService">
+    			<param name="beanName" value="menuService"/>
+    			<include method="getMenusByMenuId"/>
+    			<include method="getMenusByParentId"/>
+    		</create>
+    		
+    		<create creator="spring" javascript="leaveWordService">
+    			<param name="beanName" value="leaveWordService"/>
+    			<include method="loadList"/>
+    			<include method="add"/>
+    			<include method="getLeaveWordsByUserId"/>
+    		</create>
+    		
+    		<!-- MyOffice -->
+    		<!-- 修改密码 -->
+    		<create creator="spring" javascript="UserService">
+    			<param name="beanName" value="userService"/>
+    			<include method="modifyPwd"/>
+    			
+    		</create>
+    		<!-- 邮件(写件) -->
+    		 <create creator="spring" javascript="EmailService">
+     			 <param name="beanName" value="emailService"/>
+     			 <include method="getDept"/>
+     			 <include method="getUserByDeptId"/>
+    		</create>
+    		<!-- 日程管理 -->
+    		<create creator="spring" javascript="ScratchpadService">
+      			<param name="beanName" value="scratchpadService"/>
+      			<include method="getScratchpadByDay"/>
+      			<include method="delScratchpadByDate"/>
+      			<include method="addScratchpad"/>
+      			<include method="get"/>
+      			<include method="updateScratchpad"/>
+      			
+    		</create>
+    		
+    		<create creator="spring" javascript="UserServices">
+         		<param name="beanName" value="userService"/>
+         		<include method="getUser"/>
+         		<include method="checkUserName"/>
+     		 </create>
+     		 <!-- 实现添加职位信息 LEO -->
+     		 <create creator="spring" javascript="PositionService">
+         		<param name="beanName" value="positionService"/>
+         		<include method="loadPositions"/>
+				<include method="insertPosition"/>
+    			<include method="findAllPosition"/>
+     		 </create>
+     		 <!-- 实现添加职位信息 LEO -->
+     		  <create creator="spring" javascript="DeptPositionService">
+         		<param name="beanName" value="deptPositionService"/>
+         		<include method="getDeptPosition"/>
+         		<include method="insertDeptPosition"/>
+    			<include method="findAllDeptPosition"/>
+    			<include method="getDeptPositionMaxPage"/>
+    			<include method="findDeptPositionByPage"/>
+    			<include method="loadList"/>
+     		 </create>
+     		 <!-- 实现添加单位信息 LEO -->
+    		<create creator="spring" javascript="UnitService" >
+    			<param name="beanName" value="unitService"/>
+    			<include method="insertUnit"/>
+    			<include method="findAllUnit"/>
+    		</create>
+    		<!-- 实现添加部门信息 LEO -->
+    		<create creator="spring" javascript="DeptService" >
+    			<param name="beanName" value="deptService"/>
+    			<include method="insertDept"/>
+    			<include method="findAllDept"/>
+    		</create>
+    		<!-- 实现添加部门职位（角色）信息 LEO -->
+    		<create creator="spring" javascript="PositionPopedomService" >
+    			<param name="beanName" value="positionPopedomService"/>
+    			<include method="insertPositionPopedom"/>
+    			<include method="findAllPositionPopedom"/>
+    			<include method="getPositionPopedomMaxPage"/>
+    			<include method="findPositionPopedomByPage"/>
+    			<include method="loadList"/>
+    			<include method="edit"/>
+    		</create>
+     		 
+     		 <!-- 在线人数 -->
+     		 <create creator="new" javascript="OnLineService">
+         		<param name="class" value="com.accp.myoa.common.OnLine"/>
+         		<include method="getOnLineUser"/>
+     		 </create>
+    		<convert converter="bean" match="com.accp.myoa.entity.*"/>
+    	</allow>
+    </dwr>

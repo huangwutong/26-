@@ -1,0 +1,49 @@
+a  { font:normal 12px ËÎÌו; color:#000000; text-decoration:none; }
+a:hover  { color:#428EFF }
+
+body 
+{
+    FONT-SIZE: 12px;
+    COLOR: #000000;
+    background-color: #D6DFF7; 
+}
+TD{
+font-size: 12px; line-height: 15px;
+}
+td.forumHeaderBackgroundAlternate
+{
+    background-color: #799AE1;
+	color:#FFFFFF
+}
+#TableTitleLink A:link, #TableTitleLink A:visited, #TableTitleLink A:active {
+	COLOR: #FFFFFF;
+	TEXT-DECORATION: none;
+}
+#TableTitleLink A:hover {
+	COLOR: #FFFFFF;
+	TEXT-DECORATION: underline;}
+td.forumRow
+{
+    background-color:#DEE5FA;
+}
+
+td.forumRowHighlight
+{
+    background-color: #D4DEF9;
+}
+.tableBorder
+{
+    border: 1px #6595D6 solid; 
+    background-color: #FFFFFF;
+}
+th
+{
+    background-image: url(../images/admin_bg_1.gif);
+    background-color: #4455aa;
+    color: white;
+    font-size: 12px;
+    font-weight:bold;
+}
+input,select,Textarea{
+font-size: 12px; line-height: 15px;}
+}

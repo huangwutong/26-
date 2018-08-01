@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="yasak_CustomerForm" type="com.struts.form.Yasak_CustomerForm" />
+    <form-bean name="yasak_BillInfoForm" type="com.struts.form.Yasak_BillInfoForm" />
+    <form-bean name="yasak_BillInfoAllForm" type="com.struts.form.Yasak_BillInfoAllForm" />
+    <form-bean name="yasak_BranchInfoForm" type="com.struts.form.Yasak_BranchInfoForm" />
+    <form-bean name="yasak_AfficheInfoForm" type="com.struts.form.Yasak_AfficheInfoForm" />
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+    <action
+      path="/yasak_CustomerList"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="list"
+        path="/Yasak/JsonFactory/Yasak_Customer.jsp"
+        contextRelative="true" />
+      
+      
+    </action>
+    <action
+      path="/yasak_CustomerFindById"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="findok"
+        path="/Yasak/JsonFactory/CustomerFindById.jsp"
+        contextRelative="true" />
+      
+    </action>
+    <action
+      path="/yasak_CustomerUpdate"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="customerUpdate"
+        path="/Yasak/JsonFactory/CustomerUpdate.jsp"
+        contextRelative="true" />
+      
+    </action>
+    <action
+      path="/yasak_CustomerAdd"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="addok"
+        path="/Yasak/JsonFactory/CustomerAdd.jsp"
+        contextRelative="true" />
+      
+      
+    </action>
+    <action
+      path="/yasak_BillList"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="billlist"
+        path="/Yasak/JsonFactory/BillInfo.jsp"
+        contextRelative="true" />
+      
+    </action>
+    <action
+      path="/yasak_BillAdd"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="billaddok"
+        path="/Yasak/JsonFactory/BillAdd.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/yasak_BillUpdate"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="updateok"
+        path="/Yasak/JsonFactory/BillUpdate.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/yasak_BillInBranchList"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="listok"
+        path="/Yasak/JsonFactory/BillInBranch.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/yasak_BillInBranchUpdate"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="updateok"
+        path="/Yasak/JsonFactory/BillInBranchUpdate.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/yasak_BillInCustomerList"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="listok"
+        path="/Yasak/JsonFactory/BillInCustomer.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/yasak_BillInCustomerUpdate"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="updateok"
+        path="/Yasak/JsonFactory/BillInCustomerUpdate.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/yasak_BillOutCustomerList"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="listok"
+        path="/Yasak/JsonFactory/BillOutCustomer.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/yasak_afficheAdd"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="addok"
+        path="/Yasak/JsonFactory/AfficheAdd.jsp"
+        contextRelative="true" />
+    </action>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+    
+
+  </action-mappings>
+
+  <message-resources parameter="com.struts.ApplicationResources" />
+  <plug-in className="com.plugin.Yasak_MyPlugin" />
+</struts-config>
+

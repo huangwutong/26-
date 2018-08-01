@@ -1,0 +1,12 @@
+package #{dao_impl_p};
+
+import org.springframework.stereotype.Repository;
+
+import #{entity_p}.#{Entity};
+import #{dao_p}.#{Entity}Dao;
+import #{dao_impl_parent_p}.#{dao_impl_parent_name};
+
+@Repository
+public class #{Entity}DaoImpl extends #{dao_impl_parent_name}<#{Entity}> implements #{Entity}Dao {
+
+}

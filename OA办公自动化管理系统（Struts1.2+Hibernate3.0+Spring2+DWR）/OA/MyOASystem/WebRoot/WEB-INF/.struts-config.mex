@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/login.do" location="1850,650" dimension="238,84" />
+  <StrutsActivity path="/forward.do" location="2150,650" dimension="250,84" />
+  <StrutsActivity path="/email.do" location="1550,450" dimension="82,60" />
+  <StrutsActivity path="/car.do" location="50,50" dimension="250,84" />
+  <StrutsActivity path="/boardRoom.do" location="350,50" dimension="106,60" />
+  <StrutsActivity path="/bulletinExamine.do" location="650,50" dimension="142,60" />
+  <StrutsActivity path="/bulletin.do" location="950,50" dimension="100,60" />
+  <StrutsActivity path="/bulletinRead.do" location="1250,50" dimension="124,60" />
+  <StrutsActivity path="/carApply.do" location="1550,50" dimension="100,60" />
+  <StrutsActivity path="/clientCompany.do" location="50,250" dimension="130,60" />
+  <StrutsActivity path="/client.do" location="350,250" dimension="88,60" />
+  <StrutsActivity path="/comleteDegress.do" location="650,250" dimension="136,60" />
+  <StrutsActivity path="/dept.do" location="950,250" dimension="76,60" />
+  <StrutsActivity path="/deptPosition.do" location="1250,250" dimension="124,60" />
+  <StrutsActivity path="/diary.do" location="1550,250" dimension="82,60" />
+  <StrutsActivity path="/documentExamine.do" location="50,450" dimension="142,60" />
+  <StrutsActivity path="/document.do" location="350,450" dimension="100,60" />
+  <StrutsActivity path="/documentRead.do" location="650,450" dimension="124,60" />
+  <StrutsActivity path="/egressExamine.do" location="950,450" dimension="130,60" />
+  <StrutsActivity path="/egress.do" location="1250,450" dimension="88,60" />
+  <StrutsActivity path="/emailReceivce.do" location="50,650" dimension="130,60" />
+  <StrutsActivity path="/emailType.do" location="350,650" dimension="106,60" />
+  <StrutsActivity path="/examineState.do" location="650,650" dimension="124,60" />
+  <StrutsActivity path="/file.do" location="950,650" dimension="76,60" />
+  <StrutsActivity path="/leaveWord.do" location="1250,650" dimension="106,60" />
+  <StrutsActivity path="/level.do" location="1550,650" dimension="82,60" />
+  <StrutsActivity path="/meeting.do" location="50,850" dimension="94,60" />
+  <StrutsActivity path="/meetingRead.do" location="350,850" dimension="118,60" />
+  <StrutsActivity path="/meetingstate.do" location="650,850" dimension="124,60" />
+  <StrutsActivity path="/meetingSummary.do" location="950,850" dimension="136,60" />
+  <StrutsActivity path="/meetingSummaryScan.do" location="1250,850" dimension="160,60" />
+  <StrutsActivity path="/menu.do" location="1550,850" dimension="76,60" />
+  <StrutsActivity path="/message.do" location="50,1050" dimension="94,60" />
+  <StrutsActivity path="/messageReceive.do" location="350,1050" dimension="136,60" />
+  <StrutsActivity path="/messageType.do" location="650,1050" dimension="118,60" />
+  <StrutsActivity path="/position.do" location="950,1050" dimension="100,60" />
+  <StrutsActivity path="/positionPopedom.do" location="1250,1050" dimension="142,60" />
+  <StrutsActivity path="/readState.do" location="1550,1050" dimension="106,60" />
+  <StrutsActivity path="/scratchpad.do" location="50,1250" dimension="112,60" />
+  <StrutsActivity path="/turnOutForWork.do" location="350,1250" dimension="136,60" />
+  <StrutsActivity path="/unit.do" location="650,1250" dimension="76,60" />
+  <StrutsActivity path="/user.do" location="950,1250" dimension="76,60" />
+  <StrutsActivity path="/userState.do" location="1250,1250" dimension="106,60" />
+  <StrutsActivity path="/weekDiary.do" location="1550,1250" dimension="106,60" />
+  <StrutsActivity path="carDetail;6" location="50,1450" dimension="124,72" />
+  <StrutsActivity path="index;6" location="1250,1450" dimension="106,72" />
+  <StrutsActivity path="/WEB-INF/AdmManage/carDetail.jsp" location="950,1450" dimension="232,48" />
+  <StrutsActivity path="/index.jsp" location="1550,1450" dimension="100,48" />
+  <StrutsActivity path="" location="2150,1550" dimension="40,48" />
+  <StrutsActivity path="/WEB-INF/myoffice/showemail.jsp" location="2150,850" dimension="226,48" />
+  <StrutsActivity path="/WEB-INF/myoffice/connection.jsp" location="1850,950" dimension="232,48" />
+  <StrutsActivity path="/WEB-INF/myoffice/diary.jsp" location="2150,950" dimension="202,48" />
+  <StrutsActivity path="/WEB-INF/page/menu.jsp" location="1850,1050" dimension="172,48" />
+  <StrutsActivity path="/WEB-INF/page/main.jsp" location="2150,1050" dimension="172,48" />
+  <StrutsActivity path="/WEB-INF/myoffice/weekDiary.jsp" location="1850,1150" dimension="226,48" />
+  <StrutsActivity path="/WEB-INF/myoffice/message.jsp" location="2150,1150" dimension="214,48" />
+  <StrutsActivity path="/WEB-INF/myoffice/presist.jsp" location="1850,1250" dimension="214,48" />
+  <StrutsActivity path="/WEB-INF/page/main1.jsp" location="2150,1250" dimension="178,48" />
+  <StrutsActivity path="/WEB-INF/myoffice/email.jsp" location="1850,1350" dimension="202,48" />
+  <StrutsActivity path="/WEB-INF/myoffice/file.jsp" location="2150,1350" dimension="196,48" />
+  <StrutsActivity path="/WEB-INF/myoffice/individualInfo.jsp" location="1850,1450" dimension="256,48" />
+  <StrutsActivity path="/WEB-INF/myoffice/wmail.jsp" location="350,1550" dimension="202,48" />
+  <StrutsActivity path="/WEB-INF/myoffice/comfirm.jsp" location="650,1550" dimension="214,48" />
+  <StrutsActivity path="/WEB-INF/page/top.jsp" location="950,1550" dimension="166,48" />
+  <StrutsActivity path="/WEB-INF/myoffice/alertInfo.jsp" location="1550,1550" dimension="226,48" />
+  <StrutsActivity path="/carDetail.jsp" location="650,1450" dimension="124,48" />
+  <StrutsActivity path="carDetail.jsp" location="350,1450" dimension="118,48" />
+  <StrutsActivity path="/login.jsp" location="1850,850" dimension="100,48" />
+  <StrutsTransition id="index;6,null,/index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1356,1483" />
+      <AbsolutePoint location="1550,1483" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="carDetail;6,null,/WEB-INF/AdmManage/carDetail.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="174,1513" />
+      <AbsolutePoint location="1066,1513" />
+      <AbsolutePoint location="1066,1498" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

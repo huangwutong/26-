@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!-- 该文件是为了防止WEB-INF\layout.xml文件不存在时候的备用 -->
+<layout>
+	<pages>
+		<page name="$LOGO$">
+			<uri>pages/logo.jsp</uri>
+		</page>
+		<page name="$HEAD$">
+			<uri>pages/head.jsp</uri>
+		</page>
+		<page name="$CATEGORY$">
+			<uri>pages/category.jsp</uri>
+		</page>
+		<page name="$CALENDAR$">
+			<uri>pages/calendar.jsp</uri>
+		</page>
+		<page name="$TOP_COMMENT$">
+			<uri>pages/top_comments.jsp</uri>
+		</page>
+		<page name="$SEARCH_FORM$">
+			<uri>pages/search.jsp</uri>
+		</page>
+		<page name="$MEMBERS$">
+			<uri>pages/last_members.jsp</uri>
+		</page>				
+		<page name="$BLOG$">
+			<uri>pages/blog.jsp</uri>
+		</page>
+		<page name="$COPYRIGHT$">
+			<uri>pages/copyright.jsp</uri>
+		</page>
+		<page name="$LINKS$">
+			<uri>pages/links.jsp</uri>
+		</page>
+		<page name="$LOGIN$">
+			<uri>pages/userinfo.jsp</uri>
+		</page>
+		<page name="$BODY$">
+			<param>main</param>
+			<uri>main.jsp</uri>
+		</page>
+	</pages>
+</layout>
+	

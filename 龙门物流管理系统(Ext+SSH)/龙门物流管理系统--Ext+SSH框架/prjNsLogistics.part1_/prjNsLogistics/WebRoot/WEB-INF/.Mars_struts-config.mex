@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/mars_billinfo_findByBranchinf4.do" location="165,165" dimension="61,46" />
+  <StrutsActivity path="/mars_billinfo_findByBranchinf3.do" location="60,165" dimension="76,46" />
+  <StrutsActivity path="/mars_billinfo_findBySendBranch3.do" location="270,165" dimension="76,46" />
+  <StrutsActivity path="/mars_billinfo_findBySendBranch4.do" location="360,165" dimension="91,46" />
+  <StrutsActivity path="/mars_billinfo_findByReceiveBranch3.do" location="465,165" dimension="76,46" />
+  <StrutsActivity path="/mars_billinfo_findByReceiveBranch4.do" location="555,165" dimension="91,46" />
+  <StrutsActivity path="/mars_billinfo_findByCustomer.do" location="660,165" dimension="61,46" />
+  <StrutsActivity path="/mars_billinfo_findByCustomer4.do" location="735,165" dimension="61,46" />
+  <StrutsActivity path="/mars_customerinfo_findAll.do" location="120,420" dimension="150,31" />
+  <StrutsActivity path="/mars_useinfo_findAll.do" location="120,375" dimension="150,31" />
+  <StrutsActivity path="/mars_billinfo_getparam.do" location="45,90" dimension="886,46" />
+  <StrutsActivity path="/mars_branchinfo_findAll.do" location="120,315" dimension="150,31" />
+  <StrutsActivity path="/mars_truckinfo_findAll.do" location="120,465" dimension="150,36" />
+  <StrutsActivity path="/mars_driverinfo_findAll.do" location="120,525" dimension="150,35" />
+  <StrutsActivity path="/mars_billinfo_findByReceiveBranchshare.do" location="810,165" dimension="61,46" />
+  <StrutsActivity path="/mars_billinfo_findBySendBranchshare.do" location="870,165" dimension="66,41" />
+  <StrutsActivity path="/mars_afficheinfo_findAll.do" location="555,330" dimension="150,31" />
+  <StrutsActivity path="/Mars/Billshow.jsp" location="45,255" dimension="886,33" />
+  <StrutsActivity path="/Mars/Customershow.jsp" location="330,420" dimension="150,31" />
+  <StrutsActivity path="/Mars/UserinfoShow.jsp" location="330,375" dimension="150,31" />
+  <StrutsActivity path="/Mars/Branchshow.jsp" location="330,315" dimension="150,36" />
+  <StrutsActivity path="/Mars/Truckshow.jsp" location="330,465" dimension="150,31" />
+  <StrutsActivity path="/Mars/Drivershow.jsp" location="330,525" dimension="150,37" />
+  <StrutsActivity path="/Mars/Afficheshow.jsp" location="765,315" dimension="150,46" />
+  <StrutsActivity path="/jfreeCharCustomer.do" location="870,540" dimension="166,61" />
+  <StrutsActivity path="/jfreeCharBranch.do" location="735,450" dimension="163,46" />
+  <StrutsActivity path="/Mars/CustomerJFreeChar.jsp" location="630,555" dimension="127,31" />
+  <StrutsActivity path="/Mars/BranchJFreeChar.jsp" location="945,450" dimension="190,48" />
+  <StrutsTransition id="/mars_billinfo_getparam.do,listone,/mars_billinfo_findByBranchinf3.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="121,136" />
+      <AbsolutePoint location="121,165" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mars_billinfo_getparam.do,listeight,/mars_billinfo_findByCustomer4.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="750,136" />
+      <AbsolutePoint location="750,165" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mars_customerinfo_findAll.do,list,/Mars/Customershow.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="270,435" />
+      <AbsolutePoint location="330,435" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mars_billinfo_getparam.do,listfour,/mars_billinfo_findBySendBranch4.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="436,136" />
+      <AbsolutePoint location="436,165" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mars_afficheinfo_findAll.do,list,/Mars/Afficheshow.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="705,345" />
+      <AbsolutePoint location="765,345" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mars_driverinfo_findAll.do,list,/Mars/Drivershow.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="270,542" />
+      <AbsolutePoint location="330,542" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/jfreeCharBranch.do,list,/Mars/BranchJFreeChar.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="898,473" />
+      <AbsolutePoint location="945,473" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mars_billinfo_findBySendBranch4.do,list,/Mars/Billshow.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="405,211" />
+      <AbsolutePoint location="405,255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mars_billinfo_getparam.do,listtwo,/mars_billinfo_findByBranchinf4.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="211,136" />
+      <AbsolutePoint location="211,165" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mars_billinfo_findBySendBranch3.do,list,/Mars/Billshow.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="308,211" />
+      <AbsolutePoint location="308,255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mars_useinfo_findAll.do,list,/Mars/UserinfoShow.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="270,390" />
+      <AbsolutePoint location="330,390" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mars_billinfo_getparam.do,listfive,/mars_billinfo_findByReceiveBranch3.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="488,136" />
+      <AbsolutePoint location="488,165" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mars_billinfo_getparam.do,listnine,/mars_billinfo_findByReceiveBranchshare.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="825,136" />
+      <AbsolutePoint location="825,165" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mars_billinfo_getparam.do,listthree,/mars_billinfo_findBySendBranch3.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="331,136" />
+      <AbsolutePoint location="331,165" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mars_billinfo_getparam.do,listseven,/mars_billinfo_findByCustomer.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="675,136" />
+      <AbsolutePoint location="675,165" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mars_billinfo_findByBranchinf4.do,list,/Mars/Billshow.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="195,211" />
+      <AbsolutePoint location="195,255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mars_billinfo_findByCustomer4.do,list,/Mars/Billshow.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="765,211" />
+      <AbsolutePoint location="765,255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/jfreeCharCustomer.do,list,/Mars/CustomerJFreeChar.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="870,570" />
+      <AbsolutePoint location="757,570" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mars_branchinfo_findAll.do,list,/Mars/Branchshow.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="270,330" />
+      <AbsolutePoint location="330,330" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mars_billinfo_getparam.do,listsix,/mars_billinfo_findByReceiveBranch4.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="570,136" />
+      <AbsolutePoint location="570,165" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mars_truckinfo_findAll.do,list,/Mars/Truckshow.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="270,481" />
+      <AbsolutePoint location="330,481" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mars_billinfo_findBySendBranchshare.do,list,/Mars/Billshow.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="903,206" />
+      <AbsolutePoint location="903,255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mars_billinfo_getparam.do,listten,/mars_billinfo_findBySendBranchshare.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="886,136" />
+      <AbsolutePoint location="886,165" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mars_billinfo_findByReceiveBranch3.do,list,/Mars/Billshow.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="503,211" />
+      <AbsolutePoint location="503,255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mars_billinfo_findByCustomer.do,list,/Mars/Billshow.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="690,211" />
+      <AbsolutePoint location="690,255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mars_billinfo_findByBranchinf3.do,list,/Mars/Billshow.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="98,211" />
+      <AbsolutePoint location="98,255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mars_billinfo_findByReceiveBranchshare.do,list,/Mars/Billshow.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="840,211" />
+      <AbsolutePoint location="840,255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mars_billinfo_findByReceiveBranch4.do,list,/Mars/Billshow.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="600,211" />
+      <AbsolutePoint location="600,255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

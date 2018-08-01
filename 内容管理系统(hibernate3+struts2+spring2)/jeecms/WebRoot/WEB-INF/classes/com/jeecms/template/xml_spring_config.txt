@@ -1,0 +1,9 @@
+	<!--#{config_comment}-->
+	<bean id="#{entity}Dao" parent="daoTemplate" class="#{dao_impl_p}.#{Entity}DaoImpl" />
+	<bean id="#{entity}MngImpl" class="#{manager_impl_p}.#{Entity}MngImpl" autowire="byName"/>
+	<bean id="#{entity}Mng" parent="abstractTxDefinition">
+		<property name="target">
+			<ref local="#{entity}MngImpl"/>
+		</property>
+	</bean>	
+	<bean id="#{sys}.#{entity}Act" scope="prototype" class="#{action_p}.#{Entity}Act" autowire="byName" />

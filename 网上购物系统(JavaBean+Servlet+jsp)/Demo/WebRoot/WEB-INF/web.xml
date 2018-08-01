@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" 
+	xmlns="http://java.sun.com/xml/ns/j2ee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+   
+  <servlet>
+  <servlet-name>adminLogin</servlet-name>
+  <servlet-class>test.servlet.AdminLogin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>adminLogin</servlet-name>
+  <url-pattern>/adminLogin</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>addMessage</servlet-name>
+  <servlet-class>test.servlet.AddMessageInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>addMessage</servlet-name>
+  <url-pattern>/addMessage</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>ExitAdminLoginServlet</servlet-name>
+  <servlet-class>test.servlet.ExitAdminLoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>ExitAdminLoginServlet</servlet-name>
+  <url-pattern>/ExitAdminLoginServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>addCatagory</servlet-name>
+  <servlet-class>test.servlet.AddCatagory</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>addCatagory</servlet-name>
+  <url-pattern>/addCatagory</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>delCatagoryInfo</servlet-name>
+  <servlet-class>test.servlet.DelCatagoryInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>delCatagoryInfo</servlet-name>
+  <url-pattern>/delCatagoryInfo</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>addBookInfo</servlet-name>
+  <servlet-class>test.servlet.AddBookInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>addBookInfo</servlet-name>
+  <url-pattern>/addBookInfo</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>searchBooks</servlet-name>
+  <servlet-class>test.servlet.SearchBooks</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>searchBooks</servlet-name>
+  <url-pattern>/searchBooks</url-pattern>
+  </servlet-mapping>
+  
+  
+  <servlet>
+  <servlet-name>showuserinfo</servlet-name>
+  <servlet-class>test.servlet.ShowUserInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>showuserinfo</servlet-name>
+  <url-pattern>/showuserinfo</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>registUserinfo</servlet-name>
+  <servlet-class>test.servlet.RegistUserinfo</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>registUserinfo</servlet-name>
+  <url-pattern>/userRegist</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>invalidate</servlet-name>
+  <servlet-class>test.servlet.InvalidateUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>invalidate</servlet-name>
+ <url-pattern>/invalidateUser</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>randomCodeServlet</servlet-name>
+  <servlet-class>test.servlet.RandomCodeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>randomCodeServlet</servlet-name>
+  <url-pattern>/imgcode</url-pattern>
+  </servlet-mapping>
+ 
+ 
+ 
+  <servlet>
+  <servlet-name>updateCatagoryInfo</servlet-name>
+  <servlet-class>test.servlet.UpdateCatagoryInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>updateCatagoryInfo</servlet-name>
+  <url-pattern>/updateCatagoryInfo</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>saveUpdateCatagoryInfo</servlet-name>
+  <servlet-class>test.servlet.SaveUpdateCatagoryInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>saveUpdateCatagoryInfo</servlet-name>
+  <url-pattern>/saveUpdateCatagoryInfo</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>pageShowCatagoryList</servlet-name>
+  <servlet-class>test.servlet.PageShowCatagoryList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>pageShowCatagoryList</servlet-name>
+  <url-pattern>/pageShowCatagoryList</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>pageShowMessageList</servlet-name>
+  <servlet-class>test.servlet.PageShowMessageList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>pageShowMessageList</servlet-name>
+  <url-pattern>/pageShowMessageList</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>delBookInfo</servlet-name>
+  <servlet-class>test.servlet.DelBookInfo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>delBookInfo</servlet-name>
+  <url-pattern>/delBookInfo</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  <servlet-name>checkUname</servlet-name>
+  <servlet-class>test.servlet.CheckUnameServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>checkUname</servlet-name>
+  <url-pattern>/checkUname</url-pattern>
+  </servlet-mapping>
+  
+   <servlet>
+  <servlet-name>userLogin</servlet-name>
+  <servlet-class>test.servlet.UserLogin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>userLogin</servlet-name>
+  <url-pattern>/userLogin</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>showUser</servlet-name>
+  <servlet-class>test.servlet.ShowUser</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>showUser</servlet-name>
+  <url-pattern>/showUser</url-pattern>
+  </servlet-mapping>
+
+  
+  <servlet>
+  <servlet-name>showCatagoryBook</servlet-name>
+  <servlet-class>test.servlet.ShowCatagoryBook</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>showCatagoryBook</servlet-name>
+  <url-pattern>/showCatagoryBook</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>addCartServlet</servlet-name>
+  <servlet-class>test.servlet.AddCartServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>addCartServlet</servlet-name>
+  <url-pattern>/addCartServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>addordersServlet</servlet-name>
+  <servlet-class>test.servlet.AddordersServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>addordersServlet</servlet-name>
+  <url-pattern>/addordersServlet</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+  <servlet-name>showMyOrders</servlet-name>
+  <servlet-class>test.servlet.ShowMyOrders</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>showMyOrders</servlet-name>
+  <url-pattern>/showMyOrders</url-pattern>
+  </servlet-mapping>
+  
+  <filter>
+  <filter-name>charset</filter-name>
+  <filter-class>test.util.CharsetFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  <filter-name>charset</filter-name>
+  <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+  
+
+</web-app>

@@ -1,0 +1,10 @@
+@charset "utf-8";
+@import url(normal.css);
+/* CSS Document */
+#login_win {width:420px;text-align:left;margin:auto;}
+#login_win .login_body {background:url(../images/login_bg.gif) no-repeat;width:420px;height:155px;padding-top:10px;}
+.line {padding:5px 0 0 80px;}
+.sumbit_div{padding:5px 0 0 280px;}
+.errorWorning{padding:5px 0 0 20px;}
+input.username,.validateCode {background:url(../images/input_bg.gif) no-repeat #fff;border:0;height:15px;width:99px;padding:3px 3px 3px 3px;background-attachment:fixed;}
+input.validateCode{width:36px;}

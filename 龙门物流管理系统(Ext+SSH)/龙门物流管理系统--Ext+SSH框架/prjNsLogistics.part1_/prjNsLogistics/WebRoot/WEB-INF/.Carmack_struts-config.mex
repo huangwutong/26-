@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/CarmacktruckInfoAdd.do" location="285,60" dimension="181,106" />
+  <StrutsActivity path="/CarmacktruckInfoUpdateOk.do" location="285,-90" dimension="181,106" />
+  <StrutsActivity path="/CarmacktruckInfoUpdate.do" location="60,-60" dimension="181,106" />
+  <StrutsActivity path="/carmacktruckInfoDelete.do" location="45,-195" dimension="181,106" />
+  <StrutsActivity path="/carmackUserInfoAdd.do" location="90,900" dimension="181,106" />
+  <StrutsActivity path="/carmackUserInfoList.do" location="330,570" dimension="181,106" />
+  <StrutsActivity path="/carmackUserInfoUpdateOk.do" location="330,705" dimension="181,106" />
+  <StrutsActivity path="/carmackUserInfoUpdate.do" location="330,840" dimension="181,106" />
+  <StrutsActivity path="/carmackUserInfoDelete.do" location="75,615" dimension="181,106" />
+  <StrutsActivity path="/carmackDriverInfoAdd.do" location="600,525" dimension="181,106" />
+  <StrutsActivity path="/carmackDriverInfoUpdateOk.do" location="600,645" dimension="181,106" />
+  <StrutsActivity path="/carmackDriverInfoUpdate.do" location="600,765" dimension="181,106" />
+  <StrutsActivity path="/carmackDriverInfoList.do" location="810,405" dimension="181,106" />
+  <StrutsActivity path="/carmackDriverInfoDelete.do" location="810,540" dimension="181,106" />
+  <StrutsActivity path="/carmackBranchInfoAdd.do" location="570,-240" dimension="181,106" />
+  <StrutsActivity path="/carmackBranchInfoList.do" location="825,-240" dimension="181,106" />
+  <StrutsActivity path="/carmackBranchInfoUpdateOk.do" location="570,-105" dimension="181,106" />
+  <StrutsActivity path="/carmackBranchInfoUpdate.do" location="825,-105" dimension="181,103" />
+  <StrutsActivity path="/carmackBranchInfoDelete.do" location="570,30" dimension="181,106" />
+  <StrutsActivity path="/carmackTruckModelAdd.do" location="1260,-180" dimension="181,106" />
+  <StrutsActivity path="/carmackTruckModelUpdateOk.do" location="1050,-180" dimension="181,106" />
+  <StrutsActivity path="/carmackTruckModelList.do" location="1245,-420" dimension="181,106" />
+  <StrutsActivity path="/carmackTruckModelUpdate.do" location="1065,45" dimension="181,106" />
+  <StrutsActivity path="/carmackTruckModelDelete.do" location="1275,45" dimension="181,106" />
+  <StrutsActivity path="/CarmacktruckInfoList.do" location="285,-225" dimension="181,106" />
+  <StrutsActivity path="/systemLogList.do" location="1125,360" dimension="150,100" />
+  <StrutsActivity path="/Carmack/JsonFactory/TruckInfoSave.jsp" location="315,255" dimension="150,100" />
+  <StrutsActivity path="/Carmack/JsonFactory/TruckInfoUpdate.jsp" location="60,210" dimension="150,100" />
+  <StrutsActivity path="/Carmack/TruckInfo.html" location="63,-418" dimension="150,74" />
+  <StrutsActivity path="/Carmack/JsonFactory/UserInfoSave.jsp" location="105,780" dimension="136,76" />
+  <StrutsActivity path="/Carmack/JsonFactory/UserInfoByBranchID.jsp" location="330,435" dimension="211,76" />
+  <StrutsActivity path="/Carmack/JsonFactory/UserInfoUpdate.jsp" location="345,1005" dimension="150,100" />
+  <StrutsActivity path="/Carmack/UserInfo.html" location="105,435" dimension="121,76" />
+  <StrutsActivity path="/Carmack/JsonFactory/DriverInfoAdd.jsp" location="615,375" dimension="136,76" />
+  <StrutsActivity path="/Carmack/JsonFactory/DriverInfoUpdate.jsp" location="825,900" dimension="151,76" />
+  <StrutsActivity path="/Carmack/JsonFactory/DriverInfoByBranchID.jsp" location="810,225" dimension="181,91" />
+  <StrutsActivity path="/Carmack/JsonFactory/DriverInfoDel.jsp" location="840,690" dimension="136,76" />
+  <StrutsActivity path="/Carmack/JsonFactory/BranchInfoSave.jsp" location="570,-405" dimension="150,100" />
+  <StrutsActivity path="/Carmack/JsonFactory/BranchInfoMsg.jsp" location="825,-405" dimension="150,100" />
+  <StrutsActivity path="/Carmack/JsonFactory/BranchInfoUpdate.jsp" location="840,75" dimension="150,100" />
+  <StrutsActivity path="/Carmack/BranchInfo.html" location="585,180" dimension="150,100" />
+  <StrutsActivity path="/Carmack/TruckModel.html" location="1575,120" dimension="150,100" />
+  <StrutsActivity path="/Carmack/JsonFactory/TruckModeList.jsp" location="1575,-420" dimension="150,100" />
+  <StrutsActivity path="/Carmack/JsonFactory/TruckInfoMsg.jsp" location="270,-420" dimension="150,100" />
+  <StrutsActivity path="/Carmack/JsonFactory/SystemLog.jsp" location="1110,585" dimension="150,100" />
+  <StrutsTransition id="/carmackBranchInfoUpdate.do,BranchInfoUpdate,/Carmack/JsonFactory/BranchInfoUpdate.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="915,-2" />
+      <AbsolutePoint location="915,75" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/carmackUserInfoUpdate.do,UserInfoUpdate,/Carmack/JsonFactory/UserInfoUpdate.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="420,946" />
+      <AbsolutePoint location="420,1005" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/carmackTruckModelDelete.do,TruckModelDel,/Carmack/TruckModel.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1456,135" />
+      <AbsolutePoint location="1575,135" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/carmackBranchInfoList.do,bilist,/Carmack/JsonFactory/BranchInfoMsg.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="915,-240" />
+      <AbsolutePoint location="915,-305" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/carmackUserInfoAdd.do,uiSave,/Carmack/JsonFactory/UserInfoSave.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="180,900" />
+      <AbsolutePoint location="180,856" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/carmackDriverInfoUpdate.do,diUpdateOK,/Carmack/JsonFactory/DriverInfoUpdate.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="781,818" />
+      <AbsolutePoint location="900,818" />
+      <AbsolutePoint location="900,900" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/CarmacktruckInfoAdd.do,tisave,/Carmack/JsonFactory/TruckInfoSave.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="375,166" />
+      <AbsolutePoint location="375,255" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/carmackUserInfoDelete.do,uidel,/Carmack/UserInfo.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="165,615" />
+      <AbsolutePoint location="165,511" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/carmackDriverInfoDelete.do,didelOK,/Carmack/JsonFactory/DriverInfoDel.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="900,646" />
+      <AbsolutePoint location="900,690" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/carmackTruckModelAdd.do,TruckModelSorUOK,/Carmack/TruckModel.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1441,-127" />
+      <AbsolutePoint location="1650,-127" />
+      <AbsolutePoint location="1650,120" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/carmackBranchInfoAdd.do,bisave,/Carmack/JsonFactory/BranchInfoSave.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="660,-240" />
+      <AbsolutePoint location="660,-305" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/carmackTruckModelList.do,TruckModelList,/Carmack/JsonFactory/TruckModeList.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1426,-367" />
+      <AbsolutePoint location="1575,-367" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/carmackBranchInfoDelete.do,bidel,/Carmack/BranchInfo.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="660,136" />
+      <AbsolutePoint location="660,180" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/carmackDriverInfoList.do,dilist,/Carmack/JsonFactory/DriverInfoByBranchID.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="900,405" />
+      <AbsolutePoint location="900,316" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/carmackUserInfoList.do,uilist,/Carmack/JsonFactory/UserInfoByBranchID.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="420,570" />
+      <AbsolutePoint location="420,511" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/systemLogList.do,SystemLogList,/Carmack/JsonFactory/SystemLog.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1200,460" />
+      <AbsolutePoint location="1200,585" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/carmackDriverInfoAdd.do,diaddOK,/Carmack/JsonFactory/DriverInfoAdd.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="690,525" />
+      <AbsolutePoint location="690,451" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/carmacktruckInfoDelete.do,tidel,/Carmack/TruckInfo.html,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="135,-195" />
+      <AbsolutePoint location="135,-344" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/CarmacktruckInfoList.do,tilist,/Carmack/JsonFactory/TruckInfoMsg.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="375,-225" />
+      <AbsolutePoint location="375,-320" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/CarmacktruckInfoUpdate.do,TruckInfoUpdate,/Carmack/JsonFactory/TruckInfoUpdate.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="150,46" />
+      <AbsolutePoint location="150,210" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

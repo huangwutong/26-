@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<import resource="Spring.xml"/>
+	<bean id="branchinfobusiness" class="com.bu.carmack.BranchInfoBusiness">
+		<property name="daos">
+			<ref bean="DAOService"/>
+		</property>
+	</bean>
+	<bean id="driverinfobusiness" class="com.bu.carmack.DriverInfoBusiness">
+		<property name="daos">
+			<ref bean="DAOService"/>
+		</property>
+	</bean>
+	
+	<bean id="truckinfobusiness" class="com.bu.carmack.TruckInfoBusiness">
+		<property name="daos">
+			<ref bean="DAOService"/>
+		</property>
+	</bean>
+	
+	<bean id="truckmodelbusiness" class="com.bu.carmack.TruckModelBusiness">
+		<property name="daos">
+			<ref bean="DAOService"/>
+		</property>
+	</bean>
+	
+	<bean id="userinfobusiness" class="com.bu.carmack.UserInfoBusiness">
+		<property name="daos">
+			<ref bean="DAOService"/>
+		</property>
+	</bean>
+	<bean id="systemlogbusiness" class="com.bu.carmack.SystemLogBusiness">
+		<property name="daos">
+			<ref bean="DAOService"/>
+		</property>
+	</bean>
+	
+	<!-- 注入业务服务类 -->
+	<bean id="carmackbusinessservice"
+		class="com.service.CarmackBusinessService">
+		<property name="branchinfobu">
+			<ref bean="branchinfobusiness"/>
+		</property>
+		<property name="driverinfobu">
+			<ref bean="driverinfobusiness" />
+		</property>
+		<property name="truckinfobu">
+			<ref bean="truckinfobusiness" />
+		</property>
+		<property name="truckmodelbu">
+			<ref bean="truckmodelbusiness" />
+		</property>
+		<property name="userinfobu">
+			<ref bean="userinfobusiness" />
+		</property>
+		<property name="systemlogbu">
+			<ref bean="systemlogbusiness" />
+		</property>
+		
+	</bean>
+	
+	<!-- 注入Action类 -->
+	
+	<bean name="/CarmacktruckInfoAdd"
+		class="com.struts.action.CarmackTruckInfoAddAction" abstract="false">
+		<property name="bs">
+			<ref bean="carmackbusinessservice" />
+		</property>
+	</bean>
+
+	<bean name="/CarmacktruckInfoList"
+		class="com.struts.action.CarmackTruckInfoListAction" abstract="false">
+		<property name="bs">
+			<ref bean="carmackbusinessservice" />
+		</property>
+	</bean>	
+	
+	<bean name="/CarmacktruckInfoUpdate"
+		class="com.struts.action.CarmackTruckInfoUpdateAction" abstract="false">
+		<property name="bs">
+			<ref bean="carmackbusinessservice" />
+		</property>
+	</bean>	
+	
+	<bean name="/CarmackTruckInfoUpdateOk"
+		class="com.struts.action.CarmackTruckInfoUpdateOkAction" abstract="false">
+		<property name="bs">
+			<ref bean="carmackbusinessservice" />
+		</property>
+	</bean>	
+		
+	<bean name="/carmacktruckInfoDelete"
+		class="com.struts.action.CarmacktruckInfoDeleteAction" abstract="false">
+		<property name="bs">
+			<ref bean="carmackbusinessservice" />
+		</property>
+	</bean>	
+	
+	<bean name="/carmackBranchInfoAdd"
+		class="com.struts.action.CarmackBranchInfoAddAction" abstract="false">
+		<property name="bs">
+			<ref bean="carmackbusinessservice" />
+		</property>
+	</bean>
+	
+	<bean name="/carmackBranchInfoDelete"
+		class="com.struts.action.CarmackBranchInfoDeleteAction" abstract="false">
+		<property name="bs">
+			<ref bean="carmackbusinessservice" />
+		</property>
+	</bean>
+		
+	<bean name="/carmackBranchInfoList"
+		class="com.struts.action.CarmackBranchInfoListAction" abstract="false">
+		<property name="bs">
+			<ref bean="carmackbusinessservice" />
+		</property>
+	</bean>
+		
+	<bean name="/carmackBranchInfoUpdate"
+		class="com.struts.action.CarmackBranchInfoUpdateAction" abstract="false">
+		<property name="bs">
+			<ref bean="carmackbusinessservice" />
+		</property>
+	</bean>
+	
+	<bean name="/carmackBranchInfoUpdateOk"
+		class="com.struts.action.CarmackBranchInfoUpdateOkAction" abstract="false">
+		<property name="bs">
+			<ref bean="carmackbusinessservice" />
+		</property>
+	</bean>	
+		
+	<bean name="/carmackDriverInfoAdd"
+		class="com.struts.action.CarmackDriverInfoAddAction" abstract="false">
+		<property name="bs">
+			<ref bean="carmackbusinessservice" />
+		</property>
+	</bean>	
+		
+	<bean name="/carmackDriverInfoDelete"
+		class="com.struts.action.CarmackDriverInfoDeleteAction" abstract="false">
+		<property name="bs">
+			<ref bean="carmackbusinessservice" />
+		</property>
+	</bean>	
+		
+	<bean name="/carmackDriverInfoList"
+		class="com.struts.action.CarmackDriverInfoListAction" abstract="false">
+		<property name="bs">
+			<ref bean="carmackbusinessservice" />
+		</property>
+	</bean>	
+		
+	<bean name="/carmackDriverInfoUpdate"
+		class="com.struts.action.CarmackDriverInfoUpdateAction" abstract="false">
+		<property name="bs">
+			<ref bean="carmackbusinessservice" />
+		</property>
+	</bean>	
+	
+	<bean name="/carmackDriverInfoUpdateOk"
+		class="com.struts.action.CarmackDriverInfoUpdateOkAction" abstract="false">
+		<property name="bs">
+			<ref bean="carmackbusinessservice" />
+		</property>
+	</bean>	
+		
+	<bean name="/carmackTruckModelAdd"
+		class="com.struts.action.CarmackTruckModelAddAction" abstract="false">
+		<property name="bs">
+			<ref bean="carmackbusinessservice" />
+		</property>
+	</bean>	
+		
+	<bean name="/carmackTruckModelDelete"
+		class="com.struts.action.CarmackTruckModelDeleteAction" abstract="false">
+		<property name="bs">
+			<ref bean="carmackbusinessservice" />
+		</property>
+	</bean>	
+
+	<bean name="/carmackTruckModelList"
+		class="com.struts.action.CarmackTruckModelListAction" abstract="false">
+		<property name="bs">
+			<ref bean="carmackbusinessservice" />
+		</property>
+	</bean>	
+	
+	<bean name="/carmackTruckModelUpdate"
+		class="com.struts.action.CarmackTruckModelUpdateAction" abstract="false">
+		<property name="bs">
+			<ref bean="carmackbusinessservice" />
+		</property>
+	</bean>	
+	
+	<bean name="/carmackTruckModelUpdateOk"
+		class="com.struts.action.CarmackTruckModelUpdateOkAction" abstract="false">
+		<property name="bs">
+			<ref bean="carmackbusinessservice" />
+		</property>
+	</bean>	
+	
+	<bean name="/carmackUserInfoAdd"
+		class="com.struts.action.CarmackUserInfoAddAction" abstract="false">
+		<property name="bs">
+			<ref bean="carmackbusinessservice" />
+		</property>
+	</bean>	
+	
+	<bean name="/carmackUserInfoDelete"
+		class="com.struts.action.CarmackUserInfoDeleteAction" abstract="false">
+		<property name="bs">
+			<ref bean="carmackbusinessservice" />
+		</property>
+	</bean>	
+
+	<bean name="/carmackUserInfoList"
+		class="com.struts.action.CarmackUserInfoListAction" abstract="false">
+		<property name="bs">
+			<ref bean="carmackbusinessservice" />
+		</property>
+	</bean>	
+
+	<bean name="/carmackUserInfoUpdate"
+		class="com.struts.action.CarmackUserInfoUpdateAction" abstract="false">
+		<property name="bs">
+			<ref bean="carmackbusinessservice" />
+		</property>
+	</bean>	
+
+	<bean name="/carmackUserInfoUpdateOk"
+		class="com.struts.action.CarmackUserInfoUpdateOkAction" abstract="false">
+		<property name="bs">
+			<ref bean="carmackbusinessservice" />
+		</property>
+	</bean>	
+	
+	<bean name="/systemLogList"
+		class="com.struts.action.CarmackSystemLogListAction" abstract="false">
+		<property name="bs">
+			<ref bean="carmackbusinessservice" />
+		</property>
+	</bean>	
+</beans>

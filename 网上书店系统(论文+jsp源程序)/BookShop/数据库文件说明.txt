@@ -1,0 +1,162 @@
+测试说明
+
+1-3章:	
+	1.建立数据库，打开查询分析器，运行Sql文件夹中的prodb.sql文件在数据库生成数据表.
+	2.在数据源（ODBC）中设置DSN名称为prodb.
+
+====================================================================================================
+4章:	
+	1.建立数据库，打开查询分析器，运行Sql文件夹中的table.sql文件在数据库生成数据表.
+	2.在数据源（ODBC）中设置DSN名称为prodb.
+
+====================================================================================================
+5章:	
+	1.建立数据库，打开查询分析器，运行Sql文件夹中的vote.sql文件在数据库生成数据表.
+	2.在数据源（ODBC）中设置DSN名称为cnvote.
+
+====================================================================================================
+6-9章:	
+	1.建立数据库名为Project，打开查询分析器，运行Sql文件夹中的Project.sql文件在数据库生成数据表.
+	2.把光盘中msdirver.rar文件解压缩后产生的三个jar方件复制到Tomcat/common/lib下
+	3.把下面的代码粘贴到Tomcat/conf里server.xml文件的<Host>与</Host>中间重新启动Tomcat
+
+		<Context path="/Project" reloadable="true" docBase="/Project">
+		  	<Resource name="jdbc/Project" auth="Container" type="javax.sql.DataSource"/>
+  			<ResourceParams name="jdbc/Project">
+    			    <parameter>
+				<name>factory</name>
+	      			<value>org.apache.commons.dbcp.BasicDataSourceFactory</value>
+    			    </parameter>
+			    <parameter>
+			    	<name>maxActive</name>
+			        <value>100</value>
+    			    </parameter>
+			    <parameter>
+			    	<name>maxIdle</name>
+				<value>30</value>
+			    </parameter>
+			    <parameter>
+			   	<name>maxWait</name>
+      				<value>10000</value>
+    			    </parameter>
+    			    <parameter>
+     				<name>username</name>
+     				<value>sa</value>
+    			    </parameter>
+    			    <parameter>
+     				<name>password</name>
+     				<value></value>
+    			    </parameter>
+			    <parameter>
+			        <name>driverClassName</name>
+			        <value>com.microsoft.jdbc.sqlserver.SQLServerDriver</value>
+			    </parameter>
+			    <parameter>
+			    	<name>url</name>
+				<value>jdbc:microsoft:sqlserver://127.0.0.1:1433;DatabaseName=Project;user=sa;password=;</value>
+			    </parameter>
+			</ResourceParams>
+		</Context>
+
+
+====================================================================================================
+10章:	
+	1.建立数据库名为Community，打开查询分析器，运行Sql文件夹中的Community.sql文件在数据库生成数据表.
+	2.在数据源（ODBC）中设置DSN名称为Community.
+
+====================================================================================================
+11章:	
+	1.建立数据库名为BookShop，打开查询分析器，运行Sql文件夹中的Community.sql文件在数据库生成数据表.
+	2.同6-9章节.
+	3.把下面的代码粘贴到Tomcat/conf里server.xml文件的<Host>与</Host>中间重新启动Tomcat
+
+		<Context path="/BookShop" reloadable="true" docBase="BookShop" >
+		  	<Resource name="jdbc/BookShop" auth="Container" type="javax.sql.DataSource"/>
+  				<ResourceParams name="jdbc/BookShop">
+    				<parameter>
+				    	<name>factory</name>
+	      				<value>org.apache.commons.dbcp.BasicDataSourceFactory</value>
+    				</parameter>
+				    <parameter>
+				    	<name>maxActive</name>
+				        <value>100</value>
+    				</parameter>
+				    <parameter>
+			       		<name>maxIdle</name>
+				        <value>30</value>
+				    </parameter>
+				    <parameter>
+			        	<name>maxWait</name>
+      					<value>10000</value>
+    				</parameter>
+    				<!-- MySQL dB username and password for dB connections  -->
+    				<parameter>
+     					<name>username</name>
+     					<value>sa</value>
+    				</parameter>
+    				<parameter>
+     					<name>password</name>
+     					<value></value>
+    				</parameter>
+				    <parameter>
+			 	        <name>driverClassName</name>
+				        <value>com.microsoft.jdbc.sqlserver.SQLServerDriver</value>
+				    </parameter>
+				    <parameter>
+				    	<name>url</name>
+					    <value>jdbc:microsoft:sqlserver://127.0.0.1:1433;DatabaseName=BookShop;user=sa;password=;</value>
+				    </parameter>
+				</ResourceParams>
+		</Context>
+
+
+====================================================================================================
+12章:	
+	1.建立数据库名为OA，打开查询分析器，运行Sql文件夹中的OA.sql文件在数据库生成数据表.
+	2.同6-9章节.
+	3.把下面的代码粘贴到Tomcat/conf里server.xml文件的<Host>与</Host>中间重新启动Tomcat
+
+		<Context path="/OA" reloadable="true" docBase="OA" >
+		  	<Resource name="jdbc/OA" auth="Container" type="javax.sql.DataSource"/>
+  				<ResourceParams name="jdbc/OA">
+    				<parameter>
+				    	<name>factory</name>
+	      				<value>org.apache.commons.dbcp.BasicDataSourceFactory</value>
+    				</parameter>
+				    <parameter>
+				    	<name>maxActive</name>
+				        <value>100</value>
+    				</parameter>
+				    <parameter>
+			       		<name>maxIdle</name>
+				        <value>30</value>
+				    </parameter>
+				    <parameter>
+			        	<name>maxWait</name>
+      					<value>10000</value>
+    				</parameter>
+    				<parameter>
+     					<name>username</name>
+     					<value>sa</value>
+    				</parameter>
+    				<parameter>
+     					<name>password</name>
+     					<value></value>
+    				</parameter>
+				    <parameter>
+			 	        <name>driverClassName</name>
+				        <value>com.microsoft.jdbc.sqlserver.SQLServerDriver</value>
+				    </parameter>
+				    <parameter>
+				    	<name>url</name>
+					    <value>jdbc:microsoft:sqlserver://127.0.0.1:1433;DatabaseName=OA;user=sa;password=;</value>
+				    </parameter>
+				</ResourceParams>
+		</Context>	
+
+	
+====================================================================================================
+说明：
+	1.本书数据库使用 SQL SERVER 2000 ，除非有例外说明.
+	2.在配置过程中要区分大小写.
+	

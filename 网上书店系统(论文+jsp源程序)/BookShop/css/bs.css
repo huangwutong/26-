@@ -1,0 +1,55 @@
+body {
+	background-image: url(../image/background.jpg);
+	font-size: 12px;
+}
+td {
+	font-size: 12px;
+}
+.book {
+	font-family: "华文行楷";
+	font-size: 306px;
+	color: #AEA68C;
+}
+.one {
+	font-family: "华文行楷";
+	font-size: 50px;
+	color: #E8E800;
+	font-weight: bold;
+}
+.two {
+	font-size: 20px; 
+	font-family: "幼圆";
+	color:#8B88CA;
+}
+.blue40 {
+	font-size: 40px; 
+	font-family: "幼圆";
+	color:#8B88CA;
+}
+.notice {
+	font-family: "幼圆"; 
+}
+.red {
+	font-size: 40px; 
+	color:#FF6666;
+}
+.red12 {
+	font-size: 12px; 
+	color:#FF6666;
+}
+th {
+	font-size: 12px;
+}
+a:hover{
+	 color:#FF1188;
+	 text-decoration: 
+	 underline:none; 
+	 font-size:16px; 
+}
+a{ 
+	font-size: 14px; 
+	color: #5853B3;
+	text-decoration: none 
+}
+.show{ visibility:visible}
+.hidd{ visibility:hidden}

@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<import resource="Spring.xml" />
+
+	<bean id="billinfobusiness" class="com.bu.mars.BillInfoBusiness">
+		<property name="daos">
+			<ref bean="DAOService" />
+		</property>
+	</bean>
+	
+	<bean id="branchbusiness" class="com.bu.mars.BranchBusiness">
+		<property name="daos">
+			<ref bean="DAOService" />
+		</property>
+	</bean>
+
+	<bean id="cargoinfobusiness"
+		class="com.bu.mars.CargoInfoBusiness">
+		<property name="daos">
+			<ref bean="DAOService" />
+		</property>
+	</bean>
+
+	<bean id="customerbusiness" class="com.bu.mars.Customerbusiness">
+		<property name="daos">
+			<ref bean="DAOService" />
+		</property>
+	</bean>
+
+	<bean id="trafficlogbusiness"
+		class="com.bu.mars.TrafficLogBusiness">
+		<property name="daos">
+			<ref bean="DAOService" />
+		</property>
+	</bean>
+
+	<bean id="Mars_truckinfobusiness"
+		class="com.bu.mars.TruckInfoBusiness">
+		<property name="daos">
+			<ref bean="DAOService" />
+		</property>
+	</bean>
+	
+	<bean id="Mars_userinfobusiness"
+		class="com.bu.mars.UserInfoBusiness">
+		<property name="daos">
+			<ref bean="DAOService" />
+		</property>
+	</bean>
+	
+	<bean id="Mars_driverinfobusiness"
+		class="com.bu.mars.DriverInfoBusiness">
+		<property name="daos">
+			<ref bean="DAOService" />
+		</property>
+	</bean>
+	
+	<bean id="afficheinfobusiness"
+		class="com.bu.mars.AfficheInfoBusiness">
+		<property name="daos">
+			<ref bean="DAOService" />
+		</property>
+	</bean>
+
+	<!-- 业务服务类 -->
+
+	<bean id="marsbusinessservice"
+		class="com.service.MarsBusinessservice">
+		<property name="cargoinfobusiness">
+			<ref bean="cargoinfobusiness" />
+		</property>
+		<property name="truckinfobusiness">
+			<ref bean="Mars_truckinfobusiness" />
+		</property>
+		<property name="trafficlogbusiness">
+			<ref bean="trafficlogbusiness" />
+		</property>
+		<property name="customerbusiness">
+			<ref bean="customerbusiness" />
+		</property>
+		<property name="billinfobusiness">
+			<ref bean="billinfobusiness" />
+		</property>
+		<property name="branchbusiness">
+			<ref bean="branchbusiness" />
+		</property>
+		<property name="userinfobusiness">
+			<ref bean="Mars_userinfobusiness" />
+		</property>
+		<property name="driverinfobusiness">
+			<ref bean="Mars_driverinfobusiness" />
+		</property>
+		<property name="afficheinfobusiness">
+			<ref bean="afficheinfobusiness" />
+		</property>
+	</bean>
+	<!-- 注入Action类 -->
+
+	<bean name="/mars_billinfo_findByBranchinf3"
+		class="com.struts.action.Mars_billinfo_findByBranchinf3Action"
+		abstract="false">
+		<property name="bs">
+			<ref bean="marsbusinessservice" />
+		</property>
+	</bean>
+
+	<bean name="/mars_billinfo_findByBranchinf4"
+		class="com.struts.action.Mars_billinfo_findByBranchinf4Action"
+		abstract="false">
+		<property name="bs">
+			<ref bean="marsbusinessservice" />
+		</property>
+	</bean>
+
+
+	<bean name="/mars_billinfo_findBySendBranch3"
+		class="com.struts.action.Mars_billinfo_findBySendBranch3Action"
+		abstract="false">
+		<property name="bs">
+			<ref bean="marsbusinessservice" />
+		</property>
+	</bean>
+
+
+	<bean name="/mars_billinfo_findBySendBranch4"
+		class="com.struts.action.Mars_billinfo_findBySendBranch4Action"
+		abstract="false">
+		<property name="bs">
+			<ref bean="marsbusinessservice" />
+		</property>
+	</bean>
+
+
+	<bean name="/mars_billinfo_findByReceiveBranch3"
+		class="com.struts.action.Mars_billinfo_findByReceiveBranch3Action"
+		abstract="false">
+		<property name="bs">
+			<ref bean="marsbusinessservice" />
+		</property>
+	</bean>
+
+	<bean name="/mars_billinfo_findByReceiveBranch4"
+		class="com.struts.action.Mars_billinfo_findByReceiveBranch4Action"
+		abstract="false">
+		<property name="bs">
+			<ref bean="marsbusinessservice" />
+		</property>
+	</bean>
+
+
+	<bean name="/mars_billinfo_findByCustomer"
+		class="com.struts.action.Mars_billinfo_findByCustomerAction"
+		abstract="false">
+		<property name="bs">
+			<ref bean="marsbusinessservice" />
+		</property>
+	</bean>
+
+
+	<bean name="/mars_billinfo_findByCustomer4"
+		class="com.struts.action.Mars_billinfo_findByCustomer4Action"
+		abstract="false">
+		<property name="bs">
+			<ref bean="marsbusinessservice" />
+		</property>
+	</bean>
+
+
+	<bean name="/mars_customerinfo_findAll"
+		class="com.struts.action.Mars_customerinfo_findAllAction"
+		abstract="false">
+		<property name="bs">
+			<ref bean="marsbusinessservice" />
+		</property>
+	</bean>
+
+
+	<bean name="/mars_useinfo_findAll"
+		class="com.struts.action.Mars_useinfo_findAllAction"
+		abstract="false">
+		<property name="bs">
+			<ref bean="marsbusinessservice" />
+		</property>
+	</bean>
+
+	<bean name="/mars_billinfo_getparam"
+		class="com.struts.action.Mars_billinfo_getparamAction"
+		abstract="false">
+	</bean>
+
+
+	<bean name="/mars_branchinfo_findAll"
+		class="com.struts.action.Mars_branchinfo_findAllAction"
+		abstract="false">
+		<property name="bs">
+			<ref bean="marsbusinessservice" />
+		</property>
+	</bean>
+
+
+	<bean name="/mars_truckinfo_findAll"
+		class="com.struts.action.Mars_truckinfo_findAllAction"
+		abstract="false">
+		<property name="bs">
+			<ref bean="marsbusinessservice" />
+		</property>
+	</bean>
+
+
+	<bean name="/mars_driverinfo_findAll"
+		class="com.struts.action.Mars_driverinfo_findAllAction"
+		abstract="false">
+		<property name="bs">
+			<ref bean="marsbusinessservice" />
+		</property>
+	</bean>
+
+
+	<bean name="/mars_billinfo_findByReceiveBranchshare"
+		class="com.struts.action.Mars_billinfo_findByReceiveBranchshareAction"
+		abstract="false">
+		<property name="bs">
+			<ref bean="marsbusinessservice" />
+		</property>
+	</bean>
+
+	<bean name="/mars_billinfo_findBySendBranchshare"
+		class="com.struts.action.Mars_billinfo_findBySendBranchshareAction"
+		abstract="false">
+		<property name="bs">
+			<ref bean="marsbusinessservice" />
+		</property>
+	</bean>
+
+	<bean name="/mars_afficheinfo_findAll"
+		class="com.struts.action.Mars_afficheinfo_findAllAction"
+		abstract="false">
+		<property name="bs">
+			<ref bean="marsbusinessservice" />
+		</property>
+	</bean>
+	<bean name="/jfreeCharCustomer"
+		class="com.struts.action.JfreeCharCustomerAction" abstract="false">
+		<property name="bs">
+			<ref bean="marsbusinessservice" />
+		</property>
+	</bean>
+	
+	
+	<bean name="/jfreeCharBranch"
+		class="com.struts.action.JfreeCharBranchAction" abstract="false">
+		<property name="bs">
+			<ref bean="marsbusinessservice" />
+		</property>
+	</bean>
+</beans>

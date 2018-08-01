@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.objectFactory.spring.autoWire" value="type" />
+	<constant name="struts.objectFactory" value="org.apache.struts2.spring.StrutsSpringObjectFactory" />
+     <constant name="struts.i18n.encoding" value="UTF-8" /> 
+
+<package name="pmp"  extends="struts-default">
+ <action name="userlogin" class="userloginAction">
+    <result name="success">/jsp/index.html</result>
+    <result name="uppassword">/jsp/uppassword.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+
+ <action name="login" class="loginAction">
+    <result name="success">/jsp/lr_choice.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="exitlogin" class="exitloginAction">
+    <result name="success" type="redirect">/jsp/login.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="uppassword" class="uppasswordAction">
+    <result name="success">/jsp/uppasswordsuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+	<!-- system -->
+ <action name="usermanger" class="usermangerAction">
+    <result name="success">/jsp/user/usershow.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ 
+ 
+ <action name="saveXxuser" class="saveXxuserAction">
+    <result name="success">/jsp/user/useraddsuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="userdele" class="userdeleAction">
+    <result name="success">/jsp/user/useraddsuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="useredit" class="userdeleAction" method="edit">
+    <result name="success">/jsp/user/usereditlist.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="upXxuser" class="upXxuserAction">
+    <result name="success">/jsp/user/useraddsuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ 
+ 
+ <!-- 给用户加角色 -->
+ <action name="selectur" class="selecturAction">
+    <result name="success">/jsp/user/uradd.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="saveUr" class="saveUrAction">
+    <result name="success">/jsp/user/uraddsuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="urshow" class="urshowAction">
+    <result name="success">/jsp/user/urshow.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="urdele" class="urdeleAction">
+    <result name="success">/jsp/user/uraddsuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ 
+<!-- role -->
+<action name="roleShow" class="roleShowAction">
+    <result name="success">/jsp/user/roleshow.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+</action>
+<action name="saveRoletb" class="saveRoletbAction">
+    <result name="success">/jsp/user/roleaddsuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="roledele" class="roledeleAction">
+    <result name="success">/jsp/user/roleaddsuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="roleedit" class="roledeleAction" method="edit">
+    <result name="success">/jsp/user/roleeditlist.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+  <action name="upRoletb" class="upRoletbAction">
+    <result name="success">/jsp/user/roleaddsuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ 
+ 
+  <!-- 角色权限关系 -->
+ <action name="rpshow" class="rpshowAction">
+    <result name="success">/jsp/user/rpshow.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+</action>
+ <action name="selectrp" class="selectrpAction">
+    <result name="success">/jsp/user/rpadd.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="saveRp" class="saveRpAction">
+    <result name="success">/jsp/user/rpaddsuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="rpdele" class="rpdeleAction">
+    <result name="success">/jsp/user/rpaddsuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <!-- 权限 -->
+ <action name="compsShow" class="compsShowAction">
+    <result name="success">/jsp/user/compsshow.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="saveComps" class="saveCompsAction">
+    <result name="success">/jsp/user/comaddsuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="comdele" class="comdeleAction">
+    <result name="success">/jsp/user/comaddsuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="comedit" class="comdeleAction" method="edit">
+    <result name="success">/jsp/user/compseditlist.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="upComps" class="upCompsAction">
+    <result name="success">/jsp/user/comaddsuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ 
+ <!-- 资源权限关系 -->
+ <action name="respshow" class="respshowAction">
+    <result name="success">/jsp/user/respshow.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="respdele" class="respdeleAction">
+    <result name="success">/jsp/user/respaddsuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="selectresp" class="selectrespAction">
+    <result name="success">/jsp/user/respadd.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+  <action name="saveResp" class="saveRespAction">
+    <result name="success">/jsp/user/respaddsuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <!-- 资源功能点 -->
+ <action name="resfunShow" class="resfunShowAction">
+    <result name="success">/jsp/user/resfunshow.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="saveResfun" class="saveResfunAction">
+    <result name="success">/jsp/user/resfunaddsuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="resfundele" class="resfundeleAction">
+    <result name="success">/jsp/user/resfunaddsuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="resfunedit" class="resfundeleAction" method="edit">
+    <result name="success">/jsp/user/resfuneditlist.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="upResfun" class="upResfunAction">
+    <result name="success">/jsp/user/resfunaddsuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ 
+ 
+ 
+ 
+</package>
+
+ <include file="struts-car.xml"></include>
+ <include file="struts-task.xml"></include>
+ <include file="struts-print.xml"></include>
+ 
+</struts>

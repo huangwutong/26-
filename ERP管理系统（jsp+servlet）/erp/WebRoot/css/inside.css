@@ -1,0 +1,52 @@
+@charset "utf-8";
+@import url("normal.css");
+
+/*标题*/
+.title{padding:5px 0 0 5px;}
+/*整个内容区*/
+.contentArea{background-color:#faf3e9;}
+.divContentArea{border:#fad7c6 1px solid; min-height:100px;padding:30px;}
+.divContentArea .contentTxt {padding:10px 10px 30px 10px;}
+/*附加按钮*/
+.attachMenu{background-color:#faf3e9;}
+.attachMenu a {color: #0000CC;text-decoration: none;font-size: 12px;}
+.attachMenu a:hover {color: #0099FF;}
+/*提示里的按钮*/
+.divContentArea a{font-size:13px; text-decoration:none;}
+.divContentArea ul{list-style:none;}
+.divContentArea li{float:left;border:#C3D9FF 1px solid;padding:5px;margin-left:10px;}
+/*搜索条*/
+.searchBar {padding:8px;margin-bottom:8px;background:#ECECEC;}
+/*附加注解*/
+.attachNote,.divAttachNote{background-color:#FAF3E9;color:#888;}
+.divAttachNote{padding:9px 5px 8px 8px;}
+/*友情提示*/
+#helpContent {border:1px #FAF3E9 solid;margin:6px 0 0;}
+#helpContent .title{font-size:12px;font-weight:bold;background-color:#FAF3E9;color:#FF9900;padding:5px;}
+#helpContent .Content {padding:8px;}
+/*列表区*/
+.contentList{background-color:#FFF;}
+/*列表区里的表格*/
+.contentListTable {background-color:#ffdfb2;}
+.contentListTable2 {background-color:#ffcd86;}
+/*列表区里的表格的单元格，也就是内容单元格*/
+.contentListTd {background-color:#FFF;} 
+/*列表区里的栏内容*/
+.contentListTdColName {text-align:right;font-weight:bold;padding:0 10px 0 0; background-color:#ffd594;}
+.contentListTdColName2 {font-weight:bold;background-color:#C3D9FF;}
+
+/*分页码样式*/
+a.pagenum {	background-color: #FFF;	border: 1px solid #CCC;	padding: 3px 6px 2px 6px;color: #FF9900;font-weight:bold; text-decoration:none;}
+a.pagenum:hover {background-color: #FF9900;	color:#FFF;}
+
+.lineSpace{height:10px;}
+.contentListTd2{background-color:#FFF;font-weight:bold;font-size:16px;}
+.levelA,.levelB,.levelC,.levelD,.levelE{font-weight:bold; background-color:#FFF;}
+.levelA{color:#0099FF;font-size:18px;}
+.levelB{color:#006600;font-size:16px;}
+.levelC{color:#00FF66;font-size:14px;}
+.levelD{color:#FFCC00}
+.levelE{color:#000;}
+.contentListTdColName3{background-color:#ffd594;}
+.contentListTdAlign{text-align:right;}
+.spaceBottom{margin-bottom:10px;}

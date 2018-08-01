@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+	
+	<bean id="dateSourse"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName"
+			value="net.sourceforge.jtds.jdbc.Driver">
+		</property>
+		<property name="url"
+			value="jdbc:jtds:sqlserver://localhost:1433/OA">
+		</property>
+		<property name="username" value="sa"></property>
+		<property name="password" value="123"></property>
+	</bean>
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dateSourse" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.SQLServerDialect
+				</prop>
+				<prop key="hibernate.show_sql">true</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/accp/myoa/entity/BoardRoom.hbm.xml</value>
+				<value>com/accp/myoa/entity/Bulletin.hbm.xml</value>
+				<value>
+					com/accp/myoa/entity/BulletinExamine.hbm.xml
+				</value>
+				<value>com/accp/myoa/entity/BulletinRead.hbm.xml</value>
+				<value>com/accp/myoa/entity/Car.hbm.xml</value>
+				<value>com/accp/myoa/entity/CarApply.hbm.xml</value>
+				<value>com/accp/myoa/entity/Client.hbm.xml</value>
+				<value>
+					com/accp/myoa/entity/ClientCompany.hbm.xml
+				</value>
+				<value>
+					com/accp/myoa/entity/ComleteDegress.hbm.xml
+				</value>
+				<value>com/accp/myoa/entity/Dept.hbm.xml</value>
+				<value>com/accp/myoa/entity/DeptPosition.hbm.xml</value>
+				<value>com/accp/myoa/entity/Diary.hbm.xml</value>
+				<value>com/accp/myoa/entity/Document.hbm.xml</value>
+				<value>
+					com/accp/myoa/entity/DocumentExamine.hbm.xml
+				</value>
+				<value>com/accp/myoa/entity/DocumentRead.hbm.xml</value>
+				<value>com/accp/myoa/entity/Egress.hbm.xml</value>
+				<value>
+					com/accp/myoa/entity/EgressExamine.hbm.xml
+				</value>
+				<value>com/accp/myoa/entity/Email.hbm.xml</value>
+				<value>
+					com/accp/myoa/entity/EmailReceivce.hbm.xml
+				</value>
+				<value>com/accp/myoa/entity/EmailType.hbm.xml</value>
+				<value>com/accp/myoa/entity/ExamineState.hbm.xml</value>
+				<value>com/accp/myoa/entity/File.hbm.xml</value>
+				<value>com/accp/myoa/entity/LeaveWord.hbm.xml</value>
+				<value>com/accp/myoa/entity/Level.hbm.xml</value>
+				<value>com/accp/myoa/entity/Meeting.hbm.xml</value>
+				<value>com/accp/myoa/entity/MeetingRead.hbm.xml</value>
+				<value>
+					com/accp/myoa/entity/MeetingSummary.hbm.xml
+				</value>
+				<value>
+					com/accp/myoa/entity/MeetingSummaryScan.hbm.xml
+				</value>
+				<value>com/accp/myoa/entity/Meetingstate.hbm.xml</value>
+				<value>com/accp/myoa/entity/Menu.hbm.xml</value>
+				<value>com/accp/myoa/entity/Message.hbm.xml</value>
+				<value>
+					com/accp/myoa/entity/MessageReceive.hbm.xml
+				</value>
+				<value>com/accp/myoa/entity/MessageType.hbm.xml</value>
+				<value>com/accp/myoa/entity/Position.hbm.xml</value>
+				<value>
+					com/accp/myoa/entity/PositionPopedom.hbm.xml
+				</value>
+				<value>com/accp/myoa/entity/ReadState.hbm.xml</value>
+				<value>com/accp/myoa/entity/Scratchpad.hbm.xml</value>
+				<value>
+					com/accp/myoa/entity/TurnOutForWork.hbm.xml
+				</value>
+				<value>com/accp/myoa/entity/Unit.hbm.xml</value>
+				<value>com/accp/myoa/entity/User.hbm.xml</value>
+				<value>com/accp/myoa/entity/UserState.hbm.xml</value>
+				<value>com/accp/myoa/entity/WeekDiary.hbm.xml</value>
+			</list>
+		</property>
+	</bean></beans>

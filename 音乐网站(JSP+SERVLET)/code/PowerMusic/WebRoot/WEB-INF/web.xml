@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" 
+	xmlns="http://java.sun.com/xml/ns/j2ee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+<servlet>
+    <description>control the user register</description>
+    <servlet-name>Register</servlet-name>
+    <servlet-class>control.web.Register</servlet-class>
+</servlet>
+<servlet>
+    <servlet-name>Test</servlet-name>
+    <servlet-class>control.Test</servlet-class>
+</servlet>
+<servlet>
+    <description>control the user login</description>
+    <servlet-name>Login</servlet-name>
+ 	<servlet-class>control.web.Login</servlet-class>
+</servlet>
+<servlet>
+    <description>Post File</description>
+    <servlet-name>PostFile</servlet-name>
+    <servlet-class>control.web.PostFile</servlet-class>
+</servlet>
+  <servlet>
+    <description>ManageUser</description>
+    <servlet-name>ManageUser</servlet-name>
+    <servlet-class>control.web.ManageUser</servlet-class>
+  </servlet>
+  <servlet>
+    <description>main Manage page</description>
+    <servlet-name>Manage</servlet-name>
+    <servlet-class>control.web.Manage</servlet-class>
+  </servlet>
+
+
+  <filter>
+    <filter-name>CharacterEncodingFilter</filter-name>
+	<filter-class>control.filter.CharacterEncodingFilter</filter-class>
+	<init-param>
+	  <param-name>encoding</param-name>
+	  <param-value>gb2312</param-value>
+	</init-param>
+  </filter>
+
+
+
+  <!--  mapping --> 
+<servlet-mapping>
+    <servlet-name>Register</servlet-name>
+    <url-pattern>/Register</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>Test</servlet-name>
+    <url-pattern>/Test</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>Login</servlet-name>
+    <url-pattern>/Login</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+    <servlet-name>PostFile</servlet-name>
+    <url-pattern>/PostFile</url-pattern>
+</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ManageUser</servlet-name>
+    <url-pattern>/ManageUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Manage</servlet-name>
+    <url-pattern>/Manage</url-pattern>
+  </servlet-mapping>
+ <filter-mapping>
+   <filter-name>CharacterEncodingFilter</filter-name>
+   <url-pattern>/*</url-pattern>
+ </filter-mapping>
+
+</web-app>
+

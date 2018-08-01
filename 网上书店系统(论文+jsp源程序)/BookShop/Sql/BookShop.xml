@@ -1,0 +1,37 @@
+<Context displayName="BookShop"  docBase="/BookShop" path="/BookShop" reloadable="true">
+  <Resource auth="Container" name="jdbc/BookShop" type="javax.sql.DataSource"/>
+  <ResourceParams name="jdbc/BookShop">
+    <parameter>
+      <name>factory</name>
+      <value>org.apache.commons.dbcp.BasicDataSourceFactory</value>
+    </parameter>
+    <parameter>
+      <name>url</name>
+      <value>jdbc:microsoft:sqlserver://127.0.0.1:1433;DatabaseName=BookShop;user=sa;password=;</value>
+    </parameter>
+    <parameter>
+      <name>password</name>
+      <value></value>
+    </parameter>
+    <parameter>
+      <name>maxWait</name>
+      <value>10000</value>
+    </parameter>
+    <parameter>
+      <name>maxActive</name>
+      <value>100</value>
+    </parameter>
+    <parameter>
+      <name>driverClassName</name>
+      <value>com.microsoft.jdbc.sqlserver.SQLServerDriver</value>
+    </parameter>
+    <parameter>
+      <name>username</name>
+      <value>sa</value>
+    </parameter>
+    <parameter>
+      <name>maxIdle</name>
+      <value>3</value>
+    </parameter>
+  </ResourceParams>
+</Context>

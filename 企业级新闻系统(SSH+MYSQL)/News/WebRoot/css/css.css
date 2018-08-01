@@ -1,0 +1,36 @@
+BODY {
+	OVERFLOW-Y: scroll; SCROLLBAR-FACE-COLOR: #799ae1; FONT-SIZE: 12px; OVERFLOW-X: hidden; MARGIN: 0px 0px; SCROLLBAR-HIGHLIGHT-COLOR: #799ae1; SCROLLBAR-SHADOW-COLOR: #4c94dc; SCROLLBAR-3DLIGHT-COLOR: #4c94dc; SCROLLBAR-ARROW-COLOR: #ffffff; SCROLLBAR-TRACK-COLOR: #4c94dc; FONT-FAMILY: ËÎÌו; SCROLLBAR-DARKSHADOW-COLOR: #799ae1
+}
+
+A:link {FONT-SIZE: 12px; COLOR: #000000; TEXT-DECORATION: none}
+
+A:visited {FONT-SIZE: 12px; COLOR: #000000; TEXT-DECORATION: none}
+
+A:hover {FONT-SIZE: 12px; COLOR: #FF0000; TEXT-DECORATION: underline}
+
+.tit {color: #000000; font-size: 18px; line-height: 22px; font-weight:bold}
+
+td {font-family: "Verdana", "Helvetica", "sans-serif";font-size: 12px;	color: #000000;text-decoration: none;line-height: 140%;}
+
+SELECT {BORDER-RIGHT: #6188AF 1px solid; BORDER-TOP: #6188AF 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #6188AF 1px solid; COLOR: #000000; BORDER-BOTTOM: #6188AF 1px solid; BACKGROUND-COLOR: #ffffff}
+
+.table {BORDER-RIGHT: #6188AF 1px solid; BORDER-TOP: #6188AF 1px solid; BORDER-LEFT: #6188AF 1px solid; BORDER-BOTTOM: #6188AF 1px solid}
+
+.title {background-color: #E1E1E1;}
+
+.hittd {font-family: "Verdana", "Helvetica", "sans-serif";font-size: 11px;}
+
+.input {BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #000000 1px solid; FONT-SIZE: 12px; BORDER-LEFT: #000000 1px solid; COLOR: #000000; BORDER-BOTTOM: #000000 1px solid; BACKGROUND-COLOR: #ffffff;font-family: "Verdana";}
+
+.btn{
+	border-bottom:1px;
+	border-left:1px;
+	border-right:1px;
+	border-top:1px;
+	border-style:solid;
+	border-color:#6188AF;
+	font-size:12px;
+	color:#000000;
+	background:#FFFFFF;
+	font-family: "Verdana";
+}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+ <package name="car" extends="struts-default">
+ 
+  <action name="carmessage" class="carmessageAction">
+    <result name="success">/jsp/car/carshow.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="saveCar" class="saveCarAction">
+    <result name="success">/jsp/car/caraddsuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ 
+ <action name="carsele" class="careditAction" method="edit">
+    <result name="success">/jsp/car/carsele.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="caredit" class="careditAction" method="edit">
+    <result name="success">/jsp/car/caredit.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="upCar" class="upCarAction">
+    <result name="success">/jsp/car/caraddsuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+  <action name="cardele" class="careditAction" method="dele">
+    <result name="success">/jsp/car/caraddsuccess.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ 
+ <!-- carstats -->
+ <action name="carstats" class="carmessageAction" >
+    <result name="success">/jsp/car/carstatsshow.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="carout" class="caroutAction" method="out">
+    <result name="success">/jsp/car/outcarshow.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="oil" class="caroutAction" method="oil">
+    <result name="success">/jsp/car/oilcarshow.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="wx" class="caroutAction" method="wx">
+    <result name="success">/jsp/car/wxcarshow.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ <action name="gf" class="caroutAction" method="gf">
+    <result name="success">/jsp/car/gfcarshow.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+ </action>
+ 
+ 
+ </package>
+ 
+</struts>

@@ -1,0 +1,12 @@
+<!DOCTYPE dwr PUBLIC    "-//GetAhead Limited//DTD Direct Web Remoting 1.0//EN"    "http://www.getahead.ltd.uk/dwr/dwr10.dtd">
+<dwr><!-- init is only needed if you are extending DWR -->
+	<allow>
+	 
+	<!-- 王树伟.
+	<create creator="spring" javascript="UpdoctypandpgImpl">
+			<param name="beanName" value="purdmndplnService" />
+	</create>
+		<convert converter="bean"
+			match="com.xy.prj1.java.hibernate.vo.Oemptrdrl" />-->
+	</allow>
+</dwr>

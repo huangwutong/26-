@@ -1,0 +1,10 @@
+[PropertyInfo]
+id,Integer,false,false, , ,false,<default>
+level,String,false,false, , ,false,<default>
+pwd,String,false,false, , ,false,<default>
+username,String,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

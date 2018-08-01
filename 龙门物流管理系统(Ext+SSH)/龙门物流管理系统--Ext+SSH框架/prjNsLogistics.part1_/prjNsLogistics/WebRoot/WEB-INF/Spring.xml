@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<!-- 注入SessionFactory  -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="DataSource" />
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/po/AfficheInfo.hbm.xml</value>
+				<value>com/po/BillInfo.hbm.xml</value>
+				<value>com/po/BillState.hbm.xml</value>
+				<value>com/po/BranchInfo.hbm.xml</value>
+				<value>com/po/CargoInfo.hbm.xml</value>
+				<value>com/po/CargoVector.hbm.xml</value>
+				<value>com/po/CustomerInfo.hbm.xml</value>
+				<value>com/po/DepartmentInfo.hbm.xml</value>
+				<value>com/po/DriverInfo.hbm.xml</value>
+				<value>com/po/Operation.hbm.xml</value>
+				<value>com/po/RoleInfo.hbm.xml</value>
+				<value>com/po/SystemLog.hbm.xml</value>
+				<value>com/po/TrafficLog.hbm.xml</value>
+				<value>com/po/TruckInfo.hbm.xml</value>
+				<value>com/po/TruckLog.hbm.xml</value>
+				<value>com/po/TruckModel.hbm.xml</value>
+				<value>com/po/UserInfo.hbm.xml</value>
+			</list>
+		</property>
+	</bean>
+
+	<!-- 注入DataSource数据源 -->
+	<bean id="DataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="com.microsoft.jdbc.sqlserver.SQLServerDriver">
+		</property>
+		<property name="url"
+			value="jdbc:microsoft:sqlserver://localhost:1433">
+		</property>
+		<property name="username" value="sa"></property>
+	</bean>
+
+	<!-- 注入DAO类 -->
+	<bean id="BillInfoDAO" class="com.po.BillInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="CustomerInfoDAO" class="com.po.CustomerInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TruckLogDAO" class="com.po.TruckLogDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="AfficheInfoDAO" class="com.po.AfficheInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="CargoVectorDAO" class="com.po.CargoVectorDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="RoleInfoDAO" class="com.po.RoleInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="DriverInfoDAO" class="com.po.DriverInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="SystemLogDAO" class="com.po.SystemLogDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TruckInfoDAO" class="com.po.TruckInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="BillStateDAO" class="com.po.BillStateDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TruckModelDAO" class="com.po.TruckModelDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="TrafficLogDAO" class="com.po.TrafficLogDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="DepartmentInfoDAO" class="com.po.DepartmentInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="CargoInfoDAO" class="com.po.CargoInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="BranchInfoDAO" class="com.po.BranchInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="UserInfoDAO" class="com.po.UserInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="OperationDAO" class="com.po.OperationDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<!-- 注入DAOService类 -->
+	<bean id="DAOService" class="com.service.DAOService">
+		<property name="trucklogdao">
+			<ref bean="TruckLogDAO" />
+		</property>
+		<property name="customerinfodao">
+			<ref bean="CustomerInfoDAO" />
+		</property>
+		<property name="driverinfodao">
+			<ref bean="DriverInfoDAO" />
+		</property>
+		<property name="truckmodeldao">
+			<ref bean="TruckModelDAO" />
+		</property>
+		<property name="billstatedao">
+			<ref bean="BillStateDAO" />
+		</property>
+		<property name="trafficlogdao">
+			<ref bean="TrafficLogDAO" />
+		</property>
+		<property name="billinfodao">
+			<ref bean="BillInfoDAO" />
+		</property>
+		<property name="branchinfodao">
+			<ref bean="BranchInfoDAO" />
+		</property>
+		<property name="cargoinfodao">
+			<ref bean="CargoInfoDAO" />
+		</property>
+		<property name="cargovectordao">
+			<ref bean="CargoVectorDAO" />
+		</property>
+		<property name="roleinfodao">
+			<ref bean="RoleInfoDAO" />
+		</property>
+		<property name="truckinfodao">
+			<ref bean="TruckInfoDAO" />
+		</property>
+		<property name="systemlogdao">
+			<ref bean="SystemLogDAO" />
+		</property>
+		<property name="afficheinfodao">
+			<ref bean="AfficheInfoDAO" />
+		</property>
+		<property name="userinfodao">
+			<ref bean="UserInfoDAO" />
+		</property>
+		<property name="depinfodao">
+			<ref bean="DepartmentInfoDAO" />
+		</property>
+		<property name="operationdao">
+			<ref bean="OperationDAO"/>
+		</property>
+	</bean>
+
+</beans>

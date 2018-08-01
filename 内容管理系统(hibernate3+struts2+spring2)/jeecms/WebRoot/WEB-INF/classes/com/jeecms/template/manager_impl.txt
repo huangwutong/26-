@@ -1,0 +1,51 @@
+package #{manager_impl_p};
+
+import java.io.Serializable;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import #{manager_impl_parent_p}.#{manager_impl_parent_name};
+import #{dao_p}.#{Entity}Dao;
+import #{entity_p}.#{Entity};
+import #{manager_p}.#{Entity}Mng;
+import com.ponyjava.common.hibernate3.Updater;
+
+@Service
+@Transactional
+public class #{Entity}MngImpl extends #{manager_impl_parent_name}<#{Entity}> implements #{Entity}Mng {
+	@Override
+	public Object updateByUpdater(Updater updater) {
+		#{Entity} #{entity_param} = (#{Entity}) super.updateByUpdater(updater);
+		return #{entity_param};
+	}
+
+	@Override
+	public #{Entity} save(#{Entity} #{entity_param}) {
+		super.save(#{entity_param});
+		return #{entity_param};
+	}
+
+	@Override
+	public #{Entity} findById(Serializable id) {
+		#{Entity} #{entity_param} = super.findById(id);
+		return #{entity_param};
+	}
+
+	@Override
+	public #{Entity} deleteById(Serializable id) {
+		#{Entity} #{entity_param} = super.deleteById(id);
+		return #{entity_param};
+	}
+	
+	@Autowired
+	public void setDao(#{Entity}Dao dao) {
+		super.setDao(dao);
+	}
+
+	public #{Entity}Dao getDao() {
+		return (#{Entity}Dao) super.getDao();
+	}
+
+}

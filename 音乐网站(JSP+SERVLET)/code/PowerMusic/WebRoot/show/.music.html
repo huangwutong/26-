@@ -1,0 +1,180 @@
+
+
+
+
+
+
+
+
+            
+
+
+             
+
+<script language="JavaScript" >
+	function page_check()
+	{
+		if(document.musicpage.page.value=="")
+		{
+			alert("请输入页数");
+			document.musicpage.page.focus();
+			return false;
+		}
+		return true;
+	}
+</script>
+
+		<script language="JavaScript">
+			alert("请先登陆");
+			window.location = "music.jsp";
+		</script>
+	
+	<object id="player" height="240" width="320" classid="CLSID:6BF52A52-394A-11d3-B153-00C04F79FAA6">
+    <param NAME="AutoStart" VALUE="-1">
+                 
+    <param NAME="Balance" VALUE="0">
+                             
+    <param name="enabled" value="-1">
+                     
+    <param NAME="EnableContextMenu" VALUE="-1">
+                    
+    <param NAME="url" value="music/ai.wmv">
+                  
+    <param NAME="PlayCount" VALUE="1">
+                     
+    <param name="rate" value="1">
+                                   
+    <param name="currentPosition" value="0">
+                    
+    <param name="currentMarker" value="0">
+                    
+    <param name="defaultFrame" value="">
+                 
+    <param name="invokeURLs" value="0">
+                         
+    <param name="baseURL" value="">
+                         
+    <param name="stretchToFit" value="0">
+                  
+    <param name="volume" value="500">
+                                
+    <param name="mute" value="0">
+               
+    <param name="uiMode" value="Full">
+                                                                      
+    <param name="windowlessVideo" value="0">
+                                
+    <param name="fullScreen" value="0">
+                     
+    <param name="enableErrorDialogs" value="-1">
+                     
+    <param name="SAMIStyle" value>
+                 
+    <param name="SAMILang" value>
+                 
+    <param name="SAMIFilename" value>
+               
+</object>
+			
+
+<TABLE cellSpacing=0 cellPadding=0 width=770 align=center border=0>
+   <TBODY>
+     <TR>
+		<TD width=3 background=images/bian.gif></TD>
+		<TD>
+		  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+			<TBODY>
+				<TR>
+				   <TD width=6 background=images/left-shu.gif rowSpan=3></TD>
+				   
+              <TD background=images/hen.gif height=16></TD>
+				   <TD width=6 background=images/right-shu.gif rowSpan=3></TD>
+				</TR>
+			    <TR>
+			       
+              <TD height="233"> 
+                <TABLE width="100%" height="480" 
+					border=0 cellPadding=0 cellSpacing=0 bgColor=#42748d>
+                  <TBODY>
+                    <TR vAlign=top> 
+                      <TD height="40" bgcolor="#3300cc">
+									<p>&nbsp;</p>
+									<p><a href="index.jsp"><FONT color="#ffffff">动力音乐<FONT color="#000000"
+										style="BACKGROUND-COLOR: #ffffff"></FONT></FONT>
+										</a></p></TD>
+                    </TR>
+                    <TR vAlign=top> 
+                      <TD height="8" bgcolor="#000000"> 
+                        <div align="center">
+                          <p><font color="#FFFFFF" size="3">歌曲列表</font></p>
+                          </div></TD>
+                    </TR>
+                    <TR vAlign=top> 
+                      <TD width="62%" height="220">
+                        <P>&nbsp;</P>
+					<table width="40%" height="23" border="0" align="center">
+                       <tr> 
+                          <td width="42%"><a href="/admin/user.jsp">用户管理</a></td>
+                          <td width="30%"><a href="/admin/music.jsp">歌曲管理</a></td>
+                          <td width="28%"><a href="/admin/index.jsp">管理首页</a></td>
+                       </tr>
+                    </table>
+					<table width="550" border="0" cellpadding="3" cellspacing="1" bgcolor="#ffffff" align=center>
+					  <tr bgcolor="#cccccc">
+							<td align="center" nowrap width="25%"><b>歌曲名称</b></td>
+							<td align="center" nowrap width="22%"><b>歌手名字</b></td>
+							<td align="center" nowrap width="21%"><b>上传时间</b></td>
+							<td align="center" nowrap width="15%"><b>类型</b></td>
+							<td align="center" nowrap width="17%"><b>试听</b></td>
+						  </tr>
+						  <TR bgcolor="#6600CC">
+						 	   <td align="center" nowrap width="25%"></td>
+						       <td width="22%" align="center" nowrap></td>
+						       <td align="center" nowrap width="21%"></td>
+						       <td align="center" nowrap width="15%"></td>
+						       <td align="center" nowrap width="17%">
+						       <a href="music.jsp?action=audition&musicid=">Go</a>
+						       </td>
+						   </TR>
+						  	
+						 </table>
+						 <FORM name="musicpage" method="post" onSubmit="return page_check();"action="music.jsp">
+						<TABLE width="36%">
+						<tr>
+						<td >共有页,现在是第页</td>
+						</tr>
+						<tr>
+						<td>
+						<a href="/admin/news.jsp?page=">上一页</a>
+						<a href="/admin/news.jsp?page=">下一页 </a>
+						<a href="/admin/news.jsp?page=1">首页 </a>
+						<a href="/admin/news.jsp?page=">尾页 </a>
+						<input name="page" type="text" size="5">页<input type="submit" value="Go">
+						</td>
+						</tr>
+						</TABLE>
+						</FORM>
+                        <P>&nbsp;</P>
+					</TD>
+                    </TR>
+                  </TBODY>
+                </TABLE>
+					</TD>
+				</TR>
+				
+            <TR> 
+              <TD background=images/middle-shu.gif height=60>
+              </TD>
+			</TR>
+			</TBODY>
+		 </TABLE>
+	  </TD>
+		<TD width=3 background=images/bian3.gif></TD>
+	</TR>
+   </TBODY>
+  </TABLE>
+  
+
+
+
+  

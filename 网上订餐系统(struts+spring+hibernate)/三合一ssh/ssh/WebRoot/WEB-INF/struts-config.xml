@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<!--管理action的调度  -->
+<struts-config>
+  <data-sources />
+  <!-- 只有通过了验证的数据才能传给我们的action -->
+  <form-beans >
+    <form-bean name="userInfoForm" type="com.xaccp.struts.form.UserInfoForm" />
+    <form-bean name="enterpriseForm" type="com.xaccp.struts.form.EnterpriseForm" />
+  </form-beans>
+  
+  <global-exceptions />
+  
+  <global-forwards >
+    <forward name="toMemberCenter" path="/preUserLogin.do" />
+    <forward name="toEnterpriseCenter" path="/preEnterpriseLogin.do" />
+  </global-forwards>
+
+  <action-mappings >
+    <action path="/welcome" type="com.xaccp.struts.action.WelcomeAction" >
+      <forward name="ok" path="/front/index.jsp" />
+    </action>
+    
+    <action path="/preRegister" type="com.xaccp.struts.user.action.PreRegisterAction" >
+      <forward name="ok" path="/user/registeruser.jsp" />
+    </action>
+    
+    
+    <action path="/validateUser" type="com.xaccp.struts.user.action.ValidateUserAction" />
+    
+    <action
+      attribute="userInfoForm"
+      input="/user/registeruser.jsp"
+      name="userInfoForm"
+      path="/addUserInfo"
+      scope="request"
+      type="com.xaccp.struts.user.action.AddUserInfoAction" >
+      <forward name="ok" path="/user/registerOK.jsp" />
+    </action>
+    
+    <action path="/preUserLogin" type="com.xaccp.struts.user.action.PreUserLoginAction" >
+      <forward name="no" path="/user/userlogin.jsp" />
+      <forward name="ok" path="/user/memberCenter.jsp" />
+    </action>
+       
+    <action
+      attribute="userInfoForm"
+      input="/user/userlogin.jsp"
+      name="userInfoForm"
+      path="/userLogin"
+      type="com.xaccp.struts.user.action.UserLoginAction" >
+      <forward name="ok" path="/user/memberCenter.jsp" />
+    </action>
+
+
+
+
+    <action path="/logoutUser" type="com.xaccp.struts.util.action.LogoutUserAction" />
+  
+    <action
+      attribute="userInfoForm"
+      name="userInfoForm"
+      path="/preEditUserInfo"
+      scope="request"
+      type="com.xaccp.struts.user.action.PreEditUserInfoAction" >
+      <forward name="ok" path="/user/editUserInfo.jsp" />
+    </action>
+    
+    <action
+      attribute="userInfoForm"
+      name="userInfoForm"
+      path="/editUserInfo"
+      scope="request"
+      type="com.xaccp.struts.user.action.EditUserInfoAction" />
+      
+    <action path="/preEditUserPass" type="com.xaccp.struts.user.action.PreEditUserPassAction" >
+      <forward name="ok" path="/user/edituserpass.jsp" />
+    </action>
+    
+    
+    <action
+      input="/user/edituserpass.jsp"
+      path="/editUserPass"
+      type="com.xaccp.struts.user.action.EditUserPassAction" />
+      
+    <action path="/findUserInfo" type="com.xaccp.struts.user.action.FindUserInfoAction" >
+      <forward name="ok" path="/user/userinfo2.jsp" />
+    </action>
+    
+    <action path="/findMyCredit" type="com.xaccp.struts.credit.action.FindMyCreditAction" />
+    
+    <action path="/findUserOreders" type="com.xaccp.struts.order.action.FindUserOredersAction" />
+    <!-- 我要投诉 -->
+    <action path="/preAddComplain" type="com.xaccp.struts.complain.action.PreAddComplainAction" >
+      <forward name="ok" path="/complain/addcomplain.jsp" />
+    </action>
+   
+    <action path="/addComplain" type="com.xaccp.struts.complain.action.AddComplainAction" />
+    <!-- 注册开店 -->
+    <action path="/preEnterpriseRegister" type="com.xaccp.struts.enterprise.action.PreEnterpriseRegisterAction" >
+      <forward name="ok" path="/enterprise/registerEnterprise.jsp" />
+    </action>
+    
+    <action path="/validateEnterprise" type="com.xaccp.struts.enterprise.action.ValidateEnterpriseAction" />
+    
+    <action
+      attribute="enterpriseForm"
+      input="/enterprise/registerEnterprise.jsp"
+      name="enterpriseForm"
+      path="/addEnterpriseInfo"
+      scope="request"
+      type="com.xaccp.struts.enterprise.action.AddEnterpriseInfoAction" >
+      <forward name="ok" path="/enterprise/registerOK2.jsp" />
+    </action>
+    
+    <action path="/preEnterpriseLogin" type="com.xaccp.struts.enterprise.action.PreEnterpriseLoginAction" >
+      <forward name="no" path="/enterprise/enterpriseLogin.jsp" />
+      <forward name="ok" path="/enterprise/enterpriseMemberCenter.jsp" />
+    </action>
+
+    <action path="/logout" type="com.xaccp.struts.util.action.LogoutAction" />
+    
+    <action
+      attribute="enterpriseForm"
+      input="/enterprise/enterpriseLogin.jsp"
+      name="enterpriseForm"
+      path="/enterpriseLogin"
+      scope="request"
+      type="com.xaccp.struts.enterprise.action.EnterpriseLoginAction" >
+      <forward name="ok" path="/enterprise/enterpriseMemberCenter.jsp" />
+    </action>
+    
+    <action path="/foodCart" type="com.xaccp.struts.foodcart.action.FoodCartAction" />
+    
+    <action path="/findEnterpriseInfo" type="com.xaccp.struts.enterprise.action.FindEnterpriseInfoAction" >
+      <forward name="ok" path="/enterprise/enterpriseInfo2.jsp" />
+    </action>
+   
+    <action
+      attribute="enterpriseForm"
+      name="enterpriseForm"
+      path="/preEditEnterprise"
+      scope="request"
+      type="com.xaccp.struts.enterprise.action.PreEditEnterpriseAction" >
+      <forward name="ok" path="/enterprise/EditEnterprise.jsp" />
+    </action>
+    
+    <action
+      attribute="enterpriseForm"
+      name="enterpriseForm"
+      path="/editEnterpriseInfo"
+      scope="request"
+      type="com.xaccp.struts.enterprise.action.EditEnterpriseInfoAction" />
+    
+    <action path="/preEditEnterprisePass" type="com.xaccp.struts.enterprise.action.PreEditEnterprisePassAction" >
+      <forward name="ok" path="/enterprise/editEnterprisePass.jsp" />
+    </action>
+    
+    <action
+      input="/enterprise/editEnterprisePass.jsp"
+      path="/editEnterprisePass"
+      type="com.xaccp.struts.enterprise.action.EditEnterprisePassAction" />
+
+  </action-mappings>
+<controller processorClass="org.springframework.web.struts.DelegatingRequestProcessor"></controller>
+  <message-resources parameter="com.xaccp.struts.ApplicationResources" />
+  <plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+  	<set-property property="contextConfigLocation" value="WEB-INF/spring.xml"/>
+  </plug-in>
+</struts-config>

@@ -1,0 +1,18 @@
+[PropertyInfo]
+id,Integer,false,false, , ,false,<default>
+introduct,String,false,false, , ,false,<default>
+marketprice,int,false,false, , ,false,<default>
+newproduct,String,false,false, , ,true,<default>
+preferentialprice,int,false,false, , ,false,<default>
+producefactory,String,false,false, , ,false,<default>
+productBigClass,com.xh369.dto.ProductBigClass,false,false, , ,false,<default>
+productmodel,String,false,false, , ,false,<default>
+productname,String,false,false, , ,false,<default>
+productpic,String,false,false, , ,false,<default>
+productSmallClass,com.xh369.dto.ProductSmallClass,false,false, , ,false,<default>
+vouch,String,false,false, , ,true,<default>
+[IconNames]
+
+
+
+

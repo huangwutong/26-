@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping package="dlog4j.formbean">
+	
+    <class name="UserRole" table="dlog_siteuser" dynamic-update="false">
+    	<id name="id" column="urid" type="int">
+			<generator class="increment"/>
+		</id>		
+		<property name="role" type="int" column="userrole"/>
+		<many-to-one name="site" column="siteid" cascade="none"/>
+		<many-to-one name="user" column="userid" cascade="none"/>
+    </class>
+
+</hibernate-mapping>

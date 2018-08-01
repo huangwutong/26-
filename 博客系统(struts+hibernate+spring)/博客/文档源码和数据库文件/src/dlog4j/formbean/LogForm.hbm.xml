@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping package="dlog4j.formbean">
+	
+    <class name="LogForm" table="dlog_journal" dynamic-update="false">
+    	<id name="id" column="logid" type="int">
+			<generator class="increment"/>
+		</id>
+		<many-to-one name="owner" column="userid" cascade="none"/>
+		<many-to-one name="category" column="catid" cascade="none"/>
+		<many-to-one name="site" column="siteid" not-null="true" outer-join="false"/>
+		<property name="author" type="java.lang.String" length="50" column="author"/>
+		<property name="authorUrl" type="java.lang.String" length="100" column="author_url"/>
+		<property name="title" type="java.lang.String" length="100" column="title"/>
+		<property name="content" type="java.lang.String" column="content"/>
+		<property name="searchKey" type="java.lang.String" length="40" column="logKeys"/>
+		<property name="logTime" type="java.util.Date" column="logTime"/>
+		<property name="refUrl" type="java.lang.String" column="refUrl" length="100"/>
+		<property name="moodLevel" type="int" column="moodLevel"/>
+		<property name="useFace" type="int" column="useFace"/>
+		<property name="useUbb" type="int" column="useUbb"/>
+		<property name="showFormerly" type="int" column="showFormerly"/>
+		<property name="weather" type="java.lang.String" column="weather" length="20"/>
+		<property name="replyNotify" type="int" column="replyNotify"/>
+		<property name="viewCount" type="int" column="viewCount"/>
+		<property name="replyCount" type="int" column="replyCount"/>
+		<property name="deleteTime" type="java.util.Date" column="delete_time"/>
+		<property name="status" type="int" column="status"/>
+		<bag name="replies" lazy="true" inverse="true" cascade="save-update" order-by="writeTime DESC">
+			<key column="logid"/>
+			<one-to-many class="ReplyForm"/>
+		</bag>
+		<bag name="trackBacks" lazy="true" inverse="true" cascade="save-update" order-by="id DESC">
+			<key column="refid"/>
+			<one-to-many class="TrackBackForm"/>
+		</bag>
+		<bag name="attachments" lazy="true" inverse="true" cascade="save-update" order-by="id DESC">
+			<key column="logid"/>
+			<one-to-many class="AttachmentForm"/>
+		</bag>
+    </class>
+
+</hibernate-mapping>

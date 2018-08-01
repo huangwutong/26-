@@ -1,0 +1,54 @@
+body         { background-color: #ffffff; color:#000000; text-transform:capitalize }
+ 
+body, p, td, input { font-size: 9pt; color: #000000 }
+a:link   { padding:0; color: #003399; text-decoration: none }
+a:active { text-decoration: none; font-size: 9pt; color: #0000FF }
+a:visited { color: #003399; text-decoration: none font-size 9pt }
+a:hover  { text-decoration: underline; font-size: 9pt; color: #0000FF }
+a:link.toolbar   { padding:0; color: #ffffff; text-decoration: none }
+a:active.toolbar { text-decoration: none; font-size: 9pt; color: #ff0000 }
+a:visited.toolbar { color: #ffffff; text-decoration: none font-size 9pt }
+a:hover.toolbar  { text-decoration: underline; font-size: 9pt; color: #ff0000 }
+.inputnormal { border:1px solid #799AE1; text-align:center; background-color:#D6DFF7}
+.inputnormalleft { border:1px solid #4D79D7; text-align:left; background-color:#D6DFF7; color:#0000FF}
+.inputedit   { border:1px solid #4D79D7; background-color:#FFFFFF; color:#0000FF }
+.radio       { border: 1px solid #FFFFFF; background-color: #FFFDE8 }
+.areanormal { border-style: solid; border-width: 0; background-color:#ffffff}
+BODY {scrollbar-face-color:#6699cc;
+scrollbar-highlight-color:#0099ff;
+scrollbar-3dlight-color:#99ccff;
+scrollbar-darkshadow-color:#000000;
+scrollbar-shadow-color:#006699;
+scrollbar-arrow-color:#ffffff;
+scrollbar-track-color:#FFFFFF; color:#000000}
+.s01 {border:1px groove #000000; FONT-SIZE: 12px; HEIGHT: 14pt; color:#003399}
+.s02 { border:1px solid #799AE1; FONT-SIZE: 12px; HEIGHT: 16pt; BACKGROUND-COLOR: #FFFFFF; padding-top:1; color:#000000; padding-left:4; padding-right:4; padding-bottom:1}
+.s03 { border:1px solid #000000; FONT-SIZE: 12px; HEIGHT: 16pt; BACKGROUND-COLOR: #FFFFFF; padding-top:1; color:#000000; padding-left:4; padding-right:4; padding-bottom:1}
+.outborder   { border-left: 1px solid #333333; border-right: 1px solid #000000; 
+               border-top: 1px solid #99CCFF; border-bottom: 1px solid #000000; 
+               background-color: #336699; color:#FFFFFF }
+.sec_menu  { border-left:1px solid white; border-right:1px solid white; border-bottom:1px solid white; overflow:hidden; background:#D6DFF7; }
+.menu_title  { }
+.menu_title span  { position:relative; top:2px; left:8px; color:#215DC6; font-weight:bold; }
+.menu_title2  { }
+.menu_title2 span  { position:relative; top:2px; left:8px; color:#428EFF; font-weight:bold; }
+
+.trh
+{
+    background-image: url('images/admin_bg_1.gif');
+    background-color: #4455aa;
+    color: #FFFFFF;
+    font-size: 12px;
+    font-weight:bold
+}
+.trh1
+{
+ 
+    background-color: #FFFDE8;
+    color: #2E60C9;
+    font-size: 12px;
+    
+}.banquan     { color: #FF0000; font-weight: bold }
+.bg_1 { background-color: #FFFFFF }
+.bg_2 { background-color: #F7F7F7 }
+.bg_3 { background-color: #EDEDED }

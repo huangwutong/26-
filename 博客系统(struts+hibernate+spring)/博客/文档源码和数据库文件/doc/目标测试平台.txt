@@ -1,0 +1,95 @@
+Windows XP Professional (SP2)
+
+Tomcat 5.5.2  通过
+Tomcat 5.0.28  通过
+Resin 3.0.8  通过
+resin 2.1.14  通过
+
+Red Hat Enterprise Linux AS release 3 (Taroon)
+jdk1.42
+resin-2.14
+
+RedHat Linux 9
+
+Apache 2.0.52 + Tomcat 5.0.28 + DB2 8.1 + IBM JDK 1.4.1通过
+
+
+resin 3.0.8(不允许提交后forward到另外一个页面,resin 2.1.14则可以) 
+测试通过，只需要将formbean的自动validate改为在Action中执行即可。 
+(已完成，在DlogActionBase进行统一处理，关闭所有action的自动validate功能)
+
+Tomcat 4.1.30 添加下面配置后解决页面乱码问题
+
+        <init-param>
+            <param-name>javaEncoding</param-name>
+            <param-value>UTF8</param-value>
+        </init-param>
+
+        
+Resin 3.0.3 测试失败，异常信息如下
+java.lang.ClassCastException: $Proxy3
+	at com.caucho.server.dispatch.PageFilterChain.doFilter(PageFilterChain.java:128)
+	at dlog4j.UnicodeFilter.doFilter(UnicodeFilter.java:48)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:84)
+	at com.caucho.server.cache.CacheFilterChain.doFilter(CacheFilterChain.java:211)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:165)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:221)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:253)
+	at com.caucho.server.port.WorkerThread.run(WorkerThread.java:129)
+	at java.lang.Thread.run(Thread.java:595)
+
+Resin 3.0.8 (不加载UnicodeFilter时显示正常，但是提交中文参数是乱码)
+java.lang.ClassCastException: $Proxy3
+	at dlog4j.UnicodeFilter$RequestProxy.getInstance(UnicodeFilter.java:145)
+	at dlog4j.UnicodeFilter.doFilter(UnicodeFilter.java:47)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:84)
+	at com.caucho.server.cache.CacheFilterChain.doFilter(CacheFilterChain.java:211)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:177)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:221)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:263)
+	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:331)
+	at com.caucho.util.ThreadPool.runTasks(ThreadPool.java:464)
+	at com.caucho.util.ThreadPool.run(ThreadPool.java:408)
+	at java.lang.Thread.run(Thread.java:595)
+上面问题通过修改ServletRequest->HttpServletRequest后得到解决
+
+现在出现的问题是，而没加载UnicodeFilter是可以浏览所有页面的
+java.io.FileNotFoundException: /pages/reg.jspe
+	at com.caucho.server.dispatch.PageFilterChain.doFilter(PageFilterChain.java:144)
+	at com.caucho.server.webapp.DispatchFilterChain.doFilter(DispatchFilterChain.java:129)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:221)
+	at com.caucho.server.webapp.RequestDispatcherImpl.forward(RequestDispatcherImpl.java:272)
+	at com.caucho.server.webapp.RequestDispatcherImpl.forward(RequestDispatcherImpl.java:112)
+	at dlog4j.EmbedPageServlet.doGet(EmbedPageServlet.java:67)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:126)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:103)
+	at com.caucho.server.dispatch.ServletFilterChain.doFilter(ServletFilterChain.java:113)
+	at dlog4j.UnicodeFilter.doFilter(UnicodeFilter.java:50)
+	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:84)
+	at com.caucho.server.cache.CacheFilterChain.doFilter(CacheFilterChain.java:211)
+	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:177)
+	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:221)
+	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:263)
+	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:331)
+	at com.caucho.util.ThreadPool.runTasks(ThreadPool.java:464)
+	at com.caucho.util.ThreadPool.run(ThreadPool.java:408)
+	at java.lang.Thread.run(Thread.java:595)
+把EmbedPageServlet的forward改为include就可以了！
+
+
+resin-2.1.14
+
+配置webpath=/dlog
+错误现象，
+
+1.超文本编辑器的图片无法显示  解决办法：this.imgURL = _editor_url + 'htmlarea_images/';
+2.日记显示页面的评论人头像无法显示  解决办法：将头像前的../去掉
+3.java.lang.ArithmeticException: / by zero at com.caucho.jsp.QPageContext.handlePageException(QPageContext.java:669) at _web_22dinf._jsp._pages._drafts__jsp._jspService(_drafts__jsp.java:407)
+  解决办法：CompareTag被改动导致，恢复回去
+4.中文搜索翻页后搜索字变乱码
+
+5.换回3.0.8后发现点击搜索后页面空白
+
+对于access数据库，struts-config.xml必须有
+     		
+            <set-property property="encoding" value="false" />            	

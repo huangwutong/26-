@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping package="dlog4j.formbean">
+	
+    <class name="MessageForm" table="dlog_message" dynamic-update="false">
+    	<id name="id" column="msgid" type="int">
+			<generator class="increment"/>
+		</id>		
+		<property name="content" type="java.lang.String" column="content"/>
+		<property name="isHtml" type="int" column="isHtml"/>
+		<property name="status" type="int" column="status"/>
+		<property name="sendTime" type="java.util.Date" column="sendTime"/>
+		<property name="readTime" type="java.util.Date" column="readTime"/>
+		<many-to-one name="fromUser" column="fromUserId" cascade="none"/>
+		<many-to-one name="toUser" column="toUserId" cascade="none"/>
+    </class>
+
+</hibernate-mapping>

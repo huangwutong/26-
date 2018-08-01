@@ -1,0 +1,24 @@
+<script language=javascript>
+switch(type)
+{
+  case 'text':
+  case 'password':  //文本输入框和密码输入框的样式
+    style.border="1px solid #000000";
+    style.backgroundColor="#EEEEF8";
+    style.height="18px";
+    style.font="normal 12px 宋体";
+    style.color="#000000";
+    break;
+  case 'submit':
+  case 'reset':
+  case 'button':  //按钮类的样式（不包括图片按钮）
+    style.border="1px solid #000000";
+    style.backgroundColor="#CCCCCC";
+    style.height="18px";
+    style.font="normal 12px 宋体";
+    style.color="#000000";
+    break;
+  default:  //对于象单选框多选框等上面没有出现过的元素，我们使用默认样式。
+    ;
+}
+</script>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" 
+	xmlns="http://java.sun.com/xml/ns/j2ee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddUser</servlet-name>
+    <servlet-class>sys.admin.AddUser</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddAdmin</servlet-name>
+    <servlet-class>sys.admin.AddAdmin</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AdminMod</servlet-name>
+    <servlet-class>sys.admin.AdminMod</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AdminDel</servlet-name>
+    <servlet-class>sys.admin.AdminDel</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TeacherAdd</servlet-name>
+    <servlet-class>sys.admin.TeacherAdd</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UserMod</servlet-name>
+    <servlet-class>sys.admin.UserMod</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TeacherMod</servlet-name>
+    <servlet-class>sys.admin.TeacherMod</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TesterDel</servlet-name>
+    <servlet-class>sys.admin.TesterDel</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TeacherDel</servlet-name>
+    <servlet-class>sys.admin.TeacherDel</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>InitServlet</servlet-name>
+    <servlet-class>sys.InitServlet</servlet-class>
+    <init-param>
+    	<param-name>db_user</param-name>
+    	<param-value>root</param-value>
+    </init-param>
+    <init-param>
+    	<param-name>db_pws</param-name>
+    	<param-value>bit</param-value>
+    </init-param>
+    <init-param>
+    	<param-name>webpath</param-name>
+    	<param-value>D:/Develop/apache-tomcat-5.5.25/webapps/pctest</param-value>
+    </init-param>
+    <init-param>
+    	<param-name>token</param-name>
+    	<param-value>param-value</param-value>
+    </init-param>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>AddUser</servlet-name>
+    <url-pattern>/servlet/AddUser</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddAdmin</servlet-name>
+    <url-pattern>/servlet/AddAdmin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminMod</servlet-name>
+    <url-pattern>/servlet/AdminMod</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AdminDel</servlet-name>
+    <url-pattern>/servlet/AdminDel</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TeacherAdd</servlet-name>
+    <url-pattern>/servlet/TeacherAdd</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserMod</servlet-name>
+    <url-pattern>/servlet/UserMod</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TeacherMod</servlet-name>
+    <url-pattern>/servlet/TeacherMod</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TesterDel</servlet-name>
+    <url-pattern>/servlet/TesterDel</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TeacherDel</servlet-name>
+    <url-pattern>/servlet/TeacherDel</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InitServlet</servlet-name>
+    <url-pattern>/servlet/InitServlet</url-pattern>
+  </servlet-mapping>
+
+</web-app>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+<!-- DataSource -->
+	<bean id="ds" class="org.apache.commons.dbcp.BasicDataSource">
+	<!-- 这个是数据库的安装驱动，必须要的一个文件 -->
+		<property name="driverClassName">
+			<value>com.microsoft.jdbc.sqlserver.SQLServerDriver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:microsoft:sqlserver://localhost:1433;database=Eatert_DB</value>
+		</property>
+		<property name="username">
+			<value>sa</value>
+		</property>
+	</bean>
+	<!-- SessionFactory -->
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="ds" />
+		</property>
+		<property name="configLocation">
+			<value>classpath:hibernate.cfg.xml</value>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.SQLServerDialect
+				</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<!-- 管理DAO -->
+	<bean id="ComplainInfoDAO" class="com.xaccp.dao.ComplainInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="OrderAccessorilyDAO"
+		class="com.xaccp.dao.OrderAccessorilyDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="UserInfoDAO" class="com.xaccp.dao.UserInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="FoodSmallTypeDAO"
+		class="com.xaccp.dao.FoodSmallTypeDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="FoodBigTypeDAO" class="com.xaccp.dao.FoodBigTypeDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="OrderInfoDAO" class="com.xaccp.dao.OrderInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="FoodInfoDAO" class="com.xaccp.dao.FoodInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="EnterpriseInfoDAO"
+		class="com.xaccp.dao.EnterpriseInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="CreditDAO" class="com.xaccp.dao.CreditDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	<bean id="ManageInfoDAO" class="com.xaccp.dao.ManageInfoDAO">
+		<property name="sessionFactory">
+			<ref bean="sessionFactory" />
+		</property>
+	</bean>
+	
+	<!-- 管理Service -->
+	<bean id="complainInfoService" class="com.xaccp.service.ComplainInfoService">
+		<property name="complainInfodao" ref="ComplainInfoDAO"></property>
+	</bean>
+	<bean id="creditService" class="com.xaccp.service.CreditService">
+		<property name="creditDao" ref="CreditDAO"></property>
+	</bean>
+	<bean id="enterpriseInfoService" class="com.xaccp.service.EnterpriseInfoService">
+		<property name="enterDao" ref="EnterpriseInfoDAO"></property>
+	</bean>
+	<bean id="foodInfoService" class="com.xaccp.service.FoodInfoService">
+		<property name="bigTypeDao" ref="FoodBigTypeDAO"></property>
+		<property name="smallTypeDao" ref="FoodSmallTypeDAO"></property>
+		<property name="foodInfoDao" ref="FoodInfoDAO"></property>
+	</bean>
+	<bean id="ManageInfoService" class="com.xaccp.service.ManageInfoService">
+		<property name="managerInfoDao" ref="ManageInfoDAO"></property>
+	</bean>
+	<bean id="orderService" class="com.xaccp.service.OrderService">
+		<property name="orderAcessDao" ref="OrderAccessorilyDAO"></property>
+		<property name="orderInfoDao" ref="OrderInfoDAO"></property>
+	</bean>
+	<bean id="userInfoService" class="com.xaccp.service.UserInfoService">
+		<property name="userInfoDao" ref="UserInfoDAO"></property>
+	</bean>
+	
+	<!-- 管理Action -->
+	<bean name="/welcome" class="com.xaccp.struts.action.WelcomeAction">
+		<property name="foodInfoService" ref="foodInfoService"></property>
+		<property name="enterInfoService" ref="enterpriseInfoService"></property>
+	</bean>
+	
+	
+	<bean name="/validateUser" class="com.xaccp.struts.user.action.ValidateUserAction">
+		<property name="userInService" ref="userInfoService"></property>
+	</bean>
+	<bean name="/userLogin" class="com.xaccp.struts.user.action.UserLoginAction">
+		<property name="userInfoService" ref="userInfoService"></property>
+	</bean>
+	<bean name="/editUserPass" class="com.xaccp.struts.user.action.EditUserPassAction">
+		<property name="userInfoService" ref="userInfoService"></property>
+	</bean>
+	<bean name="/addUserInfo" class="com.xaccp.struts.user.action.AddUserInfoAction">
+		<property name="userInfoService" ref="userInfoService"></property>
+		<property name="creditService" ref="creditService"></property>
+	</bean>
+	<bean name="/preEditUserInfo" class="com.xaccp.struts.user.action.PreEditUserInfoAction">
+		<property name="userInfoService" ref="userInfoService"></property>
+	</bean>
+	<bean name="/editUserInfo" class="com.xaccp.struts.user.action.EditUserInfoAction">
+		<property name="userInfoService" ref="userInfoService"></property>
+	</bean>
+	<bean name="/addComplain" class="com.xaccp.struts.complain.action.AddComplainAction">
+		<property name="complainService" ref="complainInfoService"></property>
+	</bean>
+	<bean name="/addEnterpriseInfo" class="com.xaccp.struts.enterprise.action.AddEnterpriseInfoAction">
+		<property name="enterService" ref="enterpriseInfoService"></property>
+	</bean>
+	<bean name="/validateEnterprise" class="com.xaccp.struts.enterprise.action.ValidateEnterpriseAction">
+		<property name="enterService" ref="enterpriseInfoService"></property>
+	</bean>
+	<bean name="/enterpriseLogin" class="com.xaccp.struts.enterprise.action.EnterpriseLoginAction">
+		<property name="enterService" ref="enterpriseInfoService"></property>
+	</bean>
+	<bean name="/editEnterpriseInfo" class="com.xaccp.struts.enterprise.action.EditEnterpriseInfoAction">
+		<property name="enterService" ref="enterpriseInfoService"></property>
+	</bean>
+</beans>

@@ -1,0 +1,53 @@
+<script type="text/javascript">
+function searchFormSubmit() {
+	if(document.getElementById('searchKey').value==''){
+		alert('请输入搜索内容');
+		return false;
+	}
+	document.getElementById('searchForm').submit();	
+}
+</script>
+
+<form id="searchForm" action="${base}${base}/ArtiSearch.do" target="_blank">
+  <div class="topsearch">
+    <div class="title"></div>
+    <div id="page_search_left">
+      <input type="hidden" name="count" value="10" />
+      <input class="inputText" id="searchKey" size="16" onkeypress="if(event.keyCode==13){searchFormSubmit();return false;}" name="searchKey" type="text" />
+    </div>
+    <div id="page_search_btn"><img src="${root}/default/article/img/topsearch_submit.gif" border="0" onclick="searchFormSubmit();" /></div>
+    <div class="hots"><strong>热门关键字：</strong> <a target="_blank" href="${base}/jeecms/ArtiSearch.do?count=10&searchKey=%C1%BD%BB%E1">两会</a>&nbsp; <a target="_blank" href="${base}/jeecms/ArtiSearch.do?count=10&searchKey=%BA%CD%C6%BD">和平</a></div>
+    <div id="page_search_right">
+      <script>
+		<!--var day="";
+		var month="";
+		var ampm="";
+		var ampmhour="";
+		var myweekday="";
+		var year="";
+		mydate=new Date();
+		myweekday=mydate.getDay();
+		mymonth=mydate.getMonth()+1;
+		myday= mydate.getDate();
+		year= mydate.getFullYear();
+		if(myweekday == 0)
+		weekday=" 星期日 ";
+		else if(myweekday == 1)
+		weekday=" 星期一 ";
+		else if(myweekday == 2)
+		weekday=" 星期二 ";
+		else if(myweekday == 3)
+		weekday=" 星期三 ";
+		else if(myweekday == 4)
+		weekday=" 星期四 ";
+		else if(myweekday == 5)
+		weekday=" 星期五 ";
+		else if(myweekday == 6)
+		weekday=" 星期六 ";
+		document.write(year+"年"+mymonth+"月"+myday+"日 "+weekday);
+		//-->
+	  </script>
+    </div>
+    <div style="clear: both"></div>
+  </div>
+</form>

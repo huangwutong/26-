@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<!-- 我新加的bean -->
+	<!--LoginAction  -->
+	<bean name="/login" class="com.accp.myoa.web.action.LoginAction">
+		<property name="userService" ref="userService"></property>
+		<property name="menuService" ref="menuService"></property>
+	</bean>
+	
+	<!-- ForwardAction -->
+	<bean name="/forward" class="com.accp.myoa.web.action.ForwardAction">
+		<property name="userService" ref="userService"></property>
+		<property name="emailService" ref="emailService"></property>
+		<property name="menuService" ref="menuService"></property>
+	</bean>
+	
+	<bean name="/email" class="com.accp.myoa.web.action.EmailAction">
+		<property name="emailService" ref="emailService"></property>
+	</bean>
+	
+	
+	
+	<bean name="/car" class="com.accp.myoa.web.action.CarAction">
+		<property name="carService" ref="carService"/>
+	</bean>
+	<bean name="/boardRoom" class="com.accp.myoa.web.action.BoardRoomAction">
+		<property name="boardRoomService" ref="boardRoomService"/>
+	</bean>
+	<bean name="/bulletinExamine" class="com.accp.myoa.web.action.BulletinExamineAction">
+		<property name="bulletinExamineService" ref="bulletinExamineService"/>
+	</bean>
+	<bean name="/bulletinRead" class="com.accp.myoa.web.action.BulletinReadAction">
+		<property name="bulletinReadService" ref="bulletinReadService"/>
+	</bean>
+	<bean name="/bulletin" class="com.accp.myoa.web.action.BulletinAction">
+		<property name="bulletinService" ref="bulletinService"/>
+		<property name="bulletinExamineService" ref="bulletinExamineService"/>
+	</bean>
+	<bean name="/carApply" class="com.accp.myoa.web.action.CarApplyAction">
+		<property name="carApplyService" ref="carApplyService"/>
+	</bean>
+	<bean name="/clientCompany" class="com.accp.myoa.web.action.ClientCompanyAction">
+		<property name="clientCompanyService" ref="clientCompanyService"/>
+	</bean>
+	<bean name="/client" class="com.accp.myoa.web.action.ClientAction">
+		<property name="clientService" ref="clientService"/>
+	</bean>
+	<bean name="/comleteDegress" class="com.accp.myoa.web.action.ComleteDegressAction">
+		<property name="comleteDegressService" ref="comleteDegressService"/>
+	</bean>
+	<bean name="/deptPosition" class="com.accp.myoa.web.action.DeptPositionAction">
+		<property name="deptPositionService" ref="deptPositionService"/>
+	</bean>
+	<bean name="/dept" class="com.accp.myoa.web.action.DeptAction">
+		<property name="deptService" ref="deptService"/>
+	</bean>
+	<bean name="/diary" class="com.accp.myoa.web.action.DiaryAction">
+		<property name="diaryService" ref="diaryService"/>
+	</bean>
+	<bean name="/documentExamine" class="com.accp.myoa.web.action.DocumentExamineAction">
+		<property name="documentExamineService" ref="documentExamineService"/>
+	</bean>
+	<bean name="/documentRead" class="com.accp.myoa.web.action.DocumentReadAction">
+		<property name="documentReadService" ref="documentReadService"/>
+	</bean>
+	<bean name="/document" class="com.accp.myoa.web.action.DocumentAction">
+		<property name="documentService" ref="documentService"/>
+	</bean>
+	<bean name="/egressExamine" class="com.accp.myoa.web.action.EgressExamineAction">
+		<property name="egressExamineService" ref="egressExamineService"/>
+	</bean>
+	<bean name="/egress" class="com.accp.myoa.web.action.EgressAction">
+		<property name="egressService" ref="egressService"/>
+	</bean>
+	<bean name="/emailReceivce" class="com.accp.myoa.web.action.EmailReceivceAction">
+		<property name="emailReceivceService" ref="emailReceivceService"/>
+	</bean>
+	
+	<bean name="/emailType" class="com.accp.myoa.web.action.EmailTypeAction">
+		<property name="emailTypeService" ref="emailTypeService"/>
+	</bean>
+	<bean name="/examineState" class="com.accp.myoa.web.action.ExamineStateAction">
+		<property name="examineStateService" ref="examineStateService"/>
+	</bean>
+	<bean name="/file" class="com.accp.myoa.web.action.FileAction">
+		<property name="fileService" ref="fileService"/>
+	</bean>
+	<bean name="/leaveWord" class="com.accp.myoa.web.action.LeaveWordAction">
+		<property name="leaveWordService" ref="leaveWordService"/>
+		<property name="userService" ref="userService"/>
+		
+	</bean>
+	<bean name="/level" class="com.accp.myoa.web.action.LevelAction">
+		<property name="levelService" ref="levelService"/>
+	</bean>
+	<bean name="/meetingRead" class="com.accp.myoa.web.action.MeetingReadAction">
+		<property name="meetingReadService" ref="meetingReadService"/>
+	</bean>
+	<bean name="/meeting" class="com.accp.myoa.web.action.MeetingAction">
+		<property name="meetingService" ref="meetingService"/>
+		<property name="userService" ref="userService"/>
+		<property name="boardRoomService" ref="boardRoomService"/>
+	</bean>
+	<bean name="/meetingstate" class="com.accp.myoa.web.action.MeetingstateAction">
+		<property name="meetingstateService" ref="meetingstateService"/>
+	</bean>
+	<bean name="/meetingSummaryScan" class="com.accp.myoa.web.action.MeetingSummaryScanAction">
+		<property name="meetingSummaryScanService" ref="meetingSummaryScanService"/>
+	</bean>
+	<bean name="/meetingSummary" class="com.accp.myoa.web.action.MeetingSummaryAction">
+		<property name="meetingSummaryService" ref="meetingSummaryService"/>
+	</bean>
+	<bean name="/menu" class="com.accp.myoa.web.action.MenuAction">
+		<property name="menuService" ref="menuService"/>
+	</bean>
+	<bean name="/messageReceive" class="com.accp.myoa.web.action.MessageReceiveAction">
+		<property name="messageReceiveService" ref="messageReceiveService"/>
+	</bean>
+	<bean name="/message" class="com.accp.myoa.web.action.MessageAction">
+		<property name="messageService" ref="messageService"/>
+	</bean>
+	<bean name="/messageType" class="com.accp.myoa.web.action.MessageTypeAction">
+		<property name="messageTypeService" ref="messageTypeService"/>
+	</bean>
+	<bean name="/positionPopedom" class="com.accp.myoa.web.action.PositionPopedomAction">
+		<property name="positionPopedomService"  ref="positionPopedomService"/>
+	</bean>
+	<bean name="/position" class="com.accp.myoa.web.action.PositionAction">
+		<property name="positionService" ref="positionService"/>
+	</bean>
+	<bean name="/readState" class="com.accp.myoa.web.action.ReadStateAction">
+		<property name="readStateService" ref="readStateService"/>
+	</bean>
+	<bean name="/scratchpad" class="com.accp.myoa.web.action.ScratchpadAction">
+		<property name="scratchpadService" ref="scratchpadService"/>
+	</bean>
+	<bean name="/turnOutForWork" class="com.accp.myoa.web.action.TurnOutForWorkAction">
+		<property name="turnOutForWorkService" ref="turnOutForWorkService"/>
+	</bean>
+	<bean name="/unit" class="com.accp.myoa.web.action.UnitAction">
+		<property name="unitService" ref="unitService"/>
+	</bean>
+	<bean name="/user" class="com.accp.myoa.web.action.UserAction">
+		<property name="userService" ref="userService"/>
+		
+		<property name="deptService" ref="deptService"/>
+		<property name="positionService" ref="positionService"/>
+		<property name="deptPositionService" ref="deptPositionService"></property>
+	</bean>
+	<bean name="/userState" class="com.accp.myoa.web.action.UserStateAction">
+		<property name="userStateService" ref="userStateService"/>
+	</bean>
+	<bean name="/weekDiary" class="com.accp.myoa.web.action.WeekDiaryAction">
+		<property name="weekDiaryService" ref="weekDiaryService"/>
+	</bean>
+</beans>

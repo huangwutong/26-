@@ -1,0 +1,27 @@
+BODY {
+PADDING-LEFT: 0px;PADDING-BOTTOM: 0px; MARGIN: 0px;PADDING-TOP: 0px;font-size:9pt;scrollbar-highlight-color: buttonface; scrollbar-shadow-color: buttonface; scrollbar-3dlight-color: buttonhighlight; scrollbar-track-color: #EEEEEE; scrollbar-darkshadow-color: buttonshadow
+}
+div{font-size:9pt} 
+table{font-size: 9pt; line-height: 140%}
+input  { behavior:url('../common/input.htc'); }
+a:link{color:#2764B5;text-decoration:none}
+a:visited{color:#2764B5;text-decoration:none}
+a:active{color:#2764B5;text-decoration:underline} 
+a:hover{color:#FF9900;text-decoration:none} 
+a.tt:link{color:#2764B5;text-decoration:none}
+a.tt:visited{color:#2764B5;text-decoration:none}
+a.tt:active{color:#2764B5;text-decoration:underline} 
+a.tt:hover{color:#000000;text-decoration:none} 
+.word{text-indent:20px;line-height:150%}
+.title1{filter:DropShadow(Color="#000000",OffX="1",OffY="1",Positive="1");color:#FFFFFF;}
+.title2{filter:DropShadow(Color="#FFFFFF",OffX="1",OffY="1",Positive="1");color:#000000;}
+.titlefont {font-weight:bold ; COLOR: #000000; FONT-SIZE:11pt;}
+.tdtopline{border:#777777 solid;border-width:0 1 1 0; background-color:#EEEEEE;}
+.tdother{border:#777777 solid;border-width:0 1 1 0;background-color:#FFFFFF}
+.tboutline{border:#777777 solid;border-width:1 0 0 1}
+.xxline{background-image=url('../images/xt_h.jpg');height:1px;border-width:0 0 0 0;}
+.toptd{height:35px;border-width:0 0 0 0;font-weight:bold;color:#2764B5;}
+.tbulleft{width:35%;border:#777777 solid;border-width:0 1 1 0;background-color:#FFFFFF;}
+.tbulright{width:65%;border:#777777 solid;border-width:0 1 1 0;background-color:#FFFFFF;}
+.tbbuttonl{width:80;border:#777777 solid;border-width:0 1 1 0;background-color:#FFFFFF;}
+.muchtext{line-height:150%;width:85%}

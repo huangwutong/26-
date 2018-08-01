@@ -1,0 +1,120 @@
+/*==============================================================*/
+/* Table:messageboard                                                 */
+/*==============================================================*/
+create table messageboard (message_id  int not null auto_increment,   message_title  varchar(50) not null,   message_date   datetime not null, 
+  message_user  varchar(20) not null,   message_content    varchar(200) not null,   primary key (message_id));
+  
+ /*==============================================================*/
+/* Table:admininfo                                                 */
+/*==============================================================*/
+create table admininfo(admin_id int not null auto_increment,admin_name varchar(30) not null,admin_password varchar(30) not null,primary key(admin_id));
+
+/*==============================================================*/
+/* DBMS name:      MySQL 5.0                                    */
+/* Created on:     2008-06-05 08:34:29                          */
+/*==============================================================*/
+
+
+drop table if exists book;
+
+drop table if exists catagory;
+
+drop table if exists orderdetail;
+
+drop table if exists orders;
+
+drop table if exists userinfo;
+
+/*==============================================================*/
+/* Table: book                                                  */
+/*==============================================================*/
+create table book
+(
+   bookno              int   not null auto_increment,
+   crono                 int not null,
+   bname                varchar(20) not null,
+   author               varchar(20),
+   pdate                varchar(15),
+   publisher            varchar(20),
+   remark               varchar(40),
+   price                numeric(4,2),
+   primary key (bookno)
+)
+comment = "图书信息";
+
+/*==============================================================*/
+/* Table: catagory                                              */
+/*==============================================================*/
+create table catagory
+(
+   crono                  int   not null auto_increment,
+   cname                varchar(20) comment '类别名',
+   xeplain              varchar(50),
+   primary key (crono)
+)
+comment = "图书类别";
+
+/*==============================================================*/
+/* Table: orderdetail                                           */
+/*==============================================================*/
+create table orderdetail
+(
+   orderdetailno         int  not null auto_increment,
+   orderno             int not null,
+   uname                varchar(20),
+   address              varchar(50),
+   bname                varchar(20),
+   price                numeric(4,2),
+   num                  int default 0,
+   status               int default 0,
+   primary key (orderdetailno)
+)
+comment = "订单明细表";
+
+/*==============================================================*/
+/* Table: orders                                                */
+/*==============================================================*/
+create table orders
+(
+   orderno                int   not null auto_increment,
+   userno                int not null,
+   uname                varchar(20),
+   status               int default 0,
+   orderdate            datetime,
+   primary key (orderno)
+)
+comment = "订单表";
+
+/*==============================================================*/
+/* Table: userinfo                                              */
+/*==============================================================*/
+create table userinfo
+(
+   userno               int   not null auto_increment,
+   uname                varchar(20) not null comment '用户名',
+   passwd               varchar(20) not null comment '用户密码',
+   usex		varchar(8) comment '用户性别',
+   uinterest varchar(100) comment '用户兴趣',
+   email                varchar(30) comment '邮箱',
+   address              varchar(50) comment '地址',
+   telephone            varchar(20) comment '电话',
+   city                varchar(20) comment '城市',
+   primary key (userno)
+)
+comment = "用户表";
+
+alter table book add constraint aa foreign key (crono)
+      references catagory (crono) on delete restrict on update restrict;
+
+alter table orderdetail add constraint bb foreign key (orderno)
+      references orders (orderno) on delete restrict on update restrict;
+
+alter table orders add constraint ee foreign key (userno)
+      references userinfo (userno) on delete restrict on update restrict;
+      
+      
+      
+ /*==============================================================*/
+/*insert data                              */
+/*==============================================================*/     
+insert into admininfo(admin_name,admin_password) values('admin','admin');

@@ -1,0 +1,56 @@
+	
+	body { 
+	font-size: 12pt; 
+	scrollbar-3dlight-color:#170708; 
+	scrollbar-arrow-color:#000000; 
+	scrollbar-base-color:#170708; 
+	scrollbar-darkshadow-color:#ffffff;
+	 scrollbar-face-color:#EEEAEB;
+	  scrollbar-highlight-color:#FBFDFC;
+	   scrollbar-shadow-color:#170708;
+	   
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	 }
+	 
+	  
+	 a.menu{
+	 font-family: "宋体";
+	font-size: 13px;
+	color: #000000;
+	text-decoration:none
+	 }
+	 
+	 a.menu:hover {
+	font-family: "宋体";
+	font-size: 13px;
+	color: #000000;
+	text-decoration:none
+	 }
+	
+	 
+	a.exit{
+	font-size: 9pt;
+	 font-family: 宋体;
+	color:#666633;
+	 text-decoration:none;
+	 }
+		a.exit:hover{
+	font-size: 9pt;
+	 font-family: 宋体; 
+	 color:red;
+	 text-decoration:none;
+	 }
+	
+	table{
+	border-collapse:collapse;
+	
+	}
+	
+	.pwdfont {
+	font-family: "宋体";
+	font-size: 14px;
+	color: #000000;
+}

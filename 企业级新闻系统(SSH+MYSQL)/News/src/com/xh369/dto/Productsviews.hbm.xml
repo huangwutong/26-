@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.xh369.dto.Productsviews" table="productsviews" lazy="false">
+        <composite-id name="id" class="com.xh369.dto.ProductsviewsId">
+            <key-property name="id" type="int">
+                <column name="id" />
+            </key-property>
+            <key-property name="productname" type="string">
+                <column name="productname"/>
+            </key-property>
+            <key-property name="bigclassname" type="string">
+                <column name="bigclassname"/>
+            </key-property>
+            <key-property name="smallclassname" type="string">
+                <column name="smallclassname"/>
+            </key-property>
+            <key-property name="productmodel" type="string">
+                <column name="productmodel"/>
+            </key-property>
+            <key-property name="marketprice" type="int">
+                <column name="marketprice"/>
+            </key-property>
+            <key-property name="preferentialprice" type="int">
+                <column name="preferentialprice"/>
+            </key-property>
+            <key-property name="vouch" type="string">
+                <column name="vouch"/>
+            </key-property>
+            <key-property name="newproduct" type="string">
+                <column name="newproduct"/>
+            </key-property>
+            <key-property name="introduct" type="text">
+                <column name="introduct"/>
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

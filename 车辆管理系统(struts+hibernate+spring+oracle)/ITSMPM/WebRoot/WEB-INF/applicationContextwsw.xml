@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans default-autowire="autodetect" >
+
+<!-- PRINT -->
+<!--对action进行配置  -->
+  <bean id="outcmprintAction" class="com.action.print.OutcmprintAction" singleton="false">
+    <property name="taskService">
+	   <ref local="taskService"/>
+	 </property>
+  </bean>
+  <bean id="oilprintAction" class="com.action.print.OilprintAction" singleton="false">
+    <property name="printServices">
+	   <ref local="printServices"/>
+	 </property>
+  </bean>
+  <bean id="selectoilAction" class="com.action.print.SelectoilAction" singleton="false">
+    <property name="printServices">
+	   <ref local="printServices"/>
+	 </property>
+  </bean>
+  <bean id="oilprintaAction" class="com.action.print.OilprintaAction" singleton="false">
+  </bean>
+  <!-- serm repair -->
+  <bean id="wxprintaAction" class="com.action.print.WxprintaAction" singleton="false">
+  </bean>
+  <bean id="byprintaAction" class="com.action.print.ByprintaAction" singleton="false">
+  </bean>
+  <bean id="bxprintaAction" class="com.action.print.BxprintaAction" singleton="false">
+  </bean>
+  <bean id="gfprintaAction" class="com.action.print.GfprintaAction" singleton="false">
+  </bean>
+  <bean id="njprintaAction" class="com.action.print.NjprintaAction" singleton="false">
+  </bean>
+  <bean id="wzprintaAction" class="com.action.print.WzprintaAction" singleton="false">
+  </bean>
+
+
+
+
+
+
+  <bean id="printServices" class="com.service.impl.print.PrintServiceImpl" >
+    <property name="carbstbDAO">
+	   <ref bean="CarbstbDAO"/>
+	 </property>
+  </bean>
+
+
+
+
+<!-- 任务管理 -->
+  <bean id="usecarsqAction" class="com.action.task.UsecarsqAction" singleton="false">
+    <property name="taskService">
+	   <ref local="taskService"/>
+	 </property>
+  </bean>
+  <bean id="saveUsecarsqAction" class="com.action.task.SaveUsecarsqAction" singleton="false">
+    <property name="taskService">
+	   <ref local="taskService"/>
+	 </property>
+  </bean>
+  <bean id="usecarsqdeleAction" class="com.action.task.UsecarsqdeleAction" singleton="false">
+    <property name="taskService">
+	   <ref local="taskService"/>
+	 </property>
+  </bean>
+  <bean id="carspAction" class="com.action.task.CarspAction" singleton="false">
+    <property name="taskService">
+	   <ref local="taskService"/>
+	 </property>
+  </bean>
+  <bean id="carspseleAction" class="com.action.task.CarspseleAction" singleton="false">
+    <property name="taskService">
+	   <ref local="taskService"/>
+	 </property>
+  </bean>
+  <bean id="saveCarspAction" class="com.action.task.SaveCarspAction" singleton="false">
+    <property name="taskService">
+	   <ref local="taskService"/>
+	 </property>
+  </bean>
+  <bean id="taskoutcarAction" class="com.action.task.TaskoutcarAction" singleton="false">
+    <property name="taskService">
+	   <ref local="taskService"/>
+	 </property>
+  </bean>
+  <bean id="takecarAction" class="com.action.task.TakecarAction" singleton="false">
+    <property name="taskService">
+	   <ref local="taskService"/>
+	 </property>
+  </bean>
+   <bean id="saveTakecarAction" class="com.action.task.SaveTakecarAction" singleton="false">
+    <property name="taskService">
+	   <ref local="taskService"/>
+	 </property>
+  </bean>
+   <bean id="seleoutcarAction" class="com.action.task.SeleoutcarAction" singleton="false">
+    <property name="taskService">
+	   <ref local="taskService"/>
+	 </property>
+  </bean>
+   <bean id="outcmdeleAction" class="com.action.task.OutcmdeleAction" singleton="false">
+    <property name="taskService">
+	   <ref local="taskService"/>
+	 </property>
+  </bean>
+  <bean id="incarAction" class="com.action.task.IncarAction" singleton="false">
+    <property name="taskService">
+	   <ref local="taskService"/>
+	 </property>
+  </bean>
+  <bean id="taskincarAction" class="com.action.task.TaskincarAction" singleton="false">
+    <property name="taskService">
+	   <ref local="taskService"/>
+	 </property>
+  </bean>
+  <bean id="saveIncarAction" class="com.action.task.SaveIncarAction" singleton="false">
+    <property name="taskService">
+	   <ref local="taskService"/>
+	 </property>
+  </bean>
+  
+  
+  
+
+
+
+ <bean id="taskService" class="com.service.impl.task.TaskServiceImpl" >
+     <property name="ucapliDAO">
+	   <ref bean="UcapliDAO"/>
+	 </property>
+	 <property name="drivermDAO">
+	   <ref bean="DrivermDAO"/>
+	 </property>
+	 <property name="outcmDAO">
+	   <ref bean="OutcmDAO"/>
+	 </property>
+	 
+	 
+ </bean>
+
+ <!-- 车辆管理 -->
+ <bean id="carmessageAction" class="com.action.car.CarmessageAction" singleton="false">
+    <property name="carService">
+	   <ref local="carService"/>
+	 </property>
+ </bean>
+ <bean id="saveCarAction" class="com.action.car.SaveCarAction" singleton="false">
+    <property name="carService">
+	   <ref local="carService"/>
+	 </property>
+ </bean>
+ <bean id="careditAction" class="com.action.car.CareditAction" singleton="false">
+    <property name="carService">
+	   <ref local="carService"/>
+	 </property>
+ </bean>
+ <bean id="upCarAction" class="com.action.car.UpCarAction" singleton="false">
+    <property name="carService">
+	   <ref local="carService"/>
+	 </property>
+ </bean>
+  <bean id="caroutAction" class="com.action.car.OutcarAction" singleton="false">
+    <property name="carService">
+	   <ref local="carService"/>
+	 </property>
+ </bean>
+ 
+ 
+ 
+ <bean id="carService" class="com.service.impl.car.CarServiceImpl" >
+    <property name="carbstbDAO">
+	   <ref bean="CarbstbDAO"/>
+	 </property>
+	 <property name="outcmDAO">
+	   <ref bean="OutcmDAO"/>
+	 </property>
+ </bean>
+ 
+ 
+ <bean id="userloginAction" class="com.action.login.UserLogin" singleton="false">
+    <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+ <bean id="loginAction" class="com.action.login.LoginAction" singleton="false">
+    <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+ <!-- system -->
+ <bean id="usermangerAction" class="com.action.user.UsermangerAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+ <bean id="saveXxuserAction" class="com.action.user.SaveXxuserAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+ 
+ <bean id="upXxuserAction" class="com.action.user.UpXxuserAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+ 
+ <bean id="userdeleAction" class="com.action.user.UserdeleAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+ <bean id="selecturAction" class="com.action.user.SelecturAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+ <bean id="saveUrAction" class="com.action.user.SaveUrAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+ <bean id="urshowAction" class="com.action.user.UrshowAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+ <bean id="urdeleAction" class="com.action.user.UrdeleAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+<!-- role -->
+<bean id="roleShowAction" class="com.action.user.RoleShowAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+ <bean id="saveRoletbAction" class="com.action.user.SaveRoletbAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+  <bean id="roledeleAction" class="com.action.user.RoledeleAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+  </bean>
+  <bean id="upRoletbAction" class="com.action.user.UpRoletbAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+  </bean>
+  
+  
+  
+<!-- rp  -->
+ <bean id="rpshowAction" class="com.action.user.RpshowAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+ <bean id="selectrpAction" class="com.action.user.SelectrpAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+ <bean id="saveRpAction" class="com.action.user.SaveRpAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+ <bean id="rpdeleAction" class="com.action.user.RpdeleAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+ <!-- 权限 -->
+ <bean id="compsShowAction" class="com.action.user.CompsShowAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+  <bean id="saveCompsAction" class="com.action.user.SaveCompsAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+  <bean id="comdeleAction" class="com.action.user.ComdeleAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+ <bean id="upCompsAction" class="com.action.user.UpCompsAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+ 
+<!-- resp -->
+ <bean id="respshowAction" class="com.action.user.RespshowAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+ <bean id="respdeleAction" class="com.action.user.RespdeleAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+ <bean id="selectrespAction" class="com.action.user.SelectrespAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+ <bean id="saveRespAction" class="com.action.user.SaveRespAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+<!-- 资源管理 -->
+<bean id="resfunShowAction" class="com.action.user.ResfunshowAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+ <bean id="saveResfunAction" class="com.action.user.SaveResfunAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+ <bean id="resfundeleAction" class="com.action.user.ResfundeleAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+ <bean id="upResfunAction" class="com.action.user.UpResfunAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+ <bean id="uppasswordAction" class="com.action.user.UppasswordAction" singleton="false">
+	 <property name="userService">
+	   <ref local="userService"/>
+	 </property>
+ </bean>
+ 
+ 
+ 
+ <bean id="userService" class="com.service.impl.user.UserServiceImpl" >
+      <property name="xxuserDAO">
+       <ref bean="XxuserDAO"/>
+      </property>
+	  <property name="roletbDAO">
+	    <ref bean="RoletbDAO"/>
+	  </property>
+	  <property name="urDAO">
+	    <ref bean="URDAO"/>
+	  </property>
+ </bean>
+ <bean id="exitloginAction" class="com.action.login.ExitloginAction" singleton="false">
+ </bean>
+ 
+
+ 
+ 
+</beans>

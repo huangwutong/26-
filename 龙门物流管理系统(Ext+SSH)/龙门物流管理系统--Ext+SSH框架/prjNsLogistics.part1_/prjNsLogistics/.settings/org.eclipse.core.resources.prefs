@@ -1,0 +1,16 @@
+#Wed Aug 27 23:59:12 CST 2008
+eclipse.preferences.version=1
+encoding//WebRoot/Opt/JsonFactory/FreeDriver.jsp=UTF-8
+encoding//WebRoot/Opt/JsonFactory/FreeTruck.jsp=UTF-8
+encoding//WebRoot/ext/myjs/Mars/BillSelect.js=UTF-8
+encoding//WebRoot/ext/myjs/Mars/Billlist.js=UTF-8
+encoding//WebRoot/ext/myjs/Mars/affichelist.js=UTF-8
+encoding//WebRoot/ext/myjs/carmack/DriverInfo.js=UTF-8
+encoding//WebRoot/ext/myjs/carmack/TruckModel.js=UTF-8
+encoding//WebRoot/ext/myjs/carmack/UserInfo.js=UTF-8
+encoding//WebRoot/ext/myjs/opt/CargoTidy.js=UTF-8
+encoding//WebRoot/ext/myjs/opt/TruckInfo.js=UTF-8
+encoding//WebRoot/ext/myjs/opt/login.js=UTF-8
+encoding//WebRoot/ext/myjs/opt/main.js=UTF-8
+encoding//src/com/struts/action/Mars_billinfo_getparamAction.java=UTF-8
+encoding//src/com/struts/action/OptOperationTreeAction.java=UTF-8

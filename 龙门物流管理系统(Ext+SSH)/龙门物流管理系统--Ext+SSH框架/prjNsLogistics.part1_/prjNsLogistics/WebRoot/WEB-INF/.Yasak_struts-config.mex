@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/yasak_CustomerList.do" location="30,30" dimension="150,100" />
+  <StrutsActivity path="/yasak_CustomerFindById.do" location="480,30" dimension="150,100" />
+  <StrutsActivity path="/yasak_CustomerUpdate.do" location="30,150" dimension="150,100" />
+  <StrutsActivity path="/yasak_CustomerAdd.do" location="30,270" dimension="150,100" />
+  <StrutsActivity path="/yasak_BillList.do" location="480,150" dimension="150,100" />
+  <StrutsActivity path="/yasak_BillAdd.do" location="480,270" dimension="150,100" />
+  <StrutsActivity path="/yasak_BillUpdate.do" location="30,405" dimension="150,100" />
+  <StrutsActivity path="/yasak_BillInBranchList.do" location="480,405" dimension="150,100" />
+  <StrutsActivity path="/yasak_BillInBranchUpdate.do" location="30,540" dimension="150,100" />
+  <StrutsActivity path="/yasak_BillInCustomerList.do" location="480,555" dimension="150,100" />
+  <StrutsActivity path="/yasak_BillInCustomerUpdate.do" location="30,675" dimension="150,100" />
+  <StrutsActivity path="/yasak_BillOutCustomerList.do" location="30,795" dimension="150,100" />
+  <StrutsActivity path="/Yasak/JsonFactory/Yasak_Customer.jsp" location="300,30" dimension="150,100" />
+  <StrutsActivity path="/Yasak/JsonFactory/CustomerFindById.jsp" location="750,30" dimension="150,100" />
+  <StrutsActivity path="/Yasak/JsonFactory/CustomerUpdate.jsp" location="300,150" dimension="150,100" />
+  <StrutsActivity path="/Yasak/JsonFactory/CustomerAdd.jsp" location="300,270" dimension="150,100" />
+  <StrutsActivity path="/Yasak/JsonFactory/BillInfo.jsp" location="750,150" dimension="150,100" />
+  <StrutsActivity path="/Yasak/JsonFactory/BillAdd.jsp" location="750,270" dimension="150,100" />
+  <StrutsActivity path="/Yasak/JsonFactory/BillUpdate.jsp" location="300,405" dimension="150,100" />
+  <StrutsActivity path="/Yasak/JsonFactory/BillInBranch.jsp" location="750,405" dimension="150,100" />
+  <StrutsActivity path="/Yasak/JsonFactory/BillInBranchUpdate.jsp" location="300,540" dimension="150,100" />
+  <StrutsActivity path="/Yasak/JsonFactory/BillInCustomer.jsp" location="750,555" dimension="150,100" />
+  <StrutsActivity path="/Yasak/JsonFactory/BillInCustomerUpdate.jsp" location="300,675" dimension="150,100" />
+  <StrutsActivity path="/Yasak/JsonFactory/BillOutCustomer.jsp" location="300,795" dimension="150,100" />
+  <StrutsActivity path="/yasak_afficheAdd.do" location="480,675" dimension="150,100" />
+  <StrutsActivity path="/Yasak/JsonFactory/AfficheAdd.jsp" location="750,675" dimension="150,100" />
+  <StrutsTransition id="/yasak_BillUpdate.do,updateok,/Yasak/JsonFactory/BillUpdate.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="180,455" />
+      <AbsolutePoint location="300,455" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/yasak_BillInCustomerUpdate.do,updateok,/Yasak/JsonFactory/BillInCustomerUpdate.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="180,725" />
+      <AbsolutePoint location="300,725" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/yasak_BillInBranchList.do,listok,/Yasak/JsonFactory/BillInBranch.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="630,455" />
+      <AbsolutePoint location="750,455" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/yasak_BillInBranchUpdate.do,updateok,/Yasak/JsonFactory/BillInBranchUpdate.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="180,590" />
+      <AbsolutePoint location="300,590" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/yasak_BillOutCustomerList.do,listok,/Yasak/JsonFactory/BillOutCustomer.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="180,845" />
+      <AbsolutePoint location="300,845" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/yasak_CustomerAdd.do,addok,/Yasak/JsonFactory/CustomerAdd.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="180,320" />
+      <AbsolutePoint location="300,320" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/yasak_CustomerList.do,list,/Yasak/JsonFactory/Yasak_Customer.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="180,80" />
+      <AbsolutePoint location="300,80" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/yasak_BillList.do,billlist,/Yasak/JsonFactory/BillInfo.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="630,200" />
+      <AbsolutePoint location="750,200" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/yasak_BillInCustomerList.do,listok,/Yasak/JsonFactory/BillInCustomer.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="630,605" />
+      <AbsolutePoint location="750,605" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/yasak_afficheAdd.do,addok,/Yasak/JsonFactory/AfficheAdd.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="630,725" />
+      <AbsolutePoint location="750,725" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/yasak_BillAdd.do,billaddok,/Yasak/JsonFactory/BillAdd.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="630,320" />
+      <AbsolutePoint location="750,320" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/yasak_CustomerFindById.do,findok,/Yasak/JsonFactory/CustomerFindById.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="630,80" />
+      <AbsolutePoint location="750,80" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/yasak_CustomerUpdate.do,customerUpdate,/Yasak/JsonFactory/CustomerUpdate.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="180,180" />
+      <AbsolutePoint location="300,180" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

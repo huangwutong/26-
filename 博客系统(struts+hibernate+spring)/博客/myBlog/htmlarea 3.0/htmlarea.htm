@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Example of HTMLArea 3.0</title>
+
+<script type="text/javascript">
+  _editor_url = "./";
+  _editor_lang = "en";
+</script>
+<script type="text/javascript" src="./htmlarea.js"></script>
+
+<script type="text/javascript">
+function initEditor() {
+  var editor = new HTMLArea("ta");
+  editor.generate();
+}
+</script>
+
+</head>
+
+<body onload="initEditor()">
+
+<textarea id="ta" name="ta" style="width:100%" rows="20" cols="80">
+	Hello
+</textarea>
+
+</body>
+</html>

@@ -1,0 +1,179 @@
+
+
+
+
+
+
+
+
+            
+                                                                                                                                                                                                                                                   
+
+             
+
+<script language="JavaScript" >
+	function page_check()
+	{
+		if(document.newspage.page.value=="")
+		{
+			alert("请输入页数");
+			document.newspage.page.focus();
+			return false;
+		}
+		return true;
+	}
+</script>
+             
+
+		<script language="JavaScript">
+			alert("添加成功");
+			window.location = "news.jsp";
+		</script>
+
+	<script language="JavaScript">
+		alert("添加失败");
+		window.location = "news.jsp";
+	</script>
+<TABLE cellSpacing=0 cellPadding=0 width=770 align=center border=0>
+   <TBODY>
+     <TR>
+		<TD width=3 background=images/bian.gif></TD>
+		<TD>
+		  <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
+			<TBODY>
+				<TR>
+				   <TD width=6 background=images/left-shu.gif rowSpan=3></TD>
+				   
+              <TD background=images/hen.gif height=16></TD>
+				   <TD width=6 background=images/right-shu.gif rowSpan=3></TD>
+				</TR>
+			    <TR>
+			       
+              <TD height="233"> 
+                <TABLE width="100%" height="480" 
+					border=0 cellPadding=0 cellSpacing=0 bgColor=#42748d>
+                  <TBODY>
+                    <TR vAlign=top> 
+                      <TD height="40" bgcolor="#3300cc">
+									<p>&nbsp;</p>
+									<p><a href="/index.jsp"><FONT color="#ffffff">首页<FONT color="#000000"
+										style="BACKGROUND-COLOR: #ffffff"></FONT></FONT>
+										</a></p></TD>
+                    </TR>
+                    <TR vAlign=top> 
+                      <TD height="8" bgcolor="#000000"> 
+                        <div align="center">
+                          <p><font color="#FFFFFF" size="3">留言本</font></p>
+                          </div></TD>
+                    </TR>
+                    <TR vAlign=top> 
+                      <TD width="62%" height="220">
+                      <table width="283" height="266" align="left">
+                          <tr>
+						  <tr>
+                            <p></p>
+                            <td width="188" height="50"><a href="/Login?action=logout">注销</a></td>
+                          </tr>
+						  <tr>
+                            <td height="50"><a href="/admin/user.jsp">管理用户</a></td>
+                          </tr>
+                          <tr>
+						  <tr>
+                            <td height="50"><a href="news.jsp">管理新闻</a></td>
+                          </tr>
+						  <tr>
+                            <td height="50"><a href="music.jsp">管理歌曲</a></td>
+                          </tr><tr>
+                            <td height="50"><a href="">管理留言</a></td>
+                          </tr>
+                        </table> 
+                        <table width="40%" height="23" border="0" align="center">
+                          <tr> 
+                            <td width="42%"><a href="/admin/user.jsp">用户管理</a></td>
+                            <td width="30%"><a href="/admin/news.jsp?state=1">添加新闻</a></td>
+                            <td width="28%"><a href="/admin/index.jsp">管理首页</a></td>
+                          </tr>
+                        </table>
+                        <table width="450" border="0" cellpadding="3" cellspacing="1" bgcolor="#ffffff">
+						  <tr bgcolor="#cccccc">
+							<td width="32%" align="center" nowrap><b>标题</b></td>
+							<td align="center" nowrap width="34%"><b>创建日期</b></td>
+							<td align="center" nowrap width="34%"><b>发布人</b></td>
+						  </tr>
+						  <TR bgcolor="#6600CC">
+						 	   <td align="center" nowrap width="32%">
+						       <a href="news.jsp?action=modify&newsid=&position=">
+						       </a></td>
+						       <td width="34%" align="center" nowrap></td>
+						       <td align="center" nowrap width="34%"></td>
+						   </TR>
+						  	
+						 </table>
+						 <FORM name="newspage" method="post" onSubmit="return page_check();"action="news.jsp">
+						<TABLE width="36%">
+						<tr>
+						<td >共有页,现在是第页</td>
+						</tr>
+						<tr>
+						<td>
+						<a href="/admin/news.jsp?page=">上一页</a>
+						<a href="/admin/news.jsp?page=">下一页 </a>
+						<a href="/admin/news.jsp?page=1">首页 </a>
+						<a href="/admin/news.jsp?page=">尾页 </a>
+						<input name="page" type="text" size="5">页<input type="submit" value="Go">
+						</td>
+						</tr>
+						</TABLE>
+						</FORM>
+                                             
+                        
+					    
+						                
+						 
+						 <FORM action="news.jsp?action=add" method=post>
+                        <table width="550" height="175" border="0">
+                          <tr align="center"> 
+                            <td colspan="3"><b>添加留言</b></td>
+                          </tr>
+                          <tr> 
+                            <td width="19%" align="right"><strong>留言标题</strong></td>
+                            <td width="81%" align="left"> <input type="text" name="addnewstitle"></td>
+                          </tr>
+                          <tr align="center"> 
+                            <td colspan="3"><strong>留言内容</strong></td>
+                          </tr>
+                          <tr align="left"> 
+                            <td height="41" colspan="3">
+							 <textarea  name="addnewsarea" rows="8" cols="50"></textarea> 
+                            </td>
+                          </tr>
+                          <tr align="center"> 
+                            <td align="right" width="39%"> 
+                              <input type="submit" value="提交">
+                            </td>
+                            <td align="left"> 
+                              <input type="reset">
+                            </td>
+                          </tr>
+                        </table>
+                        </FORM>
+                        
+                        </TD>
+                    </TR>
+                  </TBODY>
+                </TABLE>
+					</TD>
+				</TR>
+				
+            <TR> 
+              <TD background=images/middle-shu.gif height=60>
+              </TD>
+			</TR>
+			</TBODY>
+		 </TABLE>
+	  </TD>
+		<TD width=3 background=images/bian3.gif></TD>
+	</TR>
+   </TBODY>
+  </TABLE>
+  

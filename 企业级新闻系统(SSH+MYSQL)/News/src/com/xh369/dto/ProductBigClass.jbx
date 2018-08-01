@@ -1,0 +1,10 @@
+[PropertyInfo]
+bigclassname,String,false,false, , ,false,<default>
+id,Integer,false,false, , ,false,<default>
+product,java.util.Set,false,false, , ,false,<default>
+productsmallclass,java.util.Set,false,false, , ,true,<default>
+[IconNames]
+
+
+
+

@@ -1,0 +1,138 @@
+P {
+	TEXT-INDENT: 2em
+}
+BODY {
+	FONT-SIZE: 12px; MARGIN: 0px; FONT-FAMILY: 宋体; BACKGROUND-COLOR: #ffffff
+}
+TABLE {
+	FONT-SIZE: 12px; COLOR: #000000; LINE-HEIGHT: 1.6em; FONT-FAMILY: 宋体
+}
+TD {
+	FONT-SIZE: 12px; COLOR: #000000; LINE-HEIGHT: 1.6em; FONT-FAMILY: 宋体
+}
+FORM {
+	PADDING-RIGHT: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-TOP: 0px
+}
+INPUT {
+	FONT-SIZE: 9pt; COLOR: #363636; FONT-FAMILY: 宋体
+}
+SELECT {
+	FONT-SIZE: 9pt; COLOR: #363636; FONT-FAMILY: 宋体
+}
+TEXTAREA {
+	FONT-SIZE: 9pt; COLOR: #363636; FONT-FAMILY: 宋体
+}
+IMG {
+	BORDER-RIGHT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: 0px; PADDING-LEFT: 0px; PADDING-BOTTOM: 0px; MARGIN: 0px; BORDER-LEFT: 0px; PADDING-TOP: 0px; BORDER-BOTTOM: 0px
+}
+A:link {
+	COLOR: #355faa; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #355faa; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #355faa; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #355faa; TEXT-DECORATION: underline
+}
+A.test:link {
+	COLOR: #355faa; TEXT-DECORATION: underline
+}
+A.test:visited {
+	COLOR: #355faa; TEXT-DECORATION: underline
+}
+A.test:active {
+	COLOR: #355faa; TEXT-DECORATION: underline
+}
+A.test:hover {
+	COLOR: #355faa; TEXT-DECORATION: underline
+}
+A.white:link {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.white:visited {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.white:active {
+	COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.white:hover {
+	COLOR: #ffffff; TEXT-DECORATION: underline
+}
+A.black:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A.black:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A.black:active {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A.black:hover {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A.whitebold:link {
+	FONT-WEIGHT: bold; COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.whitebold:visited {
+	FONT-WEIGHT: bold; COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.whitebold:active {
+	FONT-WEIGHT: bold; COLOR: #ffffff; TEXT-DECORATION: none
+}
+A.whitebold:hover {
+	FONT-WEIGHT: bold; COLOR: #ffffff; TEXT-DECORATION: underline
+}
+A.ltit:link {
+	FONT-WEIGHT: bold; COLOR: #355faa; TEXT-DECORATION: none
+}
+A.ltit:visited {
+	FONT-WEIGHT: bold; COLOR: #355faa; TEXT-DECORATION: none
+}
+A.ltit:active {
+	FONT-WEIGHT: bold; COLOR: #355faa; TEXT-DECORATION: none
+}
+A.ltit:hover {
+	FONT-WEIGHT: bold; COLOR: #355faa; TEXT-DECORATION: none
+}
+.allbt {
+	BORDER-RIGHT: #000000 1px solid; BORDER-TOP: #ffffff 1px solid; BORDER-LEFT: #ffffff 1px solid; COLOR: #355faa; BORDER-BOTTOM: #000000 1px solid; HEIGHT: 18px; BACKGROUND-COLOR: #f1f1f1
+}
+.gnbSubMenu A:link {
+	FONT-SIZE: 9pt; COLOR: #000000
+}
+.gnbSubMenu A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.gnbSubMenu A:active {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.gnbSubMenu A:hover {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.gnbMenu A:link {
+	COLOR: #000000
+}
+.gnbMenu A:visited {
+	COLOR: #000000
+}
+.gnbMenu A:active {
+	COLOR: #000000
+}
+.gnbMenu A:hover {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.bd_indexl {
+	BORDER-RIGHT: #dbdbdb 1px solid; BORDER-LEFT: #dbdbdb 1px solid
+}
+.bd_menul {
+	BORDER-RIGHT: #dfdfdf 1px solid; BORDER-LEFT: #dbdbdb 1px solid; BACKGROUND-COLOR: #fbfbfb
+}
+.bd_menur {
+	BORDER-RIGHT: #dfdfdf 1px solid; BORDER-TOP: #dfdfdf 1px solid; BORDER-BOTTOM: #dfdfdf 1px solid; BACKGROUND-COLOR: #fbfbfb
+}
+.title1 {
+	FONT-WEIGHT: bold; FONT-SIZE: 14px
+}

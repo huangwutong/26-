@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+
+<struts-config>
+  <data-sources />
+  <form-beans >
+    <form-bean name="marsBranchInfoForm" type="com.struts.form.MarsBranchInfoForm" />
+    <form-bean name="marsCustomerInfoForm" type="com.struts.form.MarsCustomerInfoForm" />
+    <form-bean name="marsTruckInfoForm" type="com.struts.form.MarsTruckInfoForm" />
+    <form-bean name="marsDriverInfoForm" type="com.struts.form.MarsDriverInfoForm" />
+    <form-bean name="marsTruckLogForm" type="com.struts.form.MarsTruckLogForm" />
+    <form-bean name="marsCargoInfoForm" type="com.struts.form.MarsCargoInfoForm" />
+    <form-bean name="marsCargoVectorForm" type="com.struts.form.MarsCargoVectorForm" />
+    <form-bean name="marsBillStateFormForm" type="com.struts.form.MarsBillStateFormForm" />
+    <form-bean name="marsBillInfoForm" type="com.struts.form.MarsBillInfoForm" />
+    <form-bean name="marsTrafficLogForm" type="com.struts.form.MarsTrafficLogForm" />
+    <form-bean name="marsAfficheInfoForm" type="com.struts.form.MarsAfficheInfoForm" />
+    <form-bean name="marsUserInfoForm" type="com.struts.form.MarsUserInfoForm" />
+    <form-bean name="marsJfreeCharFormForm" type="com.struts.form.MarsJfreeCharFormForm" />
+    <form-bean name="marsJfreeCharBranchForm" type="com.struts.form.MarsJfreeCharBranchForm" />
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards />
+  <action-mappings >
+    
+    <action
+      path="/mars_billinfo_findByBranchinf4"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="list"
+        path="/Mars/Billshow.jsp"
+        contextRelative="true" />
+    </action>
+
+    <action
+      path="/mars_billinfo_findByBranchinf3"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="list"
+        path="/Mars/Billshow.jsp"
+        contextRelative="true" />
+      
+    </action>
+
+    <action
+      path="/mars_billinfo_findBySendBranch3"
+     type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="list"
+        path="/Mars/Billshow.jsp"
+        contextRelative="true" />
+    </action>
+
+    <action
+      path="/mars_billinfo_findBySendBranch4"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="list"
+        path="/Mars/Billshow.jsp"
+        contextRelative="true" />
+    </action>
+
+    <action
+      path="/mars_billinfo_findByReceiveBranch3"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="list"
+        path="/Mars/Billshow.jsp"
+        contextRelative="true" />
+    </action>
+
+    <action
+      path="/mars_billinfo_findByReceiveBranch4"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="list"
+        path="/Mars/Billshow.jsp"
+        contextRelative="true" />
+    </action>
+
+    <action
+      path="/mars_billinfo_findByCustomer"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="list"
+        path="/Mars/Billshow.jsp"
+        contextRelative="true" />
+    </action>
+
+    <action
+      path="/mars_billinfo_findByCustomer4"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="list"
+        path="/Mars/Billshow.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/mars_customerinfo_findAll"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="list"
+        path="/Mars/Customershow.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/mars_useinfo_findAll"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="list"
+        path="/Mars/UserinfoShow.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/mars_billinfo_getparam"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="listone"
+        path="/mars_billinfo_findByBranchinf3.do"
+        contextRelative="true" />
+      <forward
+        name="listtwo"
+        path="/mars_billinfo_findByBranchinf4.do"
+        contextRelative="true" />
+      <forward
+        name="listthree"
+        path="/mars_billinfo_findBySendBranch3.do"
+        contextRelative="true" />
+      <forward
+        name="listfour"
+        path="/mars_billinfo_findBySendBranch4.do"
+        contextRelative="true" />
+      <forward
+        name="listfive"
+        path="/mars_billinfo_findByReceiveBranch3.do"
+        contextRelative="true" />
+      <forward
+        name="listsix"
+        path="/mars_billinfo_findByReceiveBranch4.do"
+        contextRelative="true" />
+      <forward
+        name="listseven"
+        path="/mars_billinfo_findByCustomer.do"
+        contextRelative="true" />
+      <forward
+        name="listeight"
+        path="/mars_billinfo_findByCustomer4.do"
+        contextRelative="true" />
+      <forward
+        name="listnine"
+        path="/mars_billinfo_findByReceiveBranchshare.do"
+        contextRelative="true" />
+      <forward
+        name="listten"
+        path="/mars_billinfo_findBySendBranchshare.do"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/mars_branchinfo_findAll"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="list"
+        path="/Mars/Branchshow.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/mars_truckinfo_findAll"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="list"
+        path="/Mars/Truckshow.jsp"
+        contextRelative="true" />
+    </action>
+
+    <action
+      path="/mars_driverinfo_findAll"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="list"
+        path="/Mars/Drivershow.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/mars_billinfo_findByReceiveBranchshare"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="list"
+        path="/Mars/Billshow.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/mars_billinfo_findBySendBranchshare"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="list"
+        path="/Mars/Billshow.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/mars_afficheinfo_findAll"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="list"
+        path="/Mars/Afficheshow.jsp"
+        contextRelative="true" />
+    </action>
+	<action
+      path="/jfreeCharCustomer"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="list"
+        path="/Mars/CustomerJFreeChar.jsp"
+        contextRelative="true" />
+    </action>
+    <action
+      path="/jfreeCharBranch"
+      type="org.springframework.web.struts.DelegatingActionProxy"
+      validate="false" >
+      <forward
+        name="list"
+        path="/Mars/BranchJFreeChar.jsp"
+        contextRelative="true" />
+    </action>
+</action-mappings>
+</struts-config>
+

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	
+
+		<import resource="Spring.xml" />
+		
+		<!-- 注入业务类 -->
+	    <bean id="mosterbillinfobuss" class="com.bu.moster.MosterBillInfoBusiness" >
+			<property name="ds">
+				<ref bean="DAOService"/>
+			</property>
+		</bean>
+		<bean id="mosterbillstatebuss" class="com.bu.moster.MosterBillStateBusiness">
+			<property name="ds">
+				<ref bean="DAOService"/>
+			</property>
+		</bean>
+		<bean id="mostercargoinfobuss" class="com.bu.moster.MosterCargoInfoBusiness">
+			<property name="ds">
+				<ref bean="DAOService"/>
+			</property>
+		</bean>
+		<bean id="mostercargovcbuss" class="com.bu.moster.MosterCargoVectorBusiness">
+			<property name="ds">
+				<ref bean="DAOService"/>
+			</property>
+		</bean>
+		<bean id="mostertrafficlogbuss" class="com.bu.moster.MosterTrafficLogBusiness">
+			<property name="ds">
+				<ref bean="DAOService"/>
+			</property>
+		</bean>
+		<bean id="mostertrucklogbuss" class="com.bu.moster.MosterTruckLogBusiness">
+			<property name="ds">
+				<ref bean="DAOService"/>
+			</property>
+		</bean>
+		<bean id="mosterbranchinfobuss" class="com.bu.moster.MosterBranchInfoBusiness">
+			<property name="ds">
+				<ref bean="DAOService"/>
+			</property>
+		</bean>
+		<bean id="mosteruserinfobuss" class="com.bu.moster.MosterUserInfoBusiness">
+			<property name="ds">
+				<ref bean="DAOService"/>
+			</property>
+		</bean>
+		
+	
+	
+		
+		
+		<!-- 注入业务服务类 -->
+		<bean id="mosterbuservice" class="com.service.MosterBuService">
+			<property name="mobillinfobuss">
+				<ref bean="mosterbillinfobuss"/>
+			</property>
+			<property name="mobillstatebuss">
+				<ref bean="mosterbillstatebuss"/>
+			</property>
+			<property name="mocargoinfobuss">
+				<ref bean="mostercargoinfobuss"/>
+			</property>
+			<property name="mocargoVecbuss">
+				<ref bean="mostercargovcbuss"/>
+			</property>
+			<property name="motralogbuss">
+				<ref bean="mostertrafficlogbuss"/>
+			</property>
+			<property name="motrulogbuss">
+				<ref bean="mostertrucklogbuss"/>
+			</property>
+			<property name="mobribuss">
+				<ref bean = "mosterbranchinfobuss"/>			
+			</property>
+			<property name="mousinfobuss">
+				<ref bean="mosteruserinfobuss"/>
+			</property>
+		</bean>
+	
+	
+		<!-- 注入Action类 -->
+		<bean name="/MocargoInfoAdd" class="com.struts.action.MoCargoInfoAddAction">
+			<property name="mobs">
+				<ref bean = "mosterbuservice"/>
+			</property>		
+		</bean>
+		<bean name="/MocargoList" class="com.struts.action.MoCargoListAction">
+			<property name="mobs">
+				<ref bean = "mosterbuservice"/>
+			</property>		
+		</bean>
+		<bean name="/MocargoVCAdd" class="com.struts.action.MoCargoVCAddAction">
+			<property name="mobs">
+				<ref bean = "mosterbuservice"/>
+			</property>		
+		</bean>
+		<bean name="/MocargoVCList" class="com.struts.action.MoCargoVCListAction">
+			<property name="mobs">
+				<ref bean = "mosterbuservice"/>
+			</property>		
+		</bean>
+		<bean name="/MobillList" class="com.struts.action.MoBillListAction">
+			<property name="mobs">
+				<ref bean = "mosterbuservice"/>
+			</property>		
+		</bean>
+		<bean name="/MobillUpdate" class="com.struts.action.MoBillUpdateAction">
+			<property name="mobs">
+				<ref bean = "mosterbuservice"/>
+			</property>		
+		</bean>
+		<bean name="/MoBillInfoFindByID" class="com.struts.action.MoBillInfoFindByIDAction">
+			<property name="mobs">
+				<ref bean = "mosterbuservice"/>
+			</property>
+
+		</bean>
+		<bean name="/MobillUpdateOk" class="com.struts.action.MoBillUpdateOkAction">
+			<property name="mobs">
+				<ref bean = "mosterbuservice"/>
+			</property>		
+		</bean>
+		<bean name="/MocargoBillInfo" class="com.struts.action.MoCargoBillInfoAction">
+			<property name="mobs">
+				<ref bean = "mosterbuservice"/>
+			</property>		
+		</bean>
+		
+		<bean name="/MotrafficList" class="com.struts.action.MoTrafficListAction" >
+			<property name="mobs">
+				<ref bean = "mosterbuservice"/>
+			</property>	
+		</bean>
+		
+		<bean name="/MotraBillUpdateOk" class="com.struts.action.MoTraBillUpdateOkAction">
+			<property name="mobs">
+				<ref bean = "mosterbuservice"/>
+			</property>
+		</bean>
+		
+		<bean name="/MosortingBillList" class="com.struts.action.MoSortingBillListAction">
+			<property name="mobs">
+				<ref bean = "mosterbuservice"/>
+			</property>
+		</bean>
+		
+		<bean name="/MotraBillUpdate" class="com.struts.action.MoTraBillUpdateAction">
+			<property name="mobs">
+				<ref bean = "mosterbuservice"/>
+			</property>
+		</bean>
+		
+		<bean name="/MosortingBillUpdate" class="com.struts.action.MoSortingBillUpdateAction" >
+			<property name="mobs">
+				<ref bean = "mosterbuservice"/>
+			</property>
+		</bean>
+		
+		<bean name="/MosortingBillUpdateOk" class="com.struts.action.MoSortingBillUpdateOkAction">
+			<property name="mobs">
+				<ref bean = "mosterbuservice"/>
+			</property>
+		</bean>
+		
+		
+		
+		
+		<bean name="/moCargoInfoUpdate" class="com.struts.action.MoCargoInfoUpdateAction">
+			<property name="mobs">
+				<ref bean = "mosterbuservice"/>
+			</property>
+		</bean>
+		
+		<bean name="/MoCargoID" class="com.struts.action.MoCargoIDAction">
+			<property name="mobs">
+				<ref bean = "mosterbuservice"/>
+			</property>
+			
+		</bean>
+		<bean name="/MoCargoVCUpdate" class="com.struts.action.MoCargoVCUpdateAction">
+			<property name="mobs">
+				<ref bean = "mosterbuservice"/>
+			</property>
+			
+		</bean>
+		<bean name="/moTraBillFindByID" class="com.struts.action.MoTraBillFindByIDAction">
+			<property name="mobs">
+				<ref bean = "mosterbuservice"/>
+			</property>
+			
+		</bean>
+		<bean name="/MoBillCheckList" class="com.struts.action.MoBillCheckListAction">
+			<property name="mobs">
+				<ref bean = "mosterbuservice"/>
+			</property>
+		</bean>
+		
+		<bean name="/MoBillCheckUpdateOk" class="com.struts.action.MoBillCheckUpdateOkAction">
+			<property name="mobs">
+				<ref bean = "mosterbuservice"/>
+			</property>
+			
+		</bean>
+		<bean name="/MoBillCheckUpdate" class="com.struts.action.MoBillCheckUpdateAction">
+			<property name="mobs">
+				<ref bean = "mosterbuservice"/>
+			</property>
+			
+		</bean>
+		<bean name="/MoCargoSelectList" class="com.struts.action.MoCargoSelectListAction">
+			<property name="mobs">
+				<ref bean = "mosterbuservice"/>
+			</property>
+			
+		</bean>
+		<bean name="/MoCargoSelectUpdate" class="com.struts.action.MoCargoSelectUpdateAction">
+			<property name="mobs">
+				<ref bean = "mosterbuservice"/>
+			</property>
+			
+		</bean></beans>

@@ -1,0 +1,9 @@
+[PropertyInfo]
+bigclass,com.xh369.dto.BigClass,false,false, , ,false,<default>
+id,Integer,false,false, , ,false,<default>
+smallclassname,String,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping package="dlog4j.formbean">
+	
+    <class name="CategoryForm" table="dlog_category" dynamic-update="false">
+    	<id name="id" column="catid" type="int">
+			<generator class="increment"/>
+		</id>		
+		<property name="name" type="java.lang.String" length="40" column="catName"/>
+		<property name="iconUrl" type="java.lang.String" length="20" column="iconUrl"/>
+		<property name="type" type="int" column="cattype"/>
+		<property name="order" type="int" column="sortOrder"/>
+		<bag name="logs" table="dlog_journay" lazy="true" inverse="true" cascade="save-update" order-by="logTime DESC">
+			<key column="catid"/>
+			<one-to-many class="LogForm"/>
+		</bag>
+		<many-to-one name="site" column="siteid" cascade="none"/>
+    </class>
+
+</hibernate-mapping>

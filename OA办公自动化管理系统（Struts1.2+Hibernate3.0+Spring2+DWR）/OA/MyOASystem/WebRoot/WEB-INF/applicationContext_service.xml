@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	
+	<!-- 我用到的Service -->
+	<bean id="userService" class="com.accp.myoa.service.impl.UserServiceImpl">
+		<property name="userDao" ref="userDao"/>
+	</bean>
+	<bean id="emailService" class="com.accp.myoa.service.impl.EmailServiceImpl">
+		<property name="emailDao" ref="emailDao"/>
+		<property name="pageSize" value="10"></property>
+	</bean>
+	<bean id="menuService" class="com.accp.myoa.service.impl.MenuServiceImpl">
+		<property name="menuDao" ref="menuDao"></property>
+	</bean>
+	
+	
+	<bean id="boardRoomService" class="com.accp.myoa.service.impl.BoardRoomServiceImpl">
+		<property name="boardRoomDao" ref="boardRoomDao"/>
+	</bean>
+	<bean id="bulletinExamineService" class="com.accp.myoa.service.impl.BulletinExamineServiceImpl">
+		<property name="bulletinExamineDao" ref="bulletinExamineDao"/>
+	</bean>
+	<bean id="bulletinReadService" class="com.accp.myoa.service.impl.BulletinReadServiceImpl">
+		<property name="bulletinReadDao" ref="bulletinReadDao"/>
+	</bean>
+	<bean id="bulletinService" class="com.accp.myoa.service.impl.BulletinServiceImpl">
+		<property name="bulletinDao" ref="bulletinDao"/>
+	</bean>
+	<bean id="carApplyService" class="com.accp.myoa.service.impl.CarApplyServiceImpl">
+		<property name="carApplyDao" ref="carApplyDao"/>
+	</bean>
+	<bean id="carService" class="com.accp.myoa.service.impl.CarServiceImpl">
+		<property name="carDao" ref="carDao"/>
+	</bean>
+	<bean id="clientCompanyService" class="com.accp.myoa.service.impl.ClientCompanyServiceImpl">
+		<property name="clientCompanyDao" ref="clientCompanyDao"/>
+	</bean>
+	<bean id="clientService" class="com.accp.myoa.service.impl.ClientServiceImpl">
+		<property name="clientDao" ref="clientDao"/>
+	</bean>
+	<bean id="comleteDegressService" class="com.accp.myoa.service.impl.ComleteDegressServiceImpl">
+		<property name="comleteDegressDao" ref="comleteDegressDao"/>
+	</bean>
+	<!-- 部门信息 LEO -->
+	<bean id="deptPositionService" class="com.accp.myoa.service.impl.DeptPositionServiceImpl">
+		<property name="deptPositionDao" ref="deptPositionDao"/>
+		<property name="pageSize" value="10"></property>
+	</bean>
+	
+	<bean id="deptService" class="com.accp.myoa.service.impl.DeptServiceImpl">
+		<property name="deptDao" ref="deptDao"/>
+	</bean>
+	<bean id="diaryService" class="com.accp.myoa.service.impl.DiaryServiceImpl">
+		<property name="diaryDao" ref="diaryDao"/>
+	</bean>
+	<bean id="documentExamineService" class="com.accp.myoa.service.impl.DocumentExamineServiceImpl">
+		<property name="documentExamineDao" ref="documentExamineDao"/>
+	</bean>
+	<bean id="documentReadService" class="com.accp.myoa.service.impl.DocumentReadServiceImpl">
+		<property name="documentReadDao" ref="documentReadDao"/>
+	</bean>
+	<bean id="documentService" class="com.accp.myoa.service.impl.DocumentServiceImpl">
+		<property name="documentDao" ref="documentDao"/>
+	</bean>
+	<bean id="egressExamineService" class="com.accp.myoa.service.impl.EgressExamineServiceImpl">
+		<property name="egressExamineDao" ref="egressExamineDao"/>
+	</bean>
+	<bean id="egressService" class="com.accp.myoa.service.impl.EgressServiceImpl">
+		<property name="egressDao" ref="egressDao"/>
+	</bean>
+	<bean id="emailReceivceService" class="com.accp.myoa.service.impl.EmailReceivceServiceImpl">
+		<property name="emailReceivceDao" ref="emailReceivceDao"/>
+	</bean>
+	<bean id="emailTypeService" class="com.accp.myoa.service.impl.EmailTypeServiceImpl">
+		<property name="emailTypeDao" ref="emailTypeDao"/>
+	</bean>
+	<bean id="examineStateService" class="com.accp.myoa.service.impl.ExamineStateServiceImpl">
+		<property name="examineStateDao" ref="examineStateDao"/>
+	</bean>
+	<bean id="fileService" class="com.accp.myoa.service.impl.FileServiceImpl">
+		<property name="fileDao" ref="fileDao"/>
+	</bean>
+	<bean id="leaveWordService" class="com.accp.myoa.service.impl.LeaveWordServiceImpl">
+		<property name="leaveWordDao" ref="leaveWordDao"/>
+		<property name="userDao" ref="userDao"/>
+	</bean>
+	<bean id="levelService" class="com.accp.myoa.service.impl.LevelServiceImpl">
+		<property name="levelDao" ref="levelDao"/>
+	</bean>
+	<bean id="meetingReadService" class="com.accp.myoa.service.impl.MeetingReadServiceImpl">
+		<property name="meetingReadDao" ref="meetingReadDao"/>
+	</bean>
+	<bean id="meetingService" class="com.accp.myoa.service.impl.MeetingServiceImpl">
+		<property name="meetingDao" ref="meetingDao"/>
+		<property name="meetingReadDao" ref="meetingReadDao"/>
+	</bean>
+	<bean id="meetingstateService" class="com.accp.myoa.service.impl.MeetingstateServiceImpl">
+		<property name="meetingstateDao" ref="meetingstateDao"/>
+	</bean>
+	<bean id="meetingSummaryScanService" class="com.accp.myoa.service.impl.MeetingSummaryScanServiceImpl">
+		<property name="meetingSummaryScanDao" ref="meetingSummaryScanDao"/>
+	</bean>
+	<bean id="meetingSummaryService" class="com.accp.myoa.service.impl.MeetingSummaryServiceImpl">
+		<property name="meetingSummaryDao" ref="meetingSummaryDao"/>
+	</bean>
+	
+	<bean id="messageReceiveService" class="com.accp.myoa.service.impl.MessageReceiveServiceImpl">
+		<property name="messageReceiveDao" ref="messageReceiveDao"/>
+	</bean>
+	<bean id="messageService" class="com.accp.myoa.service.impl.MessageServiceImpl">
+		<property name="messageDao" ref="messageDao"/>
+	</bean>
+	<bean id="messageTypeService" class="com.accp.myoa.service.impl.MessageTypeServiceImpl">
+		<property name="messageTypeDao" ref="messageTypeDao"/>
+	</bean>
+	<!-- 权限信息LEO -->
+	<bean id="positionPopedomService" class="com.accp.myoa.service.impl.PositionPopedomServiceImpl">
+		<property name="positionPopedomDao" ref="positionPopedomDao"/>
+		<property name="pageSize" value="10"></property>
+	</bean>
+	<bean id="positionService" class="com.accp.myoa.service.impl.PositionServiceImpl">
+		<property name="positionDao" ref="positionDao"/>
+		<property name="deptPositionDao" ref="deptPositionDao"/>
+	</bean>
+	<bean id="readStateService" class="com.accp.myoa.service.impl.ReadStateServiceImpl">
+		<property name="readStateDao" ref="readStateDao"/>
+	</bean>
+	<bean id="scratchpadService" class="com.accp.myoa.service.impl.ScratchpadServiceImpl">
+		<property name="scratchpadDao" ref="scratchpadDao"/>
+	</bean>
+	<bean id="turnOutForWorkService" class="com.accp.myoa.service.impl.TurnOutForWorkServiceImpl">
+		<property name="turnOutForWorkDao" ref="turnOutForWorkDao"/>
+	</bean>
+	<bean id="unitService" class="com.accp.myoa.service.impl.UnitServiceImpl">
+		<property name="unitDao" ref="unitDao"/>
+	</bean>
+	<bean id="userStateService" class="com.accp.myoa.service.impl.UserStateServiceImpl">
+		<property name="userStateDao" ref="userStateDao"/>
+	</bean>
+	<bean id="weekDiaryService" class="com.accp.myoa.service.impl.WeekDiaryServiceImpl">
+		<property name="weekDiaryDao" ref="weekDiaryDao"/>
+	</bean>
+</beans>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee   http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>
+			/WEB-INF/Spring.xml, /WEB-INF/Carmack_Spring.xml,
+			/WEB-INF/Mars_Spring.xml, /WEB-INF/Moster_Spring.xml,
+			/WEB-INF/Opt_Spring.xml, /WEB-INF/Yasak_Spring.xml
+		</param-value>
+	</context-param>
+	<servlet>
+		<servlet-name>SpringContextServlet</servlet-name>
+		<servlet-class>
+			org.springframework.web.context.ContextLoaderServlet
+		</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>SpringLog4jConfigServlet</servlet-name>
+		<servlet-class>
+			org.springframework.web.util.Log4jConfigServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>web</servlet-name>
+		<servlet-class>
+			org.springframework.web.servlet.DispatcherServlet
+		</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>action</servlet-name>
+		<servlet-class>
+			org.apache.struts.action.ActionServlet
+		</servlet-class>
+		<init-param>
+			<param-name>config</param-name>
+			<param-value>
+				/WEB-INF/Carmack_struts-config.xml,
+				/WEB-INF/Mars_struts-config.xml,
+				/WEB-INF/Moster_struts-config.xml,
+				/WEB-INF/Opt_struts-config.xml,
+				/WEB-INF/Yasak_struts-config.xml
+			</param-value>
+		</init-param>
+		<init-param>
+			<param-name>debug</param-name>
+			<param-value>3</param-value>
+		</init-param>
+		<init-param>
+			<param-name>detail</param-name>
+			<param-value>3</param-value>
+		</init-param>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	 <filter>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <filter-name>FilterChina</filter-name>
+    <filter-class>com.filter.FilterChina</filter-class>
+  </filter>
+	<servlet>
+		<servlet-name>DisplayChart</servlet-name>
+		<servlet-class>
+			org.jfree.chart.servlet.DisplayChart
+		</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>DisplayChart</servlet-name>
+		<url-pattern>/servlet/DisplayChart</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>action</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+	  <filter-mapping>
+    <filter-name>FilterChina</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+	<welcome-file-list>
+		<welcome-file>Opt/Login.html</welcome-file>
+	</welcome-file-list>
+</web-app>
+

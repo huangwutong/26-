@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/welcome.do" location="15,15" dimension="121,46" />
+  <StrutsActivity path="/preRegister.do" location="150,15" dimension="136,46" />
+  <StrutsActivity path="/validateUser.do" location="300,15" dimension="136,46" />
+  <StrutsActivity path="/addUserInfo.do" location="300,90" dimension="136,46" />
+  <StrutsActivity path="/preUserLogin.do" location="150,165" dimension="121,46" />
+  <StrutsActivity path="/userLogin.do" location="315,240" dimension="121,46" />
+  <StrutsActivity path="/logoutUser.do" location="450,165" dimension="106,46" />
+  <StrutsActivity path="/preEditUserInfo.do" location="450,15" dimension="121,46" />
+  <StrutsActivity path="/editUserInfo.do" location="615,90" dimension="106,61" />
+  <StrutsActivity path="/preEditUserPass.do" location="15,255" dimension="106,46" />
+  <StrutsActivity path="/editUserPass.do" location="165,330" dimension="121,46" />
+  <StrutsActivity path="/findUserInfo.do" location="585,165" dimension="106,46" />
+  <StrutsActivity path="/findMyCredit.do" location="15,795" dimension="121,46" />
+  <StrutsActivity path="/findUserOreders.do" location="315,330" dimension="106,46" />
+  <StrutsActivity path="/preAddComplain.do" location="465,330" dimension="106,46" />
+  <StrutsActivity path="/addComplain.do" location="15,390" dimension="136,46" />
+  <StrutsActivity path="/preEnterpriseRegister.do" location="225,390" dimension="106,46" />
+  <StrutsActivity path="/validateEnterprise.do" location="480,390" dimension="106,46" />
+  <StrutsActivity path="/addEnterpriseInfo.do" location="315,465" dimension="121,46" />
+  <StrutsActivity path="/preEnterpriseLogin.do" location="315,525" dimension="121,46" />
+  <StrutsActivity path="/logout.do" location="15,465" dimension="121,46" />
+  <StrutsActivity path="/enterpriseLogin.do" location="480,585" dimension="106,46" />
+  <StrutsActivity path="/foodCart.do" location="180,600" dimension="121,46" />
+  <StrutsActivity path="/findEnterpriseInfo.do" location="30,660" dimension="121,46" />
+  <StrutsActivity path="/preEditEnterprise.do" location="330,660" dimension="121,46" />
+  <StrutsActivity path="/editEnterpriseInfo.do" location="30,720" dimension="121,46" />
+  <StrutsActivity path="/preEditEnterprisePass.do" location="180,720" dimension="121,46" />
+  <StrutsActivity path="/editEnterprisePass.do" location="495,720" dimension="106,46" />
+  <StrutsActivity path="toMemberCenter;6" location="15,165" dimension="121,46" />
+  <StrutsActivity path="toEnterpriseCenter;6" location="150,525" dimension="121,46" />
+  <StrutsActivity path="/front/index.jsp" location="15,90" dimension="121,46" />
+  <StrutsActivity path="/user/registeruser.jsp" location="150,90" dimension="136,46" />
+  <StrutsActivity path="/user/registerOK.jsp" location="450,90" dimension="131,57" />
+  <StrutsActivity path="/user/userlogin.jsp" location="150,240" dimension="121,46" />
+  <StrutsActivity path="/user/memberCenter.jsp" location="315,165" dimension="121,46" />
+  <StrutsActivity path="/user/editUserInfo.jsp" location="600,15" dimension="121,46" />
+  <StrutsActivity path="/user/edituserpass.jsp" location="15,330" dimension="121,46" />
+  <StrutsActivity path="/user/userinfo2.jsp" location="585,240" dimension="113,52" />
+  <StrutsActivity path="/complain/addcomplain.jsp" location="585,330" dimension="101,41" />
+  <StrutsActivity path="/enterprise/registerEnterprise.jsp" location="345,390" dimension="106,46" />
+  <StrutsActivity path="/enterprise/registerOK2.jsp" location="465,465" dimension="106,46" />
+  <StrutsActivity path="/enterprise/enterpriseLogin.jsp" location="330,585" dimension="121,46" />
+  <StrutsActivity path="/enterprise/enterpriseMemberCenter.jsp" location="465,525" dimension="104,39" />
+  <StrutsActivity path="/enterprise/enterpriseInfo2.jsp" location="180,660" dimension="121,46" />
+  <StrutsActivity path="/enterprise/EditEnterprise.jsp" location="480,660" dimension="121,46" />
+  <StrutsActivity path="/enterprise/editEnterprisePass.jsp" location="330,720" dimension="126,42" />
+  <StrutsTransition id="/preUserLogin.do,no,/user/userlogin.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="210,211" />
+      <AbsolutePoint location="210,240" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/user/registeruser.jsp,null,/addUserInfo.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="286,113" />
+      <AbsolutePoint location="300,113" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preEditUserPass.do,ok,/user/edituserpass.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="68,301" />
+      <AbsolutePoint location="68,330" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preEnterpriseLogin.do,no,/enterprise/enterpriseLogin.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="375,571" />
+      <AbsolutePoint location="375,585" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preEnterpriseLogin.do,ok,/enterprise/enterpriseMemberCenter.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="436,548" />
+      <AbsolutePoint location="465,548" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/addUserInfo.do,ok,/user/registerOK.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="436,113" />
+      <AbsolutePoint location="450,113" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/enterpriseLogin.do,ok,/enterprise/enterpriseMemberCenter.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="533,585" />
+      <AbsolutePoint location="533,564" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preEditEnterprisePass.do,ok,/enterprise/editEnterprisePass.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="301,743" />
+      <AbsolutePoint location="330,743" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/user/edituserpass.jsp,null,/editUserPass.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="136,353" />
+      <AbsolutePoint location="165,353" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/welcome.do,ok,/front/index.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="75,61" />
+      <AbsolutePoint location="75,90" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/userLogin.do,ok,/user/memberCenter.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="375,240" />
+      <AbsolutePoint location="375,211" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/enterprise/enterpriseLogin.jsp,null,/enterpriseLogin.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="451,608" />
+      <AbsolutePoint location="480,608" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="toEnterpriseCenter;6,null,/preEnterpriseLogin.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="271,548" />
+      <AbsolutePoint location="315,548" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/enterprise/registerEnterprise.jsp,null,/addEnterpriseInfo.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="398,436" />
+      <AbsolutePoint location="398,465" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preUserLogin.do,ok,/user/memberCenter.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="271,188" />
+      <AbsolutePoint location="315,188" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/addEnterpriseInfo.do,ok,/enterprise/registerOK2.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="436,488" />
+      <AbsolutePoint location="465,488" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/findEnterpriseInfo.do,ok,/enterprise/enterpriseInfo2.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="151,683" />
+      <AbsolutePoint location="180,683" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/user/userlogin.jsp,null,/userLogin.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="271,263" />
+      <AbsolutePoint location="315,263" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preRegister.do,ok,/user/registeruser.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="218,61" />
+      <AbsolutePoint location="218,90" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preAddComplain.do,ok,/complain/addcomplain.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="571,353" />
+      <AbsolutePoint location="585,353" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preEditUserInfo.do,ok,/user/editUserInfo.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="571,38" />
+      <AbsolutePoint location="600,38" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preEditEnterprise.do,ok,/enterprise/EditEnterprise.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="451,683" />
+      <AbsolutePoint location="480,683" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="toMemberCenter;6,null,/preUserLogin.do,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="136,188" />
+      <AbsolutePoint location="150,188" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/findUserInfo.do,ok,/user/userinfo2.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="638,211" />
+      <AbsolutePoint location="638,240" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/enterprise/editEnterprisePass.jsp,null,/editEnterprisePass.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="456,741" />
+      <AbsolutePoint location="495,741" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/preEnterpriseRegister.do,ok,/enterprise/registerEnterprise.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="331,413" />
+      <AbsolutePoint location="345,413" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

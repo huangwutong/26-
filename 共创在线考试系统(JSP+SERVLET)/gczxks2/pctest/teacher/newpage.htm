@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>无标题文档</title>
+</head>
+
+<body>
+<TABLE cellSpacing=0 cellPadding=0 width="100%" align=center border=0>
+  <TBODY>
+    <TR> 
+      <TD>&nbsp;</TD>
+      <TD rowSpan=2> <DIV align=right><IMG src="images/onlinetest.gif"
+      width=208 height=97 border="0"></DIV></TD>
+    </TR>
+    <TR> 
+      <TD height=55><IMG height=45 src="images/logo.gif"
+  width=160></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+<TABLE height=15 cellSpacing=0 cellPadding=0 width="100%" align=center
+bgColor=#d3add1 border=0>
+  <TBODY>
+    <TR> 
+      <TD height=25> <DIV
+align=center>首页｜高考通｜中考通｜共创题库｜学员社区｜我的共创｜服务中心</DIV></TD>
+    </TR>
+  </TBODY>
+</TABLE>
+　　<A
+href="http://jsptestonline.cosoft.org.cn/">首页</A>--共创题库--试题录入<br>
+<br>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  <!--DWLayoutTable-->
+  <tr> 
+    <td width="100%" height="535" valign="top">
+<table width="100%" height="425" border="1" bordercolor="#d3add1" background="images/lvbgcolor.gif">
+        <tr> 
+          <td height="50" colspan="2" align="left" valign="middle"> 题目类型: 
+            <select id=QuestType name=QuestType>
+              <%Tools.showOption("select * from QuestType",con,out);%>
+            </select> </td>
+          <td width="18%" align="left" valign="middle"><input name="group" type="radio" value="single" checked>
+            单题</td>
+          <td width="18%" align="left" valign="middle"><input name="group" type="radio" value="suit">
+            套题</td>
+          <td width="39%" align="left" valign="middle">名称： 
+            <input name="suit_title" type="text" id="suit_title" size="40" maxlength="200"></td>
+        </tr>
+        <tr> 
+          <td height="50" colspan="2" align="left" valign="middle">科 目: 
+            <SELECT id=select name=Subject>
+              <%Tools.showOption("select * from subject order by id",con,out);%>
+            </SELECT></td>
+          <td colspan="3" rowspan="3" align="center">
+<iframe src="../editor/edit.jsp" id='editor' frameborder=0 scrolling=auto width=544 height=321> 
+                </iframe> <textarea name="Content" style="display:none"></textarea> &nbsp;</td>
+        </tr>
+        <tr> 
+          <td height="50" colspan="2" align="left" valign="middle">年 级: 
+            <SELECT id=select4 name=Grade>
+              <%Tools.showOption("select * from grade order by id",con,out);%>
+            </SELECT></td>
+        </tr>
+        <tr> 
+          <td height="160" colspan="2" align="center" valign="middle"><table width="100%" height="60%" border="0">
+              <tr> 
+                <td width="46%" height="77">测试点1:</td>
+                <td width="54%"><select id=select11 name=TestPoint1>
+                    <%Tools.showOption("select * from testpoint order by id",con,out);%>
+                  </select></td>
+              </tr>
+              <tr> 
+                <td height="39">测试点2:</td>
+                <td><select id=select2 name=TestPoint2>
+                    <%Tools.showOption("select * from testpoint order by id",con,out);%>
+                  </select></td>
+              </tr>
+              <tr> 
+                <td height="59">测试点3:</td>
+                <td><select id=select3 name=TestPoint3>
+                    <%Tools.showOption("select * from testpoint order by id",con,out);%>
+                  </select></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr> 
+          <td height="160" colspan="2" align="center" valign="middle"><table width="100%" height="60%" border="0">
+              <tr> 
+                <td width="46%" height="77">知识点1:</td>
+                <td width="54%"><select id=select5 name=select>
+                    <%Tools.showOption("select * from testpoint order by id",con,out);%>
+                  </select></td>
+              </tr>
+              <tr> 
+                <td height="39">知识点2:</td>
+                <td><select id=select6 name=select>
+                    <%Tools.showOption("select * from testpoint order by id",con,out);%>
+                  </select></td>
+              </tr>
+              <tr> 
+                <td height="59">知识点3:</td>
+                <td><select id=select7 name=select>
+                    <%Tools.showOption("select * from testpoint order by id",con,out);%>
+                  </select></td>
+              </tr>
+            </table></td>
+          <td colspan="3" align="center" valign="middle"><table width="73%" border="0">
+              <tr> 
+                <td width="35%" height="39" align="left">答案： 
+                  <input name="Answer" type="text" id="Answer" value="A" size="10"></td>
+                <td width="36%" align="left">分数： 
+                  <input name="Mark" type="text" id="Mark" value="5" size="10"></td>
+                <td width="29%" rowspan="2" align="left">难易度: 
+                  <select name=Difficulty id="select9">
+                    <option value="A" selected>A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                    <option value="E">E</option>
+                  </select></td>
+              </tr>
+              <tr> 
+                <td colspan="2" rowspan="2" align="center" valign="middle"> <input type="submit" name="Submit" value="提交"> 
+                  &nbsp;&nbsp;&nbsp;&nbsp; <input name="Reset_Quest" type="reset" id="Reset_Quest3" value="重置"> 
+                </td>
+              </tr>
+              <tr> 
+                <td width="29%" height="40" valign="top">&nbsp;</td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,7 @@
+UserResult 用户查询
+TruckResult 车辆查询
+DriverResult 司机查询
+CustomerResult 客户查询
+BranchResult 分公司查询
+BillshartResult 调度查询
+BillsResult 货票查询

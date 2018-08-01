@@ -1,0 +1,26 @@
+{
+	FONT-SIZE: 9pt
+}A {
+	TEXT-DECORATION:none}a:hover{TEXT-DECORATION:underline
+	}
+TD {
+	FONT-SIZE: 9pt
+}
+LI {
+	FONT-SIZE: 9pt
+}
+SELECT {
+	FONT-SIZE: 9pt
+}
+.forms {
+	BORDER-RIGHT: #254b03 1px solid; BORDER-TOP: #254b03 1px solid; MARGIN-TOP: auto; MARGIN-BOTTOM: auto; BORDER-LEFT: #254b03 1px solid; WIDTH: 80px; BORDER-BOTTOM: #254b03 1px solid; HEIGHT: 14px; BACKGROUND-COLOR: #ffffff
+}
+A {
+	FONT-SIZE: 9pt; COLOR: #FFFFFF; LINE-HEIGHT: 13.5pt; TEXT-DECORATION: none
+}
+A:hover {
+	COLOR: #000000; TEXT-DECORATION: underline
+}
+.a10 {
+	FONT-SIZE: 10.5pt
+}

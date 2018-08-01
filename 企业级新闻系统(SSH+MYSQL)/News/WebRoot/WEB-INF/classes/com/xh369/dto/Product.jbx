@@ -1,0 +1,18 @@
+[PropertyInfo]
+bigclassid,int,false,false, , ,false,<default>
+id,Integer,false,false, , ,false,<default>
+introduct,String,false,false, , ,false,<default>
+marketprice,int,false,false, , ,false,<default>
+newproduct,int,false,false, , ,false,<default>
+preferentialprice,int,false,false, , ,false,<default>
+producefactory,String,false,false, , ,false,<default>
+productmodel,String,false,false, , ,false,<default>
+productname,String,false,false, , ,false,<default>
+productpic,String,false,false, , ,false,<default>
+smallclassid,int,false,false, , ,false,<default>
+vouch,int,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

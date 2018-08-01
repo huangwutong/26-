@@ -1,0 +1,20 @@
+#
+#Thu Nov 02 22:18:45 CST 2006
+genBasicCompId=false
+sessionFactoryName=po.HibernateSessionFactory
+profile=
+daoSFId=
+version=3.1
+jndiPath=
+springDaoFile=
+useJavaTypes=true
+keyGenerator=assigned
+libInstallFolder=lib
+addLibs2Project=false
+genVersionTag=false
+sessionFactoryId=MySessionFactory
+basePersistenceClass=
+reSettingsFile=
+configFile=/chinamobile/src/applicationContext.xml
+createConfigFile=false
+addLibs2Classpath=false

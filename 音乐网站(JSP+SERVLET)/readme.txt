@@ -1,0 +1,6 @@
+请先运行"数据库"文件夹里两个sql文件.再在数据里新建用户
+密码和帐号都是music
+否则不能运行
+因为使用了proxool连接池.请确认你的Sql Server2000已安装了sp4补丁
+本来想在后台增加个使用session bean+entity bean上传文件到数据库的功能,但由于时间关系.只写了一半
+使用eclipse3.11+myeclipse4.0开发,可在eclipse下直接导入工程

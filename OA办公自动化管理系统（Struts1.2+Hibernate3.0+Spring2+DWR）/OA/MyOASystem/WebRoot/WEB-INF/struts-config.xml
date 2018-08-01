@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans>
+		<form-bean name="carForm" type="com.accp.myoa.web.form.CarForm" />
+		<form-bean name="boardRoomForm"
+			type="com.accp.myoa.web.form.BoardRoomForm" />
+		<form-bean name="bulletinExamineForm"
+			type="com.accp.myoa.web.form.BulletinExamineForm" />
+		<form-bean name="bulletinForm"
+			type="com.accp.myoa.web.form.BulletinForm" />
+		<form-bean name="bulletinReadForm"
+			type="com.accp.myoa.web.form.BulletinReadForm" />
+		<form-bean name="carApplyForm"
+			type="com.accp.myoa.web.form.CarApplyForm" />
+		<form-bean name="clientCompanyForm"
+			type="com.accp.myoa.web.form.ClientCompanyForm" />
+		<form-bean name="clientForm"
+			type="com.accp.myoa.web.form.ClientForm" />
+		<form-bean name="comleteDegressForm"
+			type="com.accp.myoa.web.form.ComleteDegressForm" />
+		<form-bean name="deptForm"
+			type="com.accp.myoa.web.form.DeptForm" />
+		<form-bean name="deptPositionForm"
+			type="com.accp.myoa.web.form.DeptPositionForm" />
+		<form-bean name="diaryForm"
+			type="com.accp.myoa.web.form.DiaryForm" />
+		<form-bean name="documentExamineForm"
+			type="com.accp.myoa.web.form.DocumentExamineForm" />
+		<form-bean name="documentForm"
+			type="com.accp.myoa.web.form.DocumentForm" />
+		<form-bean name="documentReadForm"
+			type="com.accp.myoa.web.form.DocumentReadForm" />
+		<form-bean name="egressExamineForm"
+			type="com.accp.myoa.web.form.EgressExamineForm" />
+		<form-bean name="egressForm"
+			type="com.accp.myoa.web.form.EgressForm" />
+		<form-bean name="emailForm"
+			type="com.accp.myoa.web.form.EmailForm" />
+		<form-bean name="emailReceivceForm"
+			type="com.accp.myoa.web.form.EmailReceivceForm" />
+		<form-bean name="emailTypeForm"
+			type="com.accp.myoa.web.form.EmailTypeForm" />
+		<form-bean name="examineStateForm"
+			type="com.accp.myoa.web.form.ExamineStateForm" />
+		<form-bean name="fileForm"
+			type="com.accp.myoa.web.form.FileForm" />
+		<form-bean name="leaveWordForm"
+			type="com.accp.myoa.web.form.LeaveWordForm" />
+		<form-bean name="levelForm"
+			type="com.accp.myoa.web.form.LevelForm" />
+		<form-bean name="meetingForm"
+			type="com.accp.myoa.web.form.MeetingForm" />
+		<form-bean name="meetingReadForm"
+			type="com.accp.myoa.web.form.MeetingReadForm" />
+		<form-bean name="meetingstateForm"
+			type="com.accp.myoa.web.form.MeetingstateForm" />
+		<form-bean name="meetingSummaryForm"
+			type="com.accp.myoa.web.form.MeetingSummaryForm" />
+		<form-bean name="meetingSummaryScanForm"
+			type="com.accp.myoa.web.form.MeetingSummaryScanForm" />
+		<form-bean name="menuForm"
+			type="com.accp.myoa.web.form.MenuForm" />
+		<form-bean name="messageForm"
+			type="com.accp.myoa.web.form.MessageForm" />
+		<form-bean name="messageReceiveForm"
+			type="com.accp.myoa.web.form.MessageReceiveForm" />
+		<form-bean name="messageTypeForm"
+			type="com.accp.myoa.web.form.MessageTypeForm" />
+		<form-bean name="positionForm"
+			type="com.accp.myoa.web.form.PositionForm" />
+		<form-bean name="positionPopedomForm"
+			type="com.accp.myoa.web.form.PositionPopedomForm" />
+		<form-bean name="readStateForm"
+			type="com.accp.myoa.web.form.ReadStateForm" />
+		<form-bean name="scratchpadForm"
+			type="com.accp.myoa.web.form.ScratchpadForm" />
+		<form-bean name="turnOutForWorkForm"
+			type="com.accp.myoa.web.form.TurnOutForWorkForm" />
+		<form-bean name="unitForm"
+			type="com.accp.myoa.web.form.UnitForm" />
+		<form-bean name="userStateForm"
+			type="com.accp.myoa.web.form.UserStateForm" />
+		<form-bean name="weekDiaryForm"
+			type="com.accp.myoa.web.form.WeekDiaryForm" />
+			
+		<!-- 要用到的form -->
+		<form-bean name="userForm"
+			type="com.accp.myoa.web.form.UserForm" />
+	</form-beans>
+
+	<global-exceptions />
+	
+	<!--  全局forword-->	
+	<global-forwards >
+		<forward name="carDetail" path="/WEB-INF/AdmManage/carDetail.jsp"></forward>
+		<forward name="index" path="/index.jsp"/>
+		
+	</global-forwards>
+	
+	<!--  action -->
+	<action-mappings>
+		<!-- 新加的action设置 -->
+		<action path="/login" 
+   		 name="userForm"
+   		 parameter="operate"
+   		 >
+    	<forward name="login" path="/login.jsp"></forward>
+    </action>
+    <action path="/forward" 
+   	 parameter="operate"
+    >
+	    <forward name="menu" path="/WEB-INF/page/menu.jsp"></forward>
+	    <forward name="main" path="/WEB-INF/page/main.jsp"></forward>
+	    <!-- MyOffice的页面 -->
+	            <forward name="file" path="/WEB-INF/myoffice/file.jsp"></forward>
+    </action>
+    
+    <!-- 这个action原来就有，要把它替换 -->
+    <action path="/email"
+     name="emailForm"
+     parameter="operate"
+     >
+     	<forward name="email" path="/WEB-INF/myoffice/email.jsp"></forward>
+     	<forward name="wmail" path="/WEB-INF/myoffice/wmail.jsp"></forward>
+     	<forward name="showemail" path="/WEB-INF/myoffice/showemail.jsp"></forward>
+     	<forward name="deleteEmail" path="/WEB-INF/myoffice/deleteemail.jsp"></forward>
+ 	    <forward name="success" path="/WEB-INF/myoffice/success.jsp"></forward>
+ 	    <forward name="failure" path="/WEB-INF/myoffice/failure.jsp"></forward>
+ 	</action>
+   
+		
+		<!-- 下面为原来的action -->
+		<action path="/car" name="carForm" scope="request"
+			parameter="operate">
+			<forward name="toCarManage"
+				path="/WEB-INF/AdmManage/carManage.jsp" />
+		</action>
+		<action path="/boardRoom" name="boardRoomForm" scope="request"
+			parameter="operate">
+			<forward name="toBoardRoomManage" path="/WEB-INF/AdmManage/boardManage.jsp"></forward>
+		</action>
+		<action path="/bulletinExamine" name="bulletinExamineForm"
+			scope="request" parameter="operate">
+		</action>
+		<action path="/bulletin" name="bulletinForm" scope="request"
+			parameter="operate">
+			<forward name="toBulletinsAdd"
+				path="/WEB-INF/AdmManage/bulletinsAdd.jsp" />
+			<forward name="toBulletinsManage"
+				path="/WEB-INF/AdmManage/bulletinsManage.jsp" />
+			<forward name="toBulletinsQuery"
+				path="/WEB-INF/AdmManage/bulletinsQuery.jsp" />
+			<forward name="showBulletinDetail"
+				path="/WEB-INF/AdmManage/bulletinDetail.jsp" />
+		</action>
+		<action path="/bulletinRead" name="bulletinReadForm"
+			scope="request" parameter="operate">
+		</action>
+		<action path="/carApply" name="carApplyForm" scope="request"
+			parameter="operate">
+			<forward name="toCarUseAdd" path="/WEB-INF/AdmManage/carUseAdd.jsp"/>
+			<forward name="toCarUseQuery" path="/WEB-INF/AdmManage/carUseQuery.jsp"/>	
+			<forward name="toCarUseManage" path="/WEB-INF/AdmManage/carUseManage.jsp"/>
+		</action>
+		<action path="/clientCompany" name="clientCompanyForm"
+			scope="request" parameter="operate">
+		</action>
+		<action path="/client" name="clientForm" scope="request"
+			parameter="operate">
+		</action>
+		<action path="/comleteDegress" name="comleteDegressForm"
+			scope="request" parameter="operate">
+		</action>
+		<!-- 部门信息 LEO -->
+		<action path="/dept" name="deptForm" scope="request"
+			parameter="operate">
+			<forward name="deptManage" path="/WEB-INF/SystemManage/deptManage.jsp"></forward>
+		</action>
+		<action path="/deptPosition" name="deptPositionForm"
+			scope="request" parameter="operate">
+		</action>
+		<action path="/diary" name="diaryForm" scope="request"
+			parameter="operate">
+		</action>
+		<action path="/documentExamine" name="documentExamineForm"
+			scope="request" parameter="operate">
+		</action>
+		<action path="/document" name="documentForm" scope="request"
+			parameter="operate">
+			<forward name="toDucumentAdd"
+				path="/WEB-INF/AdmManage/documentAdd.jsp" />
+			<forward name="toDucumentQuery"
+				path="/WEB-INF/AdmManage/documentQuery.jsp" />
+			<forward name="toDucumentManage"
+				path="/WEB-INF/AdmManage/documentManage.jsp" />
+		</action>
+		<action path="/documentRead" name="documentReadForm"
+			scope="request" parameter="operate">
+		</action>
+		<action path="/egressExamine" name="egressExamineForm"
+			scope="request" parameter="operate">
+		</action>
+		<action path="/egress" name="egressForm" scope="request"
+			parameter="operate">
+		</action>
+		<action path="/emailReceivce" name="emailReceivceForm"
+			scope="request" parameter="operate">
+		</action>
+		<action path="/emailType" name="emailTypeForm" scope="request"
+			parameter="operate">
+		</action>
+		<action path="/examineState" name="examineStateForm"
+			scope="request" parameter="operate">
+		</action>
+		<action path="/file" name="fileForm" scope="request"
+			parameter="operate">
+		</action>
+		<action path="/leaveWord" name="leaveWordForm" scope="request"
+			parameter="operate">
+			<forward name="leaveWord" path="/WEB-INF/InfoAC/leaveWord.jsp"/>
+			<forward name="history" path="/WEB-INF/InfoAC/leaveHistory.jsp"/>
+		</action>
+		<action path="/level" name="levelForm" scope="request"
+			parameter="operate">
+		</action>
+		<action path="/meeting" name="meetingForm" scope="request"
+			parameter="operate">
+			<forward name="toMeetAdd"
+				path="/WEB-INF/AdmManage/meetAdd.jsp" />
+			<forward name="toMeetQuery"
+				path="/WEB-INF/AdmManage/meetQuery.jsp" />
+			<forward name="toMeetManage"
+				path="/WEB-INF/AdmManage/meetingManage.jsp" />
+			<forward name="showDetail"
+				path="/WEB-INF/AdmManage/meetingRead.jsp" />
+		</action>
+		<action path="/meetingRead" name="meetingReadForm"
+			scope="request" parameter="operate">
+			<forward name="toMeetingReadAdd" path="/WEB-INF/AdmManage/meetingReadAdd.jsp"></forward>
+		</action>
+		<action path="/meetingstate" name="meetingstateForm"
+			scope="request" parameter="operate">
+		</action>
+		<action path="/meetingSummary" name="meetingSummaryForm"
+			scope="request" parameter="operate">
+		</action>
+		<action path="/meetingSummaryScan" name="meetingSummaryScanForm"
+			scope="request" parameter="operate">
+		</action>
+		<action path="/menu" name="menuForm" scope="request"
+			parameter="operate">
+			<forward name="top" path="/WEB-INF/page/top.jsp"></forward>
+			<forward name="left" path="/left.jsp"/>
+		</action>
+		<action path="/message" name="messageForm" scope="request"
+			parameter="operate">
+		</action>
+		<action path="/messageReceive" name="messageReceiveForm"
+			scope="request" parameter="operate">
+		</action>
+		<action path="/messageType" name="messageTypeForm"
+			scope="request" parameter="operate">
+		</action>
+		<!-- 职位信息 LEO -->
+		<action path="/position" name="positionForm" scope="request"
+			parameter="operate">
+			<forward name="positionManage" path="/WEB-INF/SystemManage/positionManage.jsp"></forward>
+		</action>
+		<!-- 权限信息 LEO -->
+		<action path="/positionPopedom" name="positionPopedomForm"
+			scope="request" parameter="operate">
+			<forward name="partPopedomManage" path="/WEB-INF/SystemManage/partPopedomManage.jsp"></forward>
+			<forward name="addPartPopedom" path="/WEB-INF/SystemManage/addPartPopedom.jsp"></forward>
+		</action>
+		<action path="/readState" name="readStateForm" scope="request"
+			parameter="operate">
+		</action>
+		
+		<action path="/scratchpad" name="scratchpadForm" scope="request"
+			parameter="operate">
+			<forward name="alertInfo" path="/WEB-INF/myoffice/alertInfo.jsp"></forward>
+			<forward name="scratchpadShowAndAdd" path="/WEB-INF/myoffice/alertInfoShowAndAdd.jsp"></forward>
+		</action>
+		
+		
+		<action path="/turnOutForWork" name="turnOutForWorkForm"
+			scope="request" parameter="operate">
+		</action>
+		<!-- 单位信息 LEO -->
+		<action path="/unit" name="unitForm" scope="request"
+			parameter="operate">
+			<forward name="unitManage" path="/WEB-INF/SystemManage/unitManage.jsp"></forward>
+		</action>
+		<!-- User -->
+		<!-- 用户信息 LEO -->
+		<action path="/user" name="userForm" scope="request"
+			parameter="operate">
+			<forward name="individualInfo" path="/WEB-INF/myoffice/individualInfo.jsp"></forward>
+			<forward name="addUser" path="/WEB-INF/ManpowerRes/userFileManager.jsp"/>
+			<forward name="userManage" path="/WEB-INF/SystemManage/userManage.jsp"></forward>
+		</action>
+		
+		<action path="/userState" name="userStateForm" scope="request"
+			parameter="operate">
+		</action>
+		<action path="/weekDiary" name="weekDiaryForm" scope="request"
+			parameter="operate">
+		</action>
+ 
+		
+	</action-mappings>
+
+	<!-- 控制器（上传文件，请求转到Spring处理） -->
+	<controller
+		processorClass="org.springframework.web.struts.DelegatingRequestProcessor"
+		maxFileSize="5M" memFileSize="100K" />
+
+	<message-resources
+		parameter="com.accp.myoa.struts.ApplicationResources" />
+</struts-config>
+

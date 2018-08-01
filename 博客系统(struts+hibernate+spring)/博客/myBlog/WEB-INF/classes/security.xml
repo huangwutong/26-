@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="GB2312"?>
+<web-security>
+	
+    <ranges>
+		<range name="self" desc="属于自身的"/>
+		<range name="allow" desc="允许范围内的" type="dlog4j.security.RangeAllow"/>
+		<range name="all" desc="所有" type="dlog4j.security.RangeAll"/>
+	</ranges>
+	<operations>
+		<operation name="view" desc="查看"/>		
+		<operation name="maintain" desc="维护" type="dlog4j.security.MaintainOperation"/>
+	</operations>	
+	<resources>
+		<resource name="site" desc="网站"/>
+		<resource name="category" desc="日记分类"/>
+		<resource name="log" desc="日记"/>
+		<resource name="reply" desc="评论"/>
+		<resource name="msg" desc="短消息"/>
+		<resource name="bookmark" desc="书签"/>
+		<resource name="draft" desc="草稿"/>
+		<resource name="user" desc="用户"/>
+		<resource name="param" desc="参数"/>
+	</resources>
+	
+	<roles>
+		<role id="1" name="guest" desc="游客">
+			<privileges>
+				<privilege>
+					<resource>log</resource>
+					<operation>view</operation>
+					<range>allow</range>
+				</privilege>
+				<privilege>
+					<resource>reply</resource>
+					<operation>view</operation>
+					<range>allow</range>
+				</privilege>
+				<privilege>
+					<resource>category</resource>
+					<operation>view</operation>
+					<range>allow</range>
+				</privilege>
+				<privilege>
+					<resource>msg</resource>
+					<operation>maintain</operation>
+					<range>self</range>
+				</privilege>
+				<privilege>
+					<resource>bookmark</resource>
+					<operation>maintain</operation>
+					<range>self</range>
+				</privilege>
+				<privilege>
+					<resource>user</resource>
+					<operation>view</operation>
+					<range>all</range>
+				</privilege>
+			</privileges>
+		</role>
+		<role id="2" name="common" desc="普通用户">			
+			<privileges>
+				<privilege>
+					<resource>log</resource>
+					<operation>view</operation>
+					<range>allow</range>
+				</privilege>
+				<privilege>
+					<resource>reply</resource>
+					<operation>maintain</operation>
+					<range>self</range>
+				</privilege>
+				<privilege>
+					<resource>category</resource>
+					<operation>view</operation>
+					<range>allow</range>
+				</privilege>
+				<privilege>
+					<resource>msg</resource>
+					<operation>maintain</operation>
+					<range>self</range>
+				</privilege>
+				<privilege>
+					<resource>bookmark</resource>
+					<operation>maintain</operation>
+					<range>self</range>
+				</privilege>
+				<privilege>
+					<resource>user</resource>
+					<operation>view</operation>
+					<range>all</range>
+				</privilege>
+			</privileges>
+		</role>
+		<role id="4" name="friend" desc="好友">						
+			<privileges>
+				<privilege>
+					<resource>log</resource>
+					<operation>maintain</operation>
+					<range>self</range>
+				</privilege>
+				<privilege>
+					<resource>draft</resource>
+					<operation>maintain</operation>
+					<range>self</range>
+				</privilege>
+				<privilege>
+					<resource>reply</resource>
+					<operation>maintain</operation>
+					<range>self</range>
+				</privilege>
+				<privilege>
+					<resource>category</resource>
+					<operation>view</operation>
+					<range>allow</range>
+				</privilege>
+				<privilege>
+					<resource>msg</resource>
+					<operation>maintain</operation>
+					<range>self</range>
+				</privilege>
+				<privilege>
+					<resource>bookmark</resource>
+					<operation>maintain</operation>
+					<range>self</range>
+				</privilege>
+				<privilege>
+					<resource>user</resource>
+					<operation>view</operation>
+					<range>all</range>
+				</privilege>
+			</privileges>
+		</role>
+		<role id="8" name="buddy" desc="密友">			
+			<privileges>
+				<privilege>
+					<resource>log</resource>
+					<operation>maintain</operation>
+					<range>allow</range>
+				</privilege>
+				<privilege>
+					<resource>draft</resource>
+					<operation>maintain</operation>
+					<range>self</range>
+				</privilege>
+				<privilege>
+					<resource>reply</resource>
+					<operation>maintain</operation>
+					<range>self</range>
+				</privilege>
+				<privilege>
+					<resource>category</resource>
+					<operation>view</operation>
+					<range>allow</range>
+				</privilege>
+				<privilege>
+					<resource>msg</resource>
+					<operation>maintain</operation>
+					<range>self</range>
+				</privilege>
+				<privilege>
+					<resource>bookmark</resource>
+					<operation>maintain</operation>
+					<range>self</range>
+				</privilege>
+				<privilege>
+					<resource>user</resource>
+					<operation>view</operation>
+					<range>all</range>
+				</privilege>
+			</privileges>			
+		</role>
+		<role id="16" name="manager" desc="管理员">
+			<privileges>
+				<privilege>
+					<resource>log</resource>
+					<operation>maintain</operation>
+					<range>all</range>
+				</privilege>
+				<privilege>
+					<resource>draft</resource>
+					<operation>maintain</operation>
+					<range>self</range>
+				</privilege>
+				<privilege>
+					<resource>reply</resource>
+					<operation>maintain</operation>
+					<range>all</range>
+				</privilege>
+				<privilege>
+					<resource>category</resource>
+					<operation>maintain</operation>
+					<range>all</range>
+				</privilege>
+				<privilege>
+					<resource>msg</resource>
+					<operation>maintain</operation>
+					<range>self</range>
+				</privilege>
+				<privilege>
+					<resource>bookmark</resource>
+					<operation>maintain</operation>
+					<range>self</range>
+				</privilege>
+				<privilege>
+					<resource>user</resource>
+					<operation>maintain</operation>
+					<range>all</range>
+				</privilege>
+				<privilege>
+					<resource>param</resource>
+					<operation>maintain</operation>
+					<range>all</range>
+				</privilege>
+				<privilege>
+					<resource>site</resource>
+					<operation>maintain</operation>
+					<range>all</range>
+				</privilege>
+			</privileges>			
+		</role>
+	</roles>
+	
+</web-security>

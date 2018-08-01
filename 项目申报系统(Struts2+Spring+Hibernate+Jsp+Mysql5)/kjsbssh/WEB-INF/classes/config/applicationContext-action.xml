@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <bean id="user" class="com.ascent.pojo.User"/>
+    <bean id="expert" class="com.ascent.pojo.Expert"/>
+    <bean id="unit" class="com.ascent.pojo.Unit"/>
+    <bean id="project" class="com.ascent.pojo.Project"></bean>
+    <bean id="projectcategory" class="com.ascent.pojo.ProjectCategory"/>
+	
+    <bean id="UserManager" class="com.ascent.action.UserAction">
+       <property name="userService">
+          <ref bean="UserServiceProxy"/>
+       </property>
+       <property name="user">
+          <ref bean="user"/>
+       </property>
+    </bean>
+ 	
+ 	<bean id="ExpertManager" class="com.ascent.action.ExpertAction">
+ 	   <property name="expert" ref="expert"></property>
+ 	   <property name="expertService">
+ 	      <ref bean="ExpertServiceProxy"/>
+ 	   </property>
+ 	   
+ 	   <property name="categoryService">
+ 	      <ref bean="ProjectCategoryServiceProxy"/>
+ 	   </property>
+ 	   
+ 	</bean>
+ 	
+ 	<bean id="UnitManager" class="com.ascent.action.UnitAction">
+ 	   <property name="unit">
+ 	      <ref bean="unit"/>
+ 	   </property>
+ 	   
+ 	   <property name="project">
+ 	      <ref bean="project"/>
+ 	   </property>
+ 	   
+ 	   <property name="unitService">
+ 	      <ref bean="UnitServiceProxy"/>
+ 	   </property>
+ 	   
+ 	   <property name="projectCategory">
+ 	     <ref bean="ProjectCategoryServiceProxy"/>
+ 	   </property>
+ 	   
+ 	   <property name="projectService">
+ 	     <ref bean="ProjectServiceProxy"/>
+ 	   </property>
+ 	</bean>
+	
+	<bean id="ProjectManager" class="com.ascent.action.ProjectAction">
+	   <property name="project">
+	      <ref bean="project"/>
+	   </property>
+	   
+	   <property name="projectService">
+	      <ref bean="ProjectServiceProxy"/>
+	   </property>
+	   
+	</bean>
+	
+	<bean id="ProjectCategoryManager" class="com.ascent.action.ProjectCategoryAction">
+	   <property name="projectCategory">
+	      <ref bean="projectcategory"/>
+	   </property>
+	   
+	   <property name="categoryService">
+	     <ref bean="ProjectCategoryServiceProxy"/>
+	   </property>
+	</bean>
+	
+</beans>

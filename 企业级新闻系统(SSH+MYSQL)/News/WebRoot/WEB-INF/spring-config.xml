@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+  <!-- 连接数据库 -->
+  <bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource">
+    <property name="driverClassName">
+      <value>com.mysql.jdbc.Driver</value>
+    </property>
+    <property name="url">
+      <value><![CDATA[jdbc:mysql://localhost:3306/cms369?useUnicode=true&characterEncoding=UTF-8]]></value>
+    </property>
+    <property name="username">
+      <value>root</value>
+    </property>
+    <property name="password">
+      <value>1234</value>
+    </property>
+  </bean>
+  
+  <!-- SessionFactory工厂 -->
+  <bean id="mySessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+    <property name="dataSource">
+      <ref bean="myDataSource" />
+    </property>    
+    <property name="hibernateProperties">
+      <props>
+        <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+      </props>
+    </property>
+    <property name="mappingResources">
+      <list>
+        <value>com/xh369/dto/Admin.hbm.xml</value>
+        <value>com/xh369/dto/Product.hbm.xml</value>
+        <value>com/xh369/dto/ProductBigClass.hbm.xml</value>
+        <value>com/xh369/dto/ProductSmallClass.hbm.xml</value>
+        <value>com/xh369/dto/Popedom.hbm.xml</value>
+        <value>com/xh369/dto/Productsviews.hbm.xml</value>
+      </list>
+    </property>
+  </bean>
+  
+  <!-- 事务管理 -->
+  <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+    <property name="sessionFactory">
+      <ref local="mySessionFactory" />
+    </property>
+  </bean>
+
+  <!-- 没有事务,则新建事务(为Product_Action) -->
+  <bean id="Product_ActionProxy" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref bean="transactionManager" />
+    </property>
+    <property name="target">
+      <ref local="Product_ActionDAO" />
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="insert*">PROPAGATION_REQUIRED</prop>
+        <prop key="update*">PROPAGATION_REQUIRED</prop>
+        <prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+        <prop key="del*">PROPAGATION_REQUIRED</prop>
+      </props>
+   </property>
+  </bean>
+
+    <!-- 没有事务,则新建事务(为Product_Action),为了让它注入两个DAO-->
+  <bean id="Product_ActionProxy2" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref bean="transactionManager" />
+    </property>
+    <property name="target">
+      <ref local="Product_ActionDAO2" />
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="insert*">PROPAGATION_REQUIRED</prop>
+        <prop key="update*">PROPAGATION_REQUIRED</prop>
+        <prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+        <prop key="del*">PROPAGATION_REQUIRED</prop>
+      </props>
+   </property>
+  </bean>
+
+  <!-- DAO代理(为Product_Action) 注入第一个DAO-->
+  <bean id="Product_ActionDAO" class="com.xh369.daoimpl.ProductDAOimpl">
+    <property name="sessionFactory">
+      <ref local="mySessionFactory" />
+    </property>
+  </bean>
+    <!-- DAO代理(为Product_Action)注入第二个DAO -->
+  <bean id="Product_ActionDAO2" class="com.xh369.daoimpl.ProductsviewsDAOimpl">
+    <property name="sessionFactory">
+      <ref local="mySessionFactory" />
+    </property>
+  </bean>
+  <!-- action动作设置(为Product_Action) -->
+  <bean name="/product_Action" class="com.xh369.actions.Product_Action" singleton="false">
+    <property name="productDAO">
+      <ref bean="Product_ActionProxy" />
+    </property>
+    <property name="productsviewsDAO">
+      <ref bean="Product_ActionProxy2" />
+    </property>
+  </bean>
+
+  <!-- 没有事务,则新建事务(为ProductBigClass_Action) -->
+  <bean id="ProductBigClass_ActionProxy" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref bean="transactionManager" />
+    </property>
+    <property name="target">
+      <ref local="ProductBigClass_ActionDAO" />
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="insert*">PROPAGATION_REQUIRED</prop>
+        <prop key="update*">PROPAGATION_REQUIRED</prop>
+        <prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+        <prop key="del*">PROPAGATION_REQUIRED</prop>
+      </props>
+   </property>
+  </bean>
+  <!-- DAO代理(为ProductBigClass_Action) -->
+  <bean id="ProductBigClass_ActionDAO" class="com.xh369.daoimpl.ProductBigClassDAOimpl">
+    <property name="sessionFactory">
+      <ref local="mySessionFactory" />
+    </property>
+  </bean>
+  <!-- action动作设置(为ProductBigClass_Action) -->
+  <bean name="/productBigClass_Action" class="com.xh369.actions.ProductBigClass_Action" singleton="false">
+    <property name="productBigClassDAO">
+      <ref bean="ProductBigClass_ActionProxy" />
+    </property>
+  </bean>
+
+  <!-- 没有事务,则新建事务(为ProductSmallClass_Action) -->
+  <bean id="ProductSmallClass_ActionProxy" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref bean="transactionManager" />
+    </property>
+    <property name="target">
+      <ref local="ProductSmallClass_ActionDAO" />
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="insert*">PROPAGATION_REQUIRED</prop>
+        <prop key="update*">PROPAGATION_REQUIRED</prop>
+        <prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+        <prop key="del*">PROPAGATION_REQUIRED</prop>
+      </props>
+   </property>
+  </bean>
+  <!-- DAO代理(为ProductSmallClass_Action) -->
+  <bean id="ProductSmallClass_ActionDAO" class="com.xh369.daoimpl.ProductSmallClassDAOimpl">
+    <property name="sessionFactory">
+      <ref local="mySessionFactory" />
+    </property>
+  </bean>
+  <!-- action动作设置(为ProductSmallClass_Action) -->
+  <bean name="/productSmallClass_Action" class="com.xh369.actions.ProductSmallClass_Action" singleton="false">
+    <property name="productSmallClassDAO">
+      <ref bean="ProductSmallClass_ActionProxy" />
+    </property>
+  </bean>
+
+  <!-- 没有事务,则新建事务(为Admin_Action) -->
+  <bean id="Admin_ActionProxy" class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean">
+    <property name="transactionManager">
+      <ref bean="transactionManager" />
+    </property>
+    <property name="target">
+      <ref local="Admin_ActionDAO" />
+    </property>
+    <property name="transactionAttributes">
+      <props>
+        <prop key="insert*">PROPAGATION_REQUIRED</prop>
+        <prop key="update*">PROPAGATION_REQUIRED</prop>
+        <prop key="get*">PROPAGATION_REQUIRED,readOnly</prop>
+        <prop key="del*">PROPAGATION_REQUIRED</prop>
+      </props>
+   </property>
+  </bean>
+  <!-- DAO代理(为Admin_Action) -->
+  <bean id="Admin_ActionDAO" class="com.xh369.daoimpl.AdminDAOimpl">
+    <property name="sessionFactory">
+      <ref local="mySessionFactory" />
+    </property>
+  </bean>
+  <!-- action动作设置(为ProductSmallClass_Action) -->
+  <bean name="/admin_Action" class="com.xh369.actions.Admin_Action" singleton="false">
+    <property name="adminDAO">
+      <ref bean="Admin_ActionProxy" />
+    </property>
+  </bean>
+</beans>

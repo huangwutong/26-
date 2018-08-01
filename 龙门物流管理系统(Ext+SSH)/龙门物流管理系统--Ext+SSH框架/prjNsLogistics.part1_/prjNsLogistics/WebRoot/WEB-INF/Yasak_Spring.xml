@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+	<import resource="Spring.xml" />
+	<!-- 注入业务类 -->
+	<bean id="branchInfoBusiness"
+		class="com.bu.yasak.BranchInfoBusiness">
+		<property name="daos">
+			<ref bean="DAOService" />
+		</property>
+	</bean>
+	<bean id="customerInfoBusiness"
+		class="com.bu.yasak.CustomerInfoBusiness">
+		<property name="daos">
+			<ref bean="DAOService" />
+		</property>
+	</bean>
+	<bean id="billInfoBusiness" class="com.bu.yasak.BillInfoBusiness">
+		<property name="daos">
+			<ref bean="DAOService" />
+		</property>
+	</bean>
+	
+	<bean id="billInBranchBusiness" class="com.bu.yasak.BillInBranchBusiness">
+		<property name="daos">
+			<ref bean="DAOService" />
+		</property>
+	</bean>
+
+	<bean id="billInCustomerBusiness"
+		class="com.bu.yasak.BillInCustomerBusiness" >
+		<property name="daos">
+			<ref bean="DAOService" />
+		</property>
+	</bean>
+	
+	<bean id="billOutCustomerBusiness"
+		class="com.bu.yasak.BillOutCustomerBusiness">
+		<property name="daos">
+			<ref bean="DAOService" />
+		</property>
+	</bean>
+	
+	<bean id="afficheInfoBusiness"
+		class="com.bu.yasak.AfficheInfoBusiness" abstract="false">
+		<property name="daos">
+			<ref bean="DAOService" />
+		</property>
+	</bean>
+	
+	<!-- 注入业务服务类 -->
+	<bean id="Yasak_BusinessService"
+		class="com.service.Yasak_BusinessService">
+		<property name="branchbu">
+			<ref bean="branchInfoBusiness" />
+		</property>
+		<property name="customerbu">
+			<ref bean="customerInfoBusiness" />
+		</property>
+		<property name="billbu">
+			<ref bean="billInfoBusiness" />
+		</property>
+		<property name="bibbu">
+			<ref bean="billInBranchBusiness"/>
+		</property>
+		<property name="bcbu">
+			<ref bean="billInCustomerBusiness"/>
+		</property>
+		<property name="bocbu">
+			<ref bean="billOutCustomerBusiness"/>
+		</property>
+		<property name="aibu">
+			<ref bean="afficheInfoBusiness"/>
+		</property>
+	</bean>
+
+	<!-- 注入Action类 -->
+
+	<bean name="/yasak_CustomerList"
+		class="com.struts.action.Yasak_CustomerListAction">
+		<property name="ybs">
+			<ref bean="Yasak_BusinessService" />
+		</property>
+	</bean>
+	<bean name="/yasak_CustomerFindById"
+		class="com.struts.action.Yasak_CustomerFindByIdAction">
+		<property name="ybs">
+			<ref bean="Yasak_BusinessService" />
+		</property>
+	</bean>
+
+	<bean name="/yasak_CustomerUpdate"
+		class="com.struts.action.Yasak_CustomerUpdateAction">
+		<property name="ybs">
+			<ref bean="Yasak_BusinessService" />
+		</property>
+	</bean>
+
+	<bean name="/yasak_CustomerAdd"
+		class="com.struts.action.Yasak_CustomerAddAction">
+		<property name="ybs">
+			<ref bean="Yasak_BusinessService" />
+		</property>
+	</bean>
+
+	<bean name="/yasak_BillList"
+		class="com.struts.action.Yasak_BillListAction">
+		<property name="ybs">
+			<ref bean="Yasak_BusinessService" />
+		</property>
+	</bean>
+
+
+	<bean name="/yasak_BillAdd"
+		class="com.struts.action.Yasak_BillAddAction">
+		<property name="ybs">
+			<ref bean="Yasak_BusinessService" />
+		</property>
+	</bean>
+
+
+	<bean name="/yasak_BillUpdate"
+		class="com.struts.action.Yasak_BillUpdateAction">
+		<property name="ybs">
+			<ref bean="Yasak_BusinessService" />
+		</property>
+	</bean>
+
+	<bean name="/yasak_BillInBranchList"
+		class="com.struts.action.Yasak_BillInBranchListAction">
+		<property name="ybs">
+			<ref bean="Yasak_BusinessService" />
+		</property>
+	</bean>
+
+	<bean name="/yasak_BillInBranchUpdate"
+		class="com.struts.action.Yasak_BillInBranchUpdateAction">
+		<property name="ybs">
+			<ref bean="Yasak_BusinessService" />
+		</property>
+	</bean>
+	
+	<bean name="/yasak_BillInCustomerList"
+		class="com.struts.action.Yasak_BillInCustomerListAction">
+		<property name="ybs">
+			<ref bean="Yasak_BusinessService" />
+		</property>
+	</bean>
+	<bean name="/yasak_BillInCustomerUpdate"
+		class="com.struts.action.Yasak_BillInCustomerUpdateAction">
+		<property name="ybs">
+			<ref bean="Yasak_BusinessService" />
+		</property>
+	</bean>
+	
+	<bean name="/yasak_BillOutCustomerList"
+		class="com.struts.action.Yasak_BillOutCustomerListAction">
+		<property name="ybs">
+			<ref bean="Yasak_BusinessService" />
+		</property>
+	</bean>
+	
+	
+	
+	<bean name="/yasak_afficheAdd"
+		class="com.struts.action.Yasak_afficheAddAction">
+		<property name="ybs">
+			<ref bean="Yasak_BusinessService" />
+		</property>
+	</bean></beans>

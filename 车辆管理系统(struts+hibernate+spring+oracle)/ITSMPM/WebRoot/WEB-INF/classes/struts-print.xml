@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+ 
+<package name="default" extends="struts-default,jasperreports-default">
+   <!-- 出车单打印 --> 
+    <action name="outcmprint" class="outcmprintAction">
+        <result name="success" type="jasper">
+          <param name="location">/jasper/compiled_outcmprint.jasper</param>
+          <param name="dataSource">myList</param>
+          <param name="format">PDF</param>
+        </result>
+      </action>
+      
+   <!-- 加油信息打印 -->
+   <action name="oilprint" class="oilprintAction">
+    <result name="success">/jsp/print/selectshow.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+   </action>
+   <action name="selectoil" class="selectoilAction">
+    <result name="success">/jsp/print/selectoilshow.jsp</result>
+    <result name="input">/jsp/error.jsp</result>
+   </action>
+   <action name="oilprinta" class="oilprintaAction">
+        <result name="success" type="jasper">
+          <param name="location">/jasper/compiled_oilprint.jasper</param>
+          <param name="dataSource">myList</param>
+          <param name="format">PDF</param>
+        </result>
+   </action>
+   <!-- 维修信息打印 --> 
+    <action name="wxprint" class="oilprintAction" method="repar">
+	    <result name="success">/jsp/print/selectshow.jsp</result>
+	    <result name="input">/jsp/error.jsp</result>
+   </action>
+    <action name="selectrepar" class="selectoilAction" method="repar">
+	    <result name="success">/jsp/print/selectSermshow.jsp</result>
+	    <result name="input">/jsp/error.jsp</result>
+   </action>
+   <action name="wxprinta" class="wxprintaAction">
+        <result name="success" type="jasper">
+          <param name="location">/jasper/compiled_sermprint.jasper</param>
+          <param name="dataSource">myList</param>
+          <param name="format">PDF</param>
+        </result>
+   </action>
+   <!-- 保养信息打印 --> 
+    <action name="byprint" class="oilprintAction" method="mam">
+	    <result name="success">/jsp/print/selectshow.jsp</result>
+	    <result name="input">/jsp/error.jsp</result>
+    </action>
+    <action name="selectmainm" class="selectoilAction" method="mam">
+	    <result name="success">/jsp/print/selectMainmshow.jsp</result>
+	    <result name="input">/jsp/error.jsp</result>
+    </action>
+    <action name="byprinta" class="byprintaAction">
+        <result name="success" type="jasper">
+          <param name="location">/jasper/compiled_mainmprint.jasper</param>
+          <param name="dataSource">myList</param>
+          <param name="format">PDF</param>
+        </result>
+   </action>
+   <!-- 保险信息打印 --> 
+    <action name="bxprint" class="oilprintAction" method="insrm">
+	    <result name="success">/jsp/print/selectshow.jsp</result>
+	    <result name="input">/jsp/error.jsp</result>
+    </action>
+    <action name="selectinsrm" class="selectoilAction" method="insrm">
+	    <result name="success">/jsp/print/selectInsrmshow.jsp</result>
+	    <result name="input">/jsp/error.jsp</result>
+    </action>
+    <action name="bxprinta" class="bxprintaAction">
+        <result name="success" type="jasper">
+          <param name="location">/jasper/compiled_insrmprint.jasper</param>
+          <param name="dataSource">myList</param>
+          <param name="format">PDF</param>
+        </result>
+   </action>
+    <!-- 规费信息打印 --> 
+    <action name="gfprint" class="oilprintAction" method="feesm">
+	    <result name="success">/jsp/print/selectshow.jsp</result>
+	    <result name="input">/jsp/error.jsp</result>
+    </action>
+    <action name="selectfeesm" class="selectoilAction" method="feesm">
+	    <result name="success">/jsp/print/selectFeesmshow.jsp</result>
+	    <result name="input">/jsp/error.jsp</result>
+    </action>
+    <action name="gfprinta" class="gfprintaAction">
+        <result name="success" type="jasper">
+          <param name="location">/jasper/compiled_feesmprint.jasper</param>
+          <param name="dataSource">myList</param>
+          <param name="format">PDF</param>
+        </result>
+   </action>
+    <!-- 年检信息打印 -->
+    <action name="njprint" class="oilprintAction" method="annum">
+	    <result name="success">/jsp/print/selectshow.jsp</result>
+	    <result name="input">/jsp/error.jsp</result>
+    </action>
+    <action name="selectannum" class="selectoilAction" method="annum">
+	    <result name="success">/jsp/print/selectAnnumshow.jsp</result>
+	    <result name="input">/jsp/error.jsp</result>
+    </action>
+    <action name="njprinta" class="njprintaAction">
+        <result name="success" type="jasper">
+          <param name="location">/jasper/compiled_annumprint.jasper</param>
+          <param name="dataSource">myList</param>
+          <param name="format">PDF</param>
+        </result>
+    </action>
+    <!-- 违章信息打印 -->
+    <action name="wzprint" class="oilprintAction" method="violm">
+	    <result name="success">/jsp/print/selectshow.jsp</result>
+	    <result name="input">/jsp/error.jsp</result>
+    </action>
+    <action name="selectviolm" class="selectoilAction" method="violm">
+	    <result name="success">/jsp/print/selectViolmshow.jsp</result>
+	    <result name="input">/jsp/error.jsp</result>
+    </action>
+    <action name="wzprinta" class="wzprintaAction">
+        <result name="success" type="jasper">
+          <param name="location">/jasper/compiled_violmprint.jasper</param>
+          <param name="dataSource">myList</param>
+          <param name="format">PDF</param>
+        </result>
+    </action>
+</package>
+</struts>

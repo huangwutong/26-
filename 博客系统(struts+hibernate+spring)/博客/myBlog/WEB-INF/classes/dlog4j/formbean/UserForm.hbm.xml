@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 2.0//EN" 
+    "http://hibernate.sourceforge.net/hibernate-mapping-2.0.dtd">
+
+<hibernate-mapping package="dlog4j.formbean">
+	
+    <class name="UserForm" table="dlog_user" dynamic-update="false">
+    	<id name="id" column="userid" type="int">
+			<generator class="increment"/>
+		</id>
+		<property name="displayName" type="java.lang.String" length="50" column="displayName"/>
+		<property name="email" type="java.lang.String" length="50" column="email"/>
+		<property name="homePage" type="java.lang.String" length="100" column="homePage"/>
+		<property name="resume" type="java.lang.String" length="250" column="resume"/>
+		<property name="portrait" type="java.lang.String" length="40" column="portrait"/>
+		<property name="loginCount" type="int" column="loginCount"/>
+		<property name="userRole" type="int" column="userRole"/>
+		<property name="loginName" type="java.lang.String" length="20" column="username" update="false"/>
+		<property name="cryptPassword" type="java.lang.String" length="50" column="password"/>
+		<property name="regTime" type="java.util.Date" column="regTime"/>
+		<property name="lastTime" type="java.util.Date" column="lastTime" insert="false"/>
+		<property name="cats" type="java.lang.String" length="20" column="ownerCats"/>
+		<bag name="logs" table="dlog_journay" lazy="true" inverse="true" cascade="none" order-by="logTime DESC">
+			<key column="userid"/>
+			<one-to-many class="LogForm"/>
+		</bag>
+		<bag name="replies" table="dlog_reply" lazy="true" inverse="true" cascade="none" order-by="writeTime DESC">
+			<key column="userid"/>
+			<one-to-many class="ReplyForm"/>
+		</bag>		
+		<many-to-one name="site" column="siteid" cascade="none" not-null="true" outer-join="false"/>
+    </class>
+
+</hibernate-mapping>

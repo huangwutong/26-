@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.xh369.dto.Product" table="products" dynamic-update="true" dynamic-insert="true" lazy="false">
+    <id name="id" column="id" type="int">
+       <generator class="native"/>
+    </id>
+    <many-to-one
+      class="com.xh369.dto.ProductBigClass"
+      name="productBigClass"
+      column="bigclassid"
+      not-null="false"
+    />
+    <many-to-one
+      class="com.xh369.dto.ProductSmallClass"
+      name="productSmallClass"
+      column="smallclassid"
+      not-null="false"
+    />
+    <property name="productname" type="string">
+      <column name="productname"/>
+    </property>
+    <property name="productpic" type="string">
+      <column name="productpic"/>
+    </property>
+    <property name="producefactory" type="string">
+      <column name="producefactory"/>
+    </property>
+    <property name="productmodel" type="string">
+      <column name="productmodel"/>
+    </property>
+    <property name="marketprice" type="int">
+      <column name="marketprice"/>
+    </property>
+    <property name="preferentialprice" type="int">
+      <column name="preferentialprice"/>
+    </property>
+    <property name="vouch" type="string">
+      <column name="vouch"/>
+    </property>
+    <property name="newproduct" type="string">
+      <column name="newproduct"/>
+    </property>
+    <property name="introduct" type="text">
+      <column name="introduct"/>
+    </property>
+  </class>
+</hibernate-mapping>

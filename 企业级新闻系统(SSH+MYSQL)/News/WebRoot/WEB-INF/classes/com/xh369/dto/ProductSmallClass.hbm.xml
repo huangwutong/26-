@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="com.xh369.dto.ProductSmallClass" table="productsmallclasses" dynamic-update="true" dynamic-insert="true" lazy="false">
+    <id name="id" column="id" type="int">
+      <generator class="native"/>
+    </id>
+    <property name="smallclassname" type="string">
+      <column name="smallclassname"/>
+    </property>
+    <many-to-one
+      class="com.xh369.dto.ProductBigClass"
+      name="productbigclass"
+      column="bigclass_id"
+      not-null="false"
+    />
+    <set name="product" cascade="delete" inverse="true" lazy="false">
+      <key column="smallclassid"/>
+      <one-to-many class="com.xh369.dto.Product"/>
+    </set>
+  </class>
+</hibernate-mapping>

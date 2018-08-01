@@ -1,0 +1,94 @@
+.small {
+
+	FONT-SIZE: 9pt
+
+}
+
+.smallh20 {
+
+	FONT-SIZE: 12px; LINE-HEIGHT: 20pt
+
+}
+
+.smallh15 {
+
+	FONT-SIZE: 12px; LINE-HEIGHT: 15pt
+
+}
+
+.medium {
+
+	FONT-SIZE: 14px
+
+}
+
+.mediumh15 {
+
+	FONT-SIZE: 14px; LINE-HEIGHT: 15pt
+
+}
+
+.mediumh20 {
+
+	FONT-SIZE: 14px; LINE-HEIGHT: 20pt
+
+}
+
+.big {
+
+	FONT-SIZE: 16px
+
+}
+
+A {
+
+	COLOR: #111177
+
+}
+
+A:link {
+
+	COLOR: #111177
+
+; text-decoration: none
+
+}
+
+A:active {
+
+	COLOR: #cc6600
+
+; text-decoration: none
+
+}
+
+A:visited {
+
+	COLOR: #111177
+
+; text-decoration: none
+
+}
+
+A:hover {
+
+	COLOR: #cc6600
+
+; text-decoration: none
+
+}
+
+TD {
+
+	FONT-SIZE: 12px
+
+}
+
+BODY {
+
+	MARGIN-TOP: 5pt
+
+}
+
+.link1 {  text-decoration: underline}
+

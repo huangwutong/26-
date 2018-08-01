@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+	<beans>
+	<bean id="MyData" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>oracle.jdbc.driver.OracleDriver</value>
+		</property>
+		<property name="url">
+			<value>jdbc:oracle:thin:@localhost:1521:oracle</value>
+		</property>
+		<property name="username">
+			<value>scott</value>
+		</property>
+		<property name="password">
+			<value>tiger</value>
+		</property>
+	</bean>
+	
+	<bean id="MySessionFactory"
+		class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="MyData" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle9Dialect</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>po/Tcharge.hbm.xml</value>
+				<value>po/TchargeRule.hbm.xml</value>
+				<value>po/Tcustomer.hbm.xml</value>
+				<value>po/Tmobiles.hbm.xml</value>
+				<value>po/Toperator.hbm.xml</value>
+				<value>po/Tuser.hbm.xml</value></list>
+		</property></bean>
+		
+		<bean id="logindao" class="dao.LoginDAOImp">
+		<property name="factory">
+		<ref bean="MySessionFactory"/>
+		</property>
+		</bean>
+		
+		<bean id="admindao" class="dao.AdminOperatorDAOImp">
+		<property name="factory">
+		<ref bean="MySessionFactory"/>
+		</property>
+		</bean>
+		<bean id="operatordao" class="dao.OperatorDAOImp">
+		<property name="factory">
+		<ref bean="MySessionFactory"/>
+		</property>
+		</bean>
+		
+		<bean id="loginservice" class="business.LoginImp">
+		<property name="login">
+		<ref bean="logindao"/>
+		</property> 
+		</bean>
+		<bean id="adminservice" class="business.AdminOperatorImp">
+		<property name="adminoperator">
+		<ref bean="admindao"/>
+		</property>
+		</bean>
+		<bean id="operatorservice" class="business.OperatorImp">
+		<property name="operator">
+		<ref bean="operatordao"/>
+		</property>
+		</bean>
+		</beans>

@@ -1,0 +1,19 @@
+#
+#Fri Apr 28 19:03:05 CST 2006
+springDaoFile=
+genVersionTag=false
+daoSFId=
+configFile=/ch16/src/hibernate.cfg.xml
+sessionFactoryId=
+profile=
+libInstallFolder=<no jars/zips in selected libraries>
+addLibs2Classpath=true
+jndiPath=
+genBasicCompId=false
+addLibs2Project=true
+keyGenerator=
+createConfigFile=true
+basePersistenceClass=
+version=3.0
+useJavaTypes=false
+reSettingsFile=

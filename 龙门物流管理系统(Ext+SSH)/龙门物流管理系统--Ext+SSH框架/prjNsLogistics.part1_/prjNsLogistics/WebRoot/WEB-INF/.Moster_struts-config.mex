@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/MocargoInfoAdd.do" location="480,-120" dimension="151,106" />
+  <StrutsActivity path="/MocargoList.do" location="45,-120" dimension="136,106" />
+  <StrutsActivity path="/MocargoVCAdd.do" location="495,240" dimension="151,88" />
+  <StrutsActivity path="/MocargoVCList.do" location="45,135" dimension="151,88" />
+  <StrutsActivity path="/MobillUpdate.do" location="75,450" dimension="136,106" />
+  <StrutsActivity path="/MobillUpdateOk.do" location="495,450" dimension="151,103" />
+  <StrutsActivity path="/MobillList.do" location="75,345" dimension="136,88" />
+  <StrutsActivity path="/MocargoBillInfo.do" location="495,135" dimension="151,88" />
+  <StrutsActivity path="/MotrafficList.do" location="75,645" dimension="136,91" />
+  <StrutsActivity path="/MotraBillUpdate.do" location="75,780" dimension="136,106" />
+  <StrutsActivity path="/MotraBillUpdateOk.do" location="495,780" dimension="151,103" />
+  <StrutsActivity path="/MosortingBillList.do" location="75,960" dimension="136,88" />
+  <StrutsActivity path="/MosortingBillUpdate.do" location="75,1110" dimension="136,88" />
+  <StrutsActivity path="/MosortingBillUpdateOk.do" location="495,960" dimension="151,88" />
+  <StrutsActivity path="/MoBillInfoFindByID.do" location="495,345" dimension="151,88" />
+  <StrutsActivity path="/moTraBillFindByID.do" location="495,645" dimension="150,100" />
+  <StrutsActivity path="/moCargoInfoUpdate.do" location="45,15" dimension="151,106" />
+  <StrutsActivity path="/MoCargoID.do" location="45,240" dimension="150,100" />
+  <StrutsActivity path="/MoCargoVCUpdate.do" location="495,15" dimension="150,100" />
+  <StrutsActivity path="/MoBillCheckList.do" location="75,1275" dimension="136,88" />
+  <StrutsActivity path="/MoBillCheckUpdate.do" location="495,1275" dimension="151,88" />
+  <StrutsActivity path="/MoBillCheckUpdateOk.do" location="75,1395" dimension="150,100" />
+  <StrutsActivity path="/Moster/JsonFactory/MoCargoInfoAdd.jsp" location="735,-120" dimension="150,100" />
+  <StrutsActivity path="/Moster/JsonFactory/MoCargoInfoList.jsp" location="315,-120" dimension="150,100" />
+  <StrutsActivity path="/Moster/JsonFactory/MoCargoVCAdd.jsp" location="720,240" dimension="150,100" />
+  <StrutsActivity path="/Moster/JsonFactory/MoCargoVCList.jsp" location="300,135" dimension="150,91" />
+  <StrutsActivity path="/Moster/JsonFactory/CargoByID.jsp" location="300,450" dimension="150,106" />
+  <StrutsActivity path="/Moster/JsonFactory/BillInfoUpdate.jsp" location="765,450" dimension="150,100" />
+  <StrutsActivity path="/Moster/JsonFactory/MoBillList.jsp" location="300,345" dimension="150,91" />
+  <StrutsActivity path="/Moster/JsonFactory/MoCVBillID.jsp" location="720,135" dimension="150,91" />
+  <StrutsActivity path="/Moster/JsonFactory/MoTraBillList.jsp" location="300,645" dimension="150,100" />
+  <StrutsActivity path="/Moster/JsonFactory/MoTraCargoByID.jsp" location="315,780" dimension="150,100" />
+  <StrutsActivity path="/Moster/JsonFactory/MoTraBillInfoUpdate.jsp" location="765,780" dimension="150,100" />
+  <StrutsActivity path="/Moster/JsonFactory/MoSortingBillList.jsp" location="315,960" dimension="150,91" />
+  <StrutsActivity path="/Moster/JsonFactory/MosortingCargoByID.jsp" location="330,1110" dimension="150,91" />
+  <StrutsActivity path="/Moster/JsonFactory/MosortingBillInfoUpdate.jsp" location="690,1095" dimension="150,91" />
+  <StrutsActivity path="/Moster/JsonFactory/BillInfoByID.jsp" location="765,345" dimension="150,91" />
+  <StrutsActivity path="/Moster/JsonFactory/MoTraBillInfoByID.jsp" location="765,645" dimension="150,100" />
+  <StrutsActivity path="/Moster/JsonFactory/MoCargoInfoUpdate.jsp" location="300,15" dimension="150,100" />
+  <StrutsActivity path="/Moster/JsonFactory/MoCVCargoID.jsp" location="300,240" dimension="150,100" />
+  <StrutsActivity path="/Moster/JsonFactory/MoCargoVCUpdate.jsp" location="750,15" dimension="150,100" />
+  <StrutsActivity path="/Moster/JsonFactory/MoBillCheckList.jsp" location="315,1275" dimension="150,91" />
+  <StrutsActivity path="/Moster/JsonFactory/MoBillCheckCargoByID.jsp" location="750,1275" dimension="150,91" />
+  <StrutsActivity path="/Moster/JsonFactory/MoBillCheckUpdate.jsp" location="345,1395" dimension="150,100" />
+  <StrutsActivity path="/MoCargoSelectList.do" location="75,1530" dimension="150,100" />
+  <StrutsActivity path="/MoCargoSelectUpdate.do" location="510,1530" dimension="150,100" />
+  <StrutsActivity path="/Moster/JsonFactory/MoCargoSelectList.jsp" location="330,1530" dimension="150,100" />
+  <StrutsActivity path="/Moster/JsonFactory/MoCargoSelectUpdate.jsp" location="810,1530" dimension="150,100" />
+  <StrutsTransition id="/MosortingBillUpdateOk.do,mosorbillupdateok,/Moster/JsonFactory/MosortingBillInfoUpdate.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="570,1048" />
+      <AbsolutePoint location="570,1140" />
+      <AbsolutePoint location="690,1140" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/moTraBillFindByID.do,motrabillfindbyid,/Moster/JsonFactory/MoTraBillInfoByID.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="645,695" />
+      <AbsolutePoint location="765,695" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MocargoBillInfo.do,mocargobill,/Moster/JsonFactory/MoCVBillID.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="646,179" />
+      <AbsolutePoint location="720,179" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MoCargoID.do,mocargoID,/Moster/JsonFactory/MoCVCargoID.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="195,290" />
+      <AbsolutePoint location="300,290" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MotrafficList.do,motralist,/Moster/JsonFactory/MoTraBillList.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="211,711" />
+      <AbsolutePoint location="300,711" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MocargoInfoAdd.do,mocargoadd,/Moster/JsonFactory/MoCargoInfoAdd.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="631,-67" />
+      <AbsolutePoint location="735,-67" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MoBillInfoFindByID.do,billInfoFindByID,/Moster/JsonFactory/BillInfoByID.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="646,389" />
+      <AbsolutePoint location="765,389" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MosortingBillUpdate.do,mosortingcargobyid,/Moster/JsonFactory/MosortingCargoByID.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="211,1154" />
+      <AbsolutePoint location="330,1154" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MocargoList.do,mocargolist,/Moster/JsonFactory/MoCargoInfoList.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="181,-67" />
+      <AbsolutePoint location="315,-67" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MoBillCheckUpdate.do,mobillcheckcargo,/Moster/JsonFactory/MoBillCheckCargoByID.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="646,1319" />
+      <AbsolutePoint location="750,1319" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MoCargoSelectUpdate.do,mocargoselectupdate,/Moster/JsonFactory/MoCargoSelectUpdate.jsp,1" routingType="1">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="660,1580" />
+      <AbsolutePoint location="810,1580" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MocargoVCList.do,mocargovclist,/Moster/JsonFactory/MoCargoVCList.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="196,179" />
+      <AbsolutePoint location="300,179" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MoBillCheckList.do,mobillchecklist,/Moster/JsonFactory/MoBillCheckList.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="211,1319" />
+      <AbsolutePoint location="315,1319" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MoBillCheckUpdateOk.do,mobillcheckupdateok,/Moster/JsonFactory/MoBillCheckUpdate.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="225,1445" />
+      <AbsolutePoint location="345,1445" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MoCargoSelectList.do,mocargoselectlist,/Moster/JsonFactory/MoCargoSelectList.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="225,1580" />
+      <AbsolutePoint location="330,1580" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MobillUpdate.do,cargoByID,/Moster/JsonFactory/CargoByID.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="211,503" />
+      <AbsolutePoint location="300,503" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MotraBillUpdateOk.do,motrabillupdate,/Moster/JsonFactory/MoTraBillInfoUpdate.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="646,831" />
+      <AbsolutePoint location="765,831" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MotraBillUpdate.do,motracargoByID,/Moster/JsonFactory/MoTraCargoByID.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="211,833" />
+      <AbsolutePoint location="315,833" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MoCargoVCUpdate.do,moCVUpdateOK,/Moster/JsonFactory/MoCargoVCUpdate.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="645,65" />
+      <AbsolutePoint location="750,65" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MosortingBillList.do,mosortingbillinfo,/Moster/JsonFactory/MoSortingBillList.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="211,1004" />
+      <AbsolutePoint location="315,1004" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/moCargoInfoUpdate.do,mocargoupdate,/Moster/JsonFactory/MoCargoInfoUpdate.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="196,68" />
+      <AbsolutePoint location="300,68" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MocargoVCAdd.do,mocargoID,/Moster/JsonFactory/MoCargoVCAdd.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="646,284" />
+      <AbsolutePoint location="720,284" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MobillUpdateOk.do,mobillUpdateOK,/Moster/JsonFactory/BillInfoUpdate.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="646,501" />
+      <AbsolutePoint location="765,501" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/MobillList.do,mobilllist,/Moster/JsonFactory/MoBillList.jsp,1" routingType="1">
+    <Bendpoints />
+  </StrutsTransition>
+</FlowViewLayout>
+

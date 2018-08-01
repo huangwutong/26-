@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+  <form-beans>
+    <form-bean name="article_ActionForm" type="com.xh369.dto.Article_ActionForm" />
+    <form-bean name="admin_ActionForm" type="com.xh369.dto.Admin_ActionForm" />
+    <form-bean name="bigClass_ActionForm" type="com.xh369.dto.BigClass_ActionForm" />
+    <form-bean name="smallClass_ActionForm" type="com.xh369.dto.SmallClass_ActionForm" />
+    <form-bean name="product_ActionForm" type="com.xh369.dto.Product_ActionForm" />
+    <form-bean name="productBigClass_ActionForm" type="com.xh369.dto.ProductBigClass_ActionForm" />
+    <form-bean name="productSmallClass_ActionForm" type="com.xh369.dto.ProductSmallClass_ActionForm" />
+    <form-bean name="insertCollectionActionForm" type="luceneActionForm.insertCollectionActionForm" />
+    <form-bean name="indexDocActionForm" type="luceneActionForm.indexDocActionForm" />
+    <form-bean name="searchActionForm" type="luceneActionForm.searchActionForm" />
+    <form-bean name="moreResultsActionForm" type="luceneActionForm.moreResultsActionForm" />
+    <form-bean name="delCollectionActionForm" type="luceneActionForm.delCollectionActionForm" />
+  </form-beans>
+  
+  <global-forwards>
+    <forward name="ok" path="/ok.jsp" />
+  </global-forwards>
+  
+  <action-mappings>
+  <!--Article_Action -->
+    <action name="article_ActionForm" parameter="method" path=" " scope="request" type="com.xh369.actions.Article_Action">
+      <forward name="ok" path="/view_admin/admin_center.jsp" />
+      <forward name="success" path="/view_admin/article_all_switch.jsp" />
+      <forward name="error" path="/view_admin/inc/error.jsp" />
+      <forward name="show" path="/view_admin/article_add.jsp" />
+      <forward name="showdesc" path="/view_admin/article_desc.jsp" />
+      <forward name="update" path="/view_admin/article_update.jsp" />
+      <forward name="searchclass" path="/view_admin/articleclass.jsp" />
+    </action>
+    <!--admin_Action -->
+    <action name="admin_ActionForm" parameter="method" path="/admin_Action" scope="request" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="faile" path="/view_admin/inc/error.jsp" />
+      <forward name="success" path="/view_admin/index.jsp" redirect="true" />
+      <forward name="list" path="/view_admin/login_list.jsp" />
+      <forward name="searchAdminList" path="/view_admin/admin_popedom.jsp" />
+      <forward name="searchPopedom" path="/view_admin/admin_popedom_config.jsp" />
+      <forward name="toAdmin" path="/view_admin/admin_popedom_add.jsp" />
+      <forward name="addAdmin" path="/view_admin/admin_center.jsp" />
+    </action>
+    <!-- bigClass_Action -->
+    <action input="/view_admin/articleclass.jsp" name="bigClass_ActionForm" parameter="method" path="/bigClass_Action" scope="request" type="com.xh369.actions.BigClass_Action">
+      <forward name="searchclass" path="/view_admin/articleclass.jsp" />
+      <forward name="error" path="/view_admin/inc/error.jsp" />
+      <forward name="updateBigClass" path="/view_admin/articlebigclass_update.jsp" />
+    </action>
+    <!-- smallClass_Action -->
+    <action input="/view_admin/articleclass.jsp" name="smallClass_ActionForm" parameter="method" path="/smallClass_Action" scope="request" type="com.xh369.actions.SmallClass_Action">
+      <forward name="addSmallClass" path="/view_admin/articlesmallclass_add.jsp" />
+      <forward name="error" path="/view_admin/inc/error.jsp" />
+      <forward name="searchclass" path="/view_admin/articleclass.jsp" />
+      <forward name="updateSmallClass" path="/view_admin/articlesmallclass_update.jsp" />
+    </action>
+    <action input="/view_admin/product_add.jsp" name="product_ActionForm" parameter="method" path="/product_Action" scope="request" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="productAdd" path="/view_admin/admin_center.jsp" />
+      <forward name="search" path="/view_admin/product_oper.jsp" />
+      <forward name="showProduct" path="/view_admin/product_update.jsp" />
+      <forward name="show" path="/view_admin/product_add.jsp" />
+      <forward name="error" path="/view_admin/inc/error.jsp" />
+    </action>
+    <action input="/view_admin/productbigclass_add.jsp" name="productBigClass_ActionForm" parameter="method" path="/productBigClass_Action" scope="request" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="productBigClass_Add" path="/view_admin/admin_center.jsp" />
+      <forward name="error" path="/view_admin/inc/error.jsp" />
+      <forward name="searchAllProductBigClass" path="/view_admin/productclass.jsp" />
+    </action>
+    <action input="/view_admin/productsmallclass_add.jsp" name="productSmallClass_ActionForm" parameter="method" path="/productSmallClass_Action" scope="request" type="org.springframework.web.struts.DelegatingActionProxy">
+      <forward name="searchProductBigClass" path="/view_admin/productsmallclass_add.jsp" />
+      <forward name="productSmallClass_Add" path="/view_admin/admin_center.jsp" />
+      <forward name="delProductSmallClass" path="/view_admin/productclass.jsp" />
+      <forward name="error" path="/view_admin/inc/error.jsp" />
+    </action>
+    <action name="insertCollectionActionForm" type="luceneAction.insertCollectionAction" path="/luceneAction/insertCollectionAction">
+      <forward name="insertOk" path="/view_admin/collection.jsp" />
+      <forward name="insertError" path="/view_admin/insert_error.jsp" />
+    </action>
+    
+    <action name="indexDocActionForm" type="luceneAction.indexDocAction" path="/luceneAction/indexDocAction">
+      <forward name="indexError" path="/view_admin/index_error.jsp" />
+      <forward name="indexOk" path="/view_admin/index_control.jsp" />
+    </action>
+    
+    <action name="searchActionForm" type="luceneAction.searchAction" path="/luceneAction/searchAction">
+      <forward name="showresults" path="/view_admin/results.jsp" />
+    </action>
+    
+    <action name="moreResultsActionForm" type="luceneAction.moreResultsAction" path="/luceneAction/moreResultsAction">
+      <forward name="showresults" path="/view_admin/results.jsp" />
+    </action>
+    
+    <action name="delCollectionActionForm" type="luceneAction.delCollectionAction" path="/luceneAction/delCollectionAction" >
+      <forward name="collection" path="/view_admin/collection.jsp"/>
+    </action>
+  </action-mappings>
+  <plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+    <set-property property="contextConfigLocation" value="/WEB-INF/spring-config.xml" />
+  </plug-in>
+</struts-config>

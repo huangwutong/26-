@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="GB2312"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN" "http://jakarta.apache.org/struts/dtds/struts-config_1_1.dtd">
+<struts-config>
+    
+    <!-- ========== Data Source Configuration =============================== -->
+    <data-sources>
+        <data-source type="org.apache.commons.dbcp.BasicDataSource">
+			
+            <set-property property="driverClassName" value="org.hsqldb.jdbcDriver" />	
+            <set-property property="url" value="jdbc:hsqldb:hsql://localhost/dlog4j" />
+            <set-property property="username" value="sa" />
+            <set-property property="password" value="" />
+			
+			<!--
+            <set-property property="driverClassName" value="com.microsoft.jdbc.sqlserver.SQLServerDriver" />
+            <set-property property="url" value="jdbc:microsoft:sqlserver://localhost:1433;DatabaseName=DLOG4j;SelectMethod=cursor" />			
+            <set-property property="username" value="dlog4j" />
+            <set-property property="password" value="dlog4j" />
+			-->
+            <set-property property="maxActive" value="20" />
+            <set-property property="maxWait" value="5000" />
+            <set-property property="defaultAutoCommit" value="true" />
+            <set-property property="defaultReadOnly" value="false" />	
+			<!--		
+            <set-property property="validationQuery" value="SELECT 1 FROM dlog_site" />			
+			-->
+            <set-property property="removeAbandoned" value="true" />
+            <set-property property="removeAbandonedTimeout" value="120" />
+            <set-property property="encoding" value="false" />			
+        </data-source>
+        
+    </data-sources>
+    
+    <!-- ========== Form Bean Definitions ================================== -->
+    <form-beans>
+        <form-bean name="userForm" type="dlog4j.formbean.UserForm" />
+        <form-bean name="siteForm" type="dlog4j.formbean.SiteForm" />
+        <form-bean name="categoryForm" type="dlog4j.formbean.CategoryForm" />
+        <form-bean name="replyForm" type="dlog4j.formbean.ReplyForm" />
+        <form-bean name="logForm" type="dlog4j.formbean.LogForm" />
+        <form-bean name="paramForm" type="dlog4j.formbean.ParamForm" />
+        <form-bean name="uploadForm" type="dlog4j.formbean.UploadForm" />
+        <form-bean name="uploadImageForm" type="dlog4j.formbean.UploadImageForm" />
+        <form-bean name="uploadFlashForm" type="dlog4j.formbean.UploadFlashForm" />
+        <form-bean name="trackBackForm" type="dlog4j.formbean.TrackBackForm" />
+        <form-bean name="messageForm" type="dlog4j.formbean.MessageForm" />
+        <form-bean name="favoriteForm" type="dlog4j.formbean.FavoriteForm" />
+        <form-bean name="tmpForm" type="dlog4j.formbean.TemplateForm" />
+    </form-beans>
+    
+    <!-- ========== Global Exception Definitions ============================== -->
+    <global-exceptions />
+    
+    <!-- ========== Global Forward Definitions =============================== -->
+    <global-forwards>
+        <forward name="home" path="/main.jspe" redirect="true"/>
+        <forward name="catmgr" path="/mgr/cat_list.jspe" redirect="true"/>
+        <forward name="fail_to_save" path="/pages/log_fail_view.jspe"/>
+        <forward name="fail_to_reply" path="/pages/reply_fail_view.jspe"/>
+		<forward name="admin_access_deny" path="/pages/access_deny.jsp"/>
+        
+    </global-forwards>
+    
+    <!-- ========== Action Mapping Definitions =============================== -->
+    <action-mappings>
+        <action
+            attribute="userForm"
+            input="/reg.jspe"
+            name="userForm"
+            validate="false"
+            path="/adduser"
+            scope="request"
+            type="dlog4j.action.DlogUserAction">
+        </action>
+        <action
+            attribute="loginUser"
+            input="/main.jspe"
+            name="userForm"
+            validate="false"
+            path="/login"
+            type="dlog4j.action.DlogUserAction">
+        </action>
+        <action
+            attribute="loginUser"
+            input="/edituser.jspe"
+            name="userForm"
+            validate="false"
+            path="/edituser"
+            type="dlog4j.action.DlogUserAction">
+        </action>
+        <action
+            attribute="logForm"
+            input="/addlog.jspe"
+            name="logForm"
+            validate="false"
+            path="/addlog"
+            scope="request"
+            type="dlog4j.action.DlogLogAction">
+            <forward name="draft" path="/pages/drafts.jspe" redirect="true"/>
+        </action>
+        <action
+            attribute="logForm"
+            input="/editlog.jspe"
+            name="logForm"
+            validate="false"
+            path="/editlog"
+            scope="request"
+            type="dlog4j.action.DlogLogAction">
+            <forward name="showlog" path="/showlog.jspe" redirect="true"/>
+        </action>
+        <action
+            attribute="replyForm"
+            input="/showlog.jspe"
+            name="replyForm"
+            validate="false"
+            path="/reply"
+            scope="request"
+            type="dlog4j.action.DlogLogAction">
+        </action>
+        <action
+            attribute="replyForm"
+            input="/comment_list.jspe"
+            name="replyForm"
+            validate="false"
+            path="/deletereply"
+            scope="request"
+            type="dlog4j.action.DlogLogAction">
+        </action>
+        <action
+            attribute="uploadImageForm"
+            input="/popups/uploadImage.jsp"
+            name="uploadImageForm"
+            validate="false"
+            path="/uploadImage"
+            scope="request"
+            type="dlog4j.action.DlogUploadAction">
+        </action>
+        <action
+            attribute="uploadFlashForm"
+            input="/popups/uploadFlash.jsp"
+            name="uploadFlashForm"
+            validate="false"
+            path="/uploadFlash"
+            scope="request"
+            type="dlog4j.action.DlogUploadAction">
+        </action>
+        <action
+            input="/mgr/cat_list.jspe"
+            name="categoryForm"
+            validate="false"
+            path="/category"
+            scope="request"
+            type="dlog4j.action.DlogCategoryAction">
+        </action>
+        <action
+            input="/user_list.jspe"
+            name="userForm"
+            validate="false"
+            path="/user"
+            scope="request"
+            type="dlog4j.action.DlogUserAction">
+        </action>
+        <action
+            input="/mgr/setting.jspe"
+            name="paramForm"
+            validate="false"
+            path="/param"
+            scope="request"
+            type="dlog4j.action.DlogParamAction">
+        </action>
+        <action
+            input="/mgr/editsite.jspe"
+            name="siteForm"
+            validate="false"
+            path="/editsite"
+            scope="request"
+            type="dlog4j.action.DlogSiteAction">
+        </action>
+        <action
+            input="/sendmsg.jspe"
+            name="messageForm"
+            validate="false"
+            path="/message"
+            scope="request"
+            type="dlog4j.action.DlogMessageAction">
+            <forward name="list" path="/showmsg.jspe?msg=0&amp;status=1" redirect="true"/>
+        </action>
+        <action
+            path="/search"
+            type="dlog4j.action.DlogSearchAction">
+            <forward name="log" path="/main.jspe"/>
+            <forward name="comment" path="/comment_list.jspe"/>
+        </action>
+        <action
+            path="/bookmark"
+            type="dlog4j.action.DlogLogAction">
+            <forward name="showlog" path="/showlog.jspe" />
+            <forward name="addok" path="/showlog.jspe" />
+            <forward name="bookmark" path="/bookmark.jspe" />
+        </action>
+        <action
+            name="trackBackForm"
+            validate="false"
+            path="/trackback"
+            type="dlog4j.action.DlogTrackBackAction">
+            <forward name="resp" path="/blog/trackback_resp.jsp" />
+            <forward name="error" path="/blog/trackback_error.jsp" />
+        </action>
+        <action
+            input="/mgr/links.jspe"
+            name="favoriteForm"
+            validate="false"
+            path="/mgr/favorite"
+            scope="request"
+            type="dlog4j.action.DlogFavoriteAction">
+            <forward name="links" path="/mgr/links.jspe" redirect="true"/>
+        </action>
+		<!-- used by wap -->
+        <action
+            attribute="loginUser"
+            input="/login.jspw"
+            name="userForm"
+            validate="false"
+            path="/wml/login"
+            type="dlog4j.action.DlogUserAction">
+			<forward name="home" path="/index.jspw" redirect="true"/>
+        </action>
+        <action
+            path="/wml/logout"
+            scope="request"
+            type="dlog4j.action.DlogUserAction">
+			<forward name="home" path="/index.jspw" redirect="true"/>
+        </action>
+        <action
+            attribute="logForm"
+            input="/addlog.jspw"
+            name="logForm"
+            validate="false"
+            path="/wml/log"
+            scope="request"
+            type="dlog4j.action.DlogLogAction">
+			<forward name="home" path="/main.jspw" redirect="true"/>
+            <forward name="draft" path="/draft.jspw" redirect="true"/>
+			<forward name="fail_to_save" path="/index.jspw"/>
+        </action>
+        <action
+            attribute="replyForm"
+            input="/showlog.jspw"
+            name="replyForm"
+            validate="false"
+            path="/wml/reply"
+            scope="request"
+            type="dlog4j.action.DlogLogAction">
+        </action>
+        <action
+            input="/mgr/links.jspe"
+            name="favoriteForm"
+            validate="false"
+            path="/mgr/link"
+            scope="request"
+            type="dlog4j.action.DlogFavoriteAction">
+			<forward name="links" path="/mgr/links.jspw"/>
+        </action>
+		
+        <action
+            input="/mgr/template.jspe"
+			name="tmpForm"
+            validate="false"
+            path="/template"
+            scope="request"
+            type="dlog4j.action.DlogSiteAction">
+        </action>
+    </action-mappings>
+    
+    <!-- ========== Controller Configuration ================================ -->
+    <controller />
+    
+    <!-- ========== Message Resources Definitions ============================ -->    
+    <message-resources parameter="dlog4j" />   
+    <message-resources parameter="wml" key="wml"/>
+    <message-resources parameter="html" key="html"/>
+    
+    <!-- ========== Plug Ins Configuration ================================= -->
+    <!-- 搜索引擎 -->
+    <plug-in className="dlog4j.search.SearchEnginePlugIn">
+    	<!-- 活动间隔(单位:秒钟) -->
+    	<set-property property="activeInterval" value="600"/>
+    	<!-- 日记索引文件存放的目录 -->
+		<set-property property="logIndexPath" value="/WEB-INF/log_index"/>
+    	<!-- 评论索引文件存放的目录 -->
+		<set-property property="replyIndexPath" value="/WEB-INF/reply_index"/>
+		<!-- 最近一次build索引的时间 -->
+		<set-property property="statusFile" value="/WEB-INF/lastActiveTime.sav"/>
+		<!-- Lucene分析类名 -->
+		<set-property property="analyzerClass" value="org.apache.lucene.analysis.standard.StandardAnalyzer"/>
+	</plug-in>
+	
+    <!-- 邮件发送引擎 -->
+    <plug-in className="dlog4j.plugins.MailPlugin">
+		<set-property property="sender" value="dlog4j@gmail.com"/>
+	</plug-in>	
+</struts-config>
+

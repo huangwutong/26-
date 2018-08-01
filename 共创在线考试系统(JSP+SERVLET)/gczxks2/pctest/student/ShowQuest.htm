@@ -1,0 +1,129 @@
+<%@ page contentType="text/html; charset=gb2312" language="java" %>
+<%@ page import="java.sql.*"  %>
+<%@ page import="jinghua.*"%>
+
+
+<jsp:useBean id="DBCon" class="jinghua.JinghuaConn" scope="session">
+</jsp:useBean>
+<jsp:useBean id="transString" class="jinghua.TransformString" scope="page">
+</jsp:useBean>
+
+<%!String strQuest1,strQuest2=null;%>
+<%
+String DBID=request.getParameter("dbid");
+
+int dbid;
+if (!(DBID==null) && !DBID.equals("")) {
+	dbid=Integer.parseInt(DBID);
+	Connection Conn=DBCon.getConnection();
+	Statement stmt = Conn.createStatement();
+	ResultSet rs;
+	String strHtml=null;
+	String sql;
+
+	try{
+		strQuest1=null;
+
+  		sql="select ID,QuestText from question where id="+dbid;
+  		rs=stmt.executeQuery(sql);
+  		if(rs.next()){
+    	strQuest1=rs.getString("QuestText");
+		stmt.close();
+		rs.close();
+		Conn.close();
+  		}
+  	}catch (SQLException e) {
+  	System.out.println(e);
+  	e.printStackTrace();
+	}
+}
+%>
+
+
+
+
+
+
+
+<%
+
+
+
+if (!(DBID==null) && !DBID.equals("")) {
+	dbid=Integer.parseInt(DBID);
+	Connection Conn=DBCon.getConnection();
+	Statement stmt = Conn.createStatement();
+	ResultSet rs;
+	String strHtml=null;
+	String sql;
+
+	try{
+		strQuest1=null;
+
+  		sql="select ID,QuestText from question where id="+dbid;
+  		rs=stmt.executeQuery(sql);
+  		if(rs.next()){
+    	strQuest1=rs.getString("QuestText");
+		stmt.close();
+		rs.close();
+		Conn.close();
+  		}
+  	}catch (SQLException e) {
+  	System.out.println(e);
+  	e.printStackTrace();
+	}
+}
+%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+<title>无标题文档</title>
+</head>
+
+<body>
+
+
+
+<table width="84%" border="1" align="center">
+  <tr>
+    <td colspan="3" align="center">Question数据库查询</td>
+  </tr>
+  <tr align="left">
+    <td width="24%" rowspan="2"><form name="form1" method="post" action="ShowQuest.jsp">
+        <table width="64%" height="78" border="0">
+          <tr>
+            <td><input name="dbid" type="text" id="dbid" size="10"></td>
+          </tr>
+          <tr>
+            <td><input type="submit" name="Submit" value="提交"></td>
+          </tr>
+        </table>
+        <font size="-1"><font size="-3"></font></font>
+      </form></td>
+    <td height="208" colspan="2"> <%if(strQuest1==null) out.print("<BR>"); else	out.print(strQuest1);%> &nbsp;</td>
+    <td width="3%" rowspan="2"></td>
+  </tr>
+  <tr align="left">
+  	<% if(strQuest1!=null)
+    	strQuest1=jinghua.Tools.toHtml(strQuest1);%>
+    <td height="200" colspan="2"><%if (strQuest1==null) out.print("<BR>");	else out.print(strQuest1);%> &nbsp;</td>
+  </tr>
+</table>
+</body>
+</html>
